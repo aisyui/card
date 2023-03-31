@@ -1,4 +1,8 @@
-.DS_Store
 node_modules
 dist
-*.lock
+tt
+app.js
+yarn-error.log
+package-lock.json
+yarn.lock
+**DS_Store

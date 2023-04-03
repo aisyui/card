@@ -103,5 +103,12 @@
     "p": "衝撃の予感",
     "file": "/ai/card/card_14",
     "src": "123"
+  },
+  {
+    "id": 15,
+    "h": "青空",
+    "p": "blueskyに飛び立つ",
+    "file": "/ai/card/card_15",
+    "src": "129"
   }
 ]

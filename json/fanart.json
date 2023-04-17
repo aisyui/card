@@ -110,5 +110,13 @@
     "img": "https://cdn.bsky.social/imgproxy/ZqZpOCF-9bt_AG2iW_13o9Q0-FI3RMqMJGXBCxxVqu4/rs:fit:1000:1000:1:0/plain/bafkreidtxy3o7efzfd7pzrbq6lv5sfjjmiircizhlgp3ffiwyqujxmytje@jpeg",
     "created_at": "2023-04-17T13:48:04+09:00",
     "did": "did:plc:viugoc2g7v4mp3zdcyi5hurf"
+  },
+  {
+    "add": "syui.ai",
+    "link": "https://staging.bsky.app/profile/yy8.bsky.social/post/3jtkrsaysb32z",
+    "author": "yy8.bsky.social",
+    "img": "https://cdn.bsky.social/imgproxy/Vy3L-b9a_QCGI8a3oaeHVhls6PIZ79poInDAX2uwoQ0/rs:fit:2000:2000:1:0/plain/bafkreiesmhkb7sysii6a33ba2uktsm4xx4vno6z4b6zlyndrfohhm5pkuy@jpeg",
+    "created_at": "2023-04-17T19:57:49+09:00",
+    "did": "did:plc:uqzpqmrjnptsxezjx4xuh2mn"
   }
 ]

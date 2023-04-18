@@ -150,13 +150,5 @@
     "img": "https://cdn.bsky.social/imgproxy/xdr0snAl_qOlLZkSdGwMBjys1-29PNxIJbEwdGH2eUc/rs:fit:1000:1000:1:0/plain/bafkreib6v4sg2vzniqupieeig52hylnnzebkztvdd4rut6g3d6husffg7e@jpeg",
     "created_at": "2023-04-18T23:52:48+09:00",
     "did": "did:plc:uqzpqmrjnptsxezjx4xuh2mn"
-  },
-  {
-    "add": "syui.ai",
-    "link": "https://staging.bsky.app/profile/weep.jp/post/3jtnp3tq67x2r",
-    "author": "weep.jp",
-    "img": "https://cdn.bsky.social/imgproxy/3w3yKuIMBtfYL5OFDjkYtEuIUXqIdCJUCDQv7uRkQKY/rs:fit:1000:1000:1:0/plain/bafkreihosqculmhkmo5ibardansbw36jstuxvio4ja2nrgkvvaj2m4nm5u@jpeg",
-    "created_at": "2023-04-18T23:53:48+09:00",
-    "did": "did:plc:uqzpqmrjnptsxezjx4xuh2mn"
   }
 ]

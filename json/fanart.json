@@ -190,5 +190,13 @@
     "img": "https://cdn.bsky.social/imgproxy/Q_u6jFHhunUc1XH6fcMsOgUncF8Xq6WOX6nKy1Iwqao/rs:fit:1000:1000:1:0/plain/bafkreidpo5fmblfi42wmdf63kvg64hfunjmtjusbxj25sy4jsuhsix4yri@jpeg",
     "created_at": "2023-04-21T11:36:09+09:00",
     "did": "did:plc:uqzpqmrjnptsxezjx4xuh2mn"
+  },
+  {
+    "add": "syui.ai",
+    "link": "https://staging.bsky.app/profile/signalize4you.bsky.social/post/3jtv3d6jpm32a",
+    "author": "signalize4you.bsky.social",
+    "img": "https://cdn.bsky.social/imgproxy/ZXYIRYH_2cYUtjFGX2NyP_JgC0o82ZpPmT5kwGlSZfE/rs:fit:1000:1000:1:0/plain/bafkreigjtksxxm73knzhim3pkthih6g7kux73xconjzpcuizxeagvnouga@jpeg",
+    "created_at": "2023-04-21T22:21:48+09:00",
+    "did": "did:plc:uqzpqmrjnptsxezjx4xuh2mn"
   }
 ]

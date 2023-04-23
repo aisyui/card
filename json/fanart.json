@@ -214,5 +214,13 @@
     "img": "https://cdn.bsky.social/imgproxy/7c-tm9BT9dapH6hyqM3REzIohNG4VVFuR9_BCUKXkow/rs:fit:1000:1000:1:0/plain/bafkreiaritdc5jz55weuh6volbcatg2ef4kjd2bbrgwi5cz627zfvxjfga@jpeg",
     "created_at": "2023-04-23T17:42:48+09:00",
     "did": "did:plc:uqzpqmrjnptsxezjx4xuh2mn"
+  },
+  {
+    "add": "syui.ai",
+    "link": "https://staging.bsky.app/profile/tenken.bsky.social/post/3ju2ygkaf252g",
+    "author": "tenken.bsky.social",
+    "img": "https://cdn.bsky.social/imgproxy/IGq9vClC2bXuQ2h1-Nqin1Ax38veHRykYMmB2uYsUp4/rs:fit:1000:1000:1:0/plain/bafkreigoepej3w327rbdjez4mr3kwsactzmigugp4xvaandwgh3cmcw5mi@jpeg",
+    "created_at": "2023-04-24T08:06:09+09:00",
+    "did": "did:plc:uqzpqmrjnptsxezjx4xuh2mn"
   }
 ]

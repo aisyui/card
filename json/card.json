@@ -1,137 +1,145 @@
 [
-  {
-    "id": 0,
-    "h": "世界",
-    "p": "ようこそ",
-    "file": "/card/card_0",
-    "src": "yui_0"
-  },
-  {
-    "id": 1,
-    "h": "夢幻",
-    "p": "夢の実現",
-    "file": "/card/card_1",
-    "owner": "telco",
-    "src": "yui_100"
-  },
-  {
-    "id": 2,
-    "h": "光彩",
-    "p": "絶好調の兆し",
-    "file": "/card/card_2",
-    "owner": null,
-    "src": "yui_109"
-  },
-  {
-    "id": 3,
-    "h": "中性子",
-    "p": "小さいもの",
-    "file": "/card/card_3",
-    "owner": null,
-    "src": "yui_88"
-  },
-  {
-    "id": 4,
-    "h": "太陽",
-    "p": "燃え上がる熱意",
-    "file": "/card/card_4",
-    "owner": null,
-    "src": "yui_59"
-  },
-  {
-    "id": 5,
-    "h": "夜空",
-    "p": "静けさと街灯",
-    "file": "/card/card_5",
-    "owner": null,
-    "src": "yui_112"
-  },
-  {
-    "id": 6,
-    "h": "雪",
-    "p": "真っ白な空",
-    "file": "/card/card_6",
-    "owner": null,
-    "src": "yui_15"
-  },
-  {
-    "id": 7,
-    "h": "雷",
-    "p": "怒りと悲しみ",
-    "file": "/card/card_7",
-    "owner": null,
-    "src": "yui_30"
-  },
-  {
-    "id": 8,
-    "h": "超究",
-    "p": "失うものと得るもの",
-    "file": "/card/card_8",
-    "owner": null,
-    "src": "yui_108"
-  },
-  {
-    "id": 9,
-    "h": "剣",
-    "p": "輪っか",
-    "file": "/card/card_9",
-    "owner": null,
-    "src": "yui_103"
-  },
-  {
-    "id": 10,
-    "h": "破壊",
-    "p": "破壊と再生",
-    "file": "/card/card_10",
-    "owner": null,
-    "src": "yui_87"
-  },
-  {
-    "id": 11,
-    "h": "地球",
-    "p": "風と旅",
-    "file": "/card/card_11",
-    "owner": null,
-    "src": "yui_78"
-  },
-  {
-    "id": 12,
-    "h": "天ノ川",
-    "p": "世界の広さ",
-    "file": "/card/card_12",
-    "owner": null,
-    "src": "yui_115"
-  },
-  {
-    "id": 13,
-    "h": "創造",
-    "p": "始まりと終わり",
-    "file": "/card/card_13",
-    "owner": "syui",
-    "src": "yui_89"
-  },
-  {
-    "id": 14,
-    "h": "超新星",
-    "p": "衝撃の予感",
-    "file": "/card/card_14",
-    "owner": null,
-    "src": "yui_123"
-  },
-  {
-    "id": 15,
-    "h": "機械",
-    "p": "時と空間",
-    "file": "/card/card_15",
-    "owner": null,
-    "src": "yui_131"
-  },
-  {
-    "id": 16,
-    "h": "サポート",
-    "p": "ようこそ",
-    "file": "/card/icon_1",
-    "owner": null,
-    "src": "icon_1"
-  }
+	{
+		"id": 0,
+		"h": "世界",
+		"p": "ようこそ",
+		"file": "/card/card_0",
+		"src": "yui_0"
+	},
+	{
+		"id": 1,
+		"h": "夢幻",
+		"p": "夢の実現",
+		"file": "/card/card_1",
+		"owner": "telco",
+		"src": "yui_100"
+	},
+	{
+		"id": 2,
+		"h": "光彩",
+		"p": "絶好調の兆し",
+		"file": "/card/card_2",
+		"owner": null,
+		"src": "yui_109"
+	},
+	{
+		"id": 3,
+		"h": "中性子",
+		"p": "小さいもの",
+		"file": "/card/card_3",
+		"owner": null,
+		"src": "yui_88"
+	},
+	{
+		"id": 4,
+		"h": "太陽",
+		"p": "燃え上がる熱意",
+		"file": "/card/card_4",
+		"owner": null,
+		"src": "yui_59"
+	},
+	{
+		"id": 5,
+		"h": "夜空",
+		"p": "静けさと街灯",
+		"file": "/card/card_5",
+		"owner": null,
+		"src": "yui_112"
+	},
+	{
+		"id": 6,
+		"h": "雪",
+		"p": "真っ白な空",
+		"file": "/card/card_6",
+		"owner": null,
+		"src": "yui_15"
+	},
+	{
+		"id": 7,
+		"h": "雷",
+		"p": "怒りと悲しみ",
+		"file": "/card/card_7",
+		"owner": null,
+		"src": "yui_30"
+	},
+	{
+		"id": 8,
+		"h": "超究",
+		"p": "失うものと得るもの",
+		"file": "/card/card_8",
+		"owner": null,
+		"src": "yui_108"
+	},
+	{
+		"id": 9,
+		"h": "剣",
+		"p": "輪っか",
+		"file": "/card/card_9",
+		"owner": null,
+		"src": "yui_103"
+	},
+	{
+		"id": 10,
+		"h": "破壊",
+		"p": "破壊と再生",
+		"file": "/card/card_10",
+		"owner": null,
+		"src": "yui_87"
+	},
+	{
+		"id": 11,
+		"h": "地球",
+		"p": "風と旅",
+		"file": "/card/card_11",
+		"owner": "amanatsu-mikan",
+		"src": "yui_78"
+	},
+	{
+		"id": 12,
+		"h": "天ノ川",
+		"p": "世界の広さ",
+		"file": "/card/card_12",
+		"owner": null,
+		"src": "yui_115"
+	},
+	{
+		"id": 13,
+		"h": "創造",
+		"p": "始まりと終わり",
+		"file": "/card/card_13",
+		"owner": "syui",
+		"src": "yui_89"
+	},
+	{
+		"id": 14,
+		"h": "超新星",
+		"p": "衝撃の予感",
+		"file": "/card/card_14",
+		"owner": null,
+		"src": "yui_123"
+	},
+	{
+		"id": 15,
+		"h": "機械",
+		"p": "時と空間",
+		"file": "/card/card_15",
+		"owner": null,
+		"src": "yui_131"
+	},
+	{
+		"id": 16,
+		"h": "サポート",
+		"p": "ようこそ",
+		"file": "/card/icon_1",
+		"owner": null,
+		"src": "icon_1"
+	},
+	{
+		"id": 17,
+		"h": "天体",
+		"p": "事象の地平線",
+		"file": "/card/card_17",
+		"owner": null,
+		"src": "yui_132"
+	}
 ]

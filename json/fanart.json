@@ -246,5 +246,13 @@
     "img": "https://cdn.bsky.social/imgproxy/vfueNpjzcrkSCVbI_SOIg2XyB7Wqj3CqC7ij7jNJ_3U/rs:fit:1000:1000:1:0/plain/bafkreifbhcl7cintwzkfz3yla3mrnjk3fau4ehmkwq2y4l4z2w5f7gyiya@jpeg",
     "created_at": "2023-04-27T09:36:23+09:00",
     "did": "did:plc:uqzpqmrjnptsxezjx4xuh2mn"
+  },
+  {
+    "add": "syui.ai",
+    "link": "https://staging.bsky.app/profile/cuconoki.net/post/3jucuisyeac2t",
+    "author": "cuconoki.net",
+    "img": "https://cdn.bsky.social/imgproxy/hhczU8jt5Vk_o-R2bckOxN4cUEPpGo2JffTJ8CWqQ1A/rs:fit:1000:1000:1:0/plain/bafkreiahep3wbxzlcp2lfdacnv2qqtzxebrc5uw6sm3sosq6mio3zyibou@jpeg",
+    "created_at": "2023-04-27T11:28:08+09:00",
+    "did": "did:plc:uqzpqmrjnptsxezjx4xuh2mn"
   }
 ]

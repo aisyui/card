@@ -302,5 +302,13 @@
     "img": "https://cdn.bsky.social/imgproxy/RBIcdzNwmHUgFrHW5byRIrSUuS_w7laEmq9WTwj_E0Y/rs:fit:2000:2000:1:0/plain/bafkreigp5tdiwwufua42tbgvo6wz6z3fp7ejkruhpxijlt3jnhfn5xhgru@jpeg",
     "created_at": "2023-04-29T05:53:48+09:00",
     "did": "did:plc:gy5hxp4ljo7g2ei5xbvxa63x"
+  },
+  {
+    "add": "nikolat.bsky.social",
+    "link": "https://staging.bsky.app/profile/sema73.bsky.social/post/3juhrfftlkw24",
+    "author": "sema73.bsky.social",
+    "img": "https://cdn.bsky.social/imgproxy/ObQxc8Rutez9-S5hPEcBoK6akS_WQ8qytCABh8N4Aek/rs:fit:2000:2000:1:0/plain/bafkreifbzvodn4rk4xsrw56ruj4mqjtk4i6zkvhg3pej4uhvad3xq2tqpe@jpeg",
+    "created_at": "2023-04-29T08:32:48+09:00",
+    "did": "did:plc:656uaefudfh7ll6leflsi4xo"
   }
 ]

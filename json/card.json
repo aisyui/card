@@ -141,5 +141,13 @@
 		"file": "/card/card_17",
 		"owner": null,
 		"src": "yui_132"
+	},
+	{
+		"id": 18,
+		"h": "バッジ",
+		"p": "キラキラ",
+		"file": "/card/icon_2",
+		"owner": null,
+		"src": "icon_2"
 	}
 ]

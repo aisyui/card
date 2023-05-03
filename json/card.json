@@ -51,7 +51,7 @@
 		"h": "雪",
 		"p": "真っ白な空",
 		"file": "/card/card_6",
-		"owner": null,
+		"owner": "six",
 		"src": "yui_15"
 	},
 	{
@@ -149,5 +149,13 @@
 		"file": "/card/icon_2",
 		"owner": null,
 		"src": "icon_2"
+	},
+	{
+		"id": 19,
+		"h": "青空",
+		"p": "桜色",
+		"file": "/card/yui_133",
+		"owner": null,
+		"src": "yui_133"
 	}
 ]

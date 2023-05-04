@@ -41,9 +41,9 @@
 	{
 		"id": 5,
 		"h": "夜空",
-		"p": "静けさと街灯",
+		"p": "静けさと灯り",
 		"file": "/card/card_5",
-		"owner": null,
+		"owner": "omi",
 		"src": "yui_112"
 	},
 	{

@@ -157,5 +157,21 @@
 		"file": "/card/yui_133",
 		"owner": null,
 		"src": "yui_133"
+	},
+	{
+		"id": 20,
+		"h": "アイ",
+		"p": "ゼン・モード",
+		"file": "/card/yui_134",
+		"owner": null,
+		"src": "yui_134"
+	},
+	{
+		"id": 21,
+		"h": "アイ",
+		"p": "ソード",
+		"file": "/card/yui_135",
+		"owner": null,
+		"src": "yui_135"
 	}
 ]

@@ -394,5 +394,13 @@
     "img": "https://cdn.bsky.social/imgproxy/9IKXw5dnTNE3gJYmuBTDl8ZgLRaq1vQvADtHThewE9Q/rs:fit:1000:1000:1:0/plain/bafkreihkvva2jtgj6p2nlcws3zjy4cjc2tk2ytkr4ugmfka332qgrz3vge@jpeg",
     "created_at": "2023-05-07T21:57:18+09:00",
     "did": "did:plc:uqzpqmrjnptsxezjx4xuh2mn"
+  },
+  {
+    "add": "meliza.bsky.social",
+    "link": "https://staging.bsky.app/profile/kudayo.wtf/post/3jvcffj5j6y2f",
+    "author": "kudayo.wtf",
+    "img": "https://cdn.bsky.social/imgproxy/7EAb64C-mKj0fmm_Y0nqrl2mLSNMq6XHChp_HX-dd9E/rs:fit:2000:2000:1:0/plain/bafkreiac7wystpglq7djfphvrle73q7iqqhksnaac6mkfgfcpcmmgzkcuy@jpeg",
+    "created_at": "2023-05-09T22:55:47+09:00",
+    "did": "did:plc:gy5hxp4ljo7g2ei5xbvxa63x"
   }
 ]

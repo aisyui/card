@@ -38,5 +38,13 @@
     "img": "https://cdn.bsky.social/imgproxy/cMYv4BMnAvqmp79X_Y0NPtTDdzgimkETs7F-Z_DzlzY/rs:fit:1000:1000:1:0/plain/bafkreih2xipm6stbsonfhsl2n47wueohrqsvu2gy27pr33jufvx44l747i@jpeg",
     "created_at": "2023-05-08T20:15:02+09:00",
     "did": "did:plc:uqzpqmrjnptsxezjx4xuh2mn"
+  },
+  {
+    "add": "syui.ai",
+    "link": "https://staging.bsky.app/profile/ichinoshin.bsky.social/post/3jvb3pyvfbf2f",
+    "author": "ichinoshin.bsky.social",
+    "img": "https://cdn.bsky.social/imgproxy/S5rej0cIpYF9UhKd42m7XaoXeLf3sYJsRia_pvaFBl8/rs:fit:1000:1000:1:0/plain/bafkreieq7rrny7cnlwgsc6nciriujqzgg6bu7vmso455h3ra2xfwdjhn4u@jpeg",
+    "created_at": "2023-05-09T10:36:02+09:00",
+    "did": "did:plc:uqzpqmrjnptsxezjx4xuh2mn"
   }
 ]

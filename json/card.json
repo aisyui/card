@@ -12,6 +12,7 @@
 		"p": "夢の実現",
 		"file": "/card/card_1",
 		"owner": "telteltel",
+		"did": "did:plc:qjp6exfcyenr22yucr5nomyi",
 		"src": "yui_100"
 	},
 	{
@@ -28,6 +29,7 @@
 		"p": "小さいもの",
 		"file": "/card/card_3",
 		"owner": "ichinoshin",
+		"did": "did:plc:dipbatun3kmwogwdligz2tjq",
 		"src": "yui_88"
 	},
 	{
@@ -35,7 +37,8 @@
 		"h": "太陽",
 		"p": "燃え上がる熱意",
 		"file": "/card/card_4",
-		"owner": null,
+		"owner": "dala00",
+		"did": "did:plc:oiqqfxzl7bj2gbngt3vtjupm",
 		"src": "yui_59"
 	},
 	{
@@ -44,6 +47,7 @@
 		"p": "静けさと灯り",
 		"file": "/card/card_5",
 		"owner": "omi",
+		"did": "did:plc:j5cxpczcvzajlxhfuq7abivp",
 		"src": "yui_112"
 	},
 	{
@@ -52,6 +56,7 @@
 		"p": "真っ白な空",
 		"file": "/card/card_6",
 		"owner": "six",
+		"did": "did:plc:bv5un6di5t7xoapwmeie4k5r",
 		"src": "yui_15"
 	},
 	{
@@ -92,6 +97,7 @@
 		"p": "風と旅",
 		"file": "/card/card_11",
 		"owner": "amanatsu-mikan",
+		"did": "did:plc:dppvzotf533qrogibmvl3mt3",
 		"src": "yui_78"
 	},
 	{
@@ -108,6 +114,7 @@
 		"p": "始まりと終わり",
 		"file": "/card/card_13",
 		"owner": "syui",
+		"did": "did:plc:uqzpqmrjnptsxezjx4xuh2mn",
 		"src": "yui_89"
 	},
 	{

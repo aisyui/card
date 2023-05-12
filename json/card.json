@@ -80,7 +80,8 @@
 		"h": "剣",
 		"p": "輪っか",
 		"file": "/card/card_9",
-		"owner": null,
+		"owner": "ntkg",
+		"did": "did:plc:5dsd4tgqlshofqzhwz2fxel3",
 		"src": "yui_103"
 	},
 	{

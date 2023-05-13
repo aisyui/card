@@ -190,5 +190,13 @@
 		"file": "/card/yui_136",
 		"owner": null,
 		"src": "yui_136"
+	},
+	{
+		"id": 23,
+		"h": "レイド",
+		"p": "ボス",
+		"file": "/card/icon_3",
+		"owner": null,
+		"src": "icon_3"
 	}
 ]

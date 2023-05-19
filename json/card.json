@@ -73,7 +73,8 @@
 		"h": "超究",
 		"p": "失うものと得るもの",
 		"file": "/card/card_8",
-		"owner": null,
+		"owner": "suzuzzz",
+		"did": "did:plc:engniy5paenub2a736hyj3r2",
 		"src": "yui_108"
 	},
 	{
@@ -107,7 +108,8 @@
 		"h": "天ノ川",
 		"p": "世界の広さ",
 		"file": "/card/card_12",
-		"owner": null,
+		"owner": "hal8",
+		"did": "did:plc:gyf62w3ufjn4roer7wcxzfhk",
 		"src": "yui_115"
 	},
 	{
@@ -185,7 +187,7 @@
 	},
 	{
 		"id": 22,
-		"h": "文字",
+		"h": "月見",
 		"p": "存在の花",
 		"file": "/card/yui_136",
 		"owner": null,

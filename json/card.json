@@ -91,7 +91,8 @@
 		"h": "破壊",
 		"p": "破壊と再生",
 		"file": "/card/card_10",
-		"owner": null,
+		"owner": "fuuri",
+		"did": "did:plc:drwx7i5ffvb2jduluynqsnpv",
 		"src": "yui_87"
 	},
 	{
@@ -187,7 +188,7 @@
 	},
 	{
 		"id": 22,
-		"h": "月見",
+		"h": "存在",
 		"p": "存在の花",
 		"file": "/card/yui_136",
 		"owner": null,

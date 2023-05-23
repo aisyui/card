@@ -113,7 +113,9 @@
     "author": "yy8.bsky.social",
     "img": "https://cdn.bsky.social/imgproxy/ZqZpOCF-9bt_AG2iW_13o9Q0-FI3RMqMJGXBCxxVqu4/rs:fit:1000:1000:1:0/plain/bafkreidtxy3o7efzfd7pzrbq6lv5sfjjmiircizhlgp3ffiwyqujxmytje@jpeg",
     "created_at": "2023-04-17T13:48:04+09:00",
-    "did": "did:plc:viugoc2g7v4mp3zdcyi5hurf"
+    "did": "did:plc:viugoc2g7v4mp3zdcyi5hurf",
+    "delete": true,
+    "delete-did": "did:plc:uqzpqmrjnptsxezjx4xuh2mn"
   },
   {
     "add": "syui.ai",
@@ -121,7 +123,9 @@
     "author": "yy8.bsky.social",
     "img": "https://cdn.bsky.social/imgproxy/Vy3L-b9a_QCGI8a3oaeHVhls6PIZ79poInDAX2uwoQ0/rs:fit:2000:2000:1:0/plain/bafkreiesmhkb7sysii6a33ba2uktsm4xx4vno6z4b6zlyndrfohhm5pkuy@jpeg",
     "created_at": "2023-04-17T19:57:49+09:00",
-    "did": "did:plc:uqzpqmrjnptsxezjx4xuh2mn"
+    "did": "did:plc:uqzpqmrjnptsxezjx4xuh2mn",
+    "delete": true,
+    "delete-did": "did:plc:uqzpqmrjnptsxezjx4xuh2mn"
   },
   {
     "add": "syui.ai",
@@ -169,7 +173,9 @@
     "author": "aozora.bsky.social",
     "img": "https://cdn.bsky.social/imgproxy/41nu2lPdkdqqdrYBQ-G8IaqFiQ-9X1eQrXWrYBY1FYc/rs:fit:1000:1000:1:0/plain/bafkreiew4jc5iod5mlvfuqlh4aghrvotxnle24pw5ulqyokirmhrayjr5i@jpeg",
     "created_at": "2023-04-19T10:09:23+09:00",
-    "did": "did:plc:uqzpqmrjnptsxezjx4xuh2mn"
+    "did": "did:plc:uqzpqmrjnptsxezjx4xuh2mn",
+    "delete": true,
+    "delete-did": "did:plc:uqzpqmrjnptsxezjx4xuh2mn"
   },
   {
     "add": "syui.ai",
@@ -265,7 +271,9 @@
     "author": "aozora.bsky.social",
     "img": "https://cdn.bsky.social/imgproxy/UK3LbFBazh3AJhT3Q8J0OIzIoUNfC0g9xuZriiJoaaI/rs:fit:1000:1000:1:0/plain/bafkreiasvr6mq7pisbbjz2vf6hsb7bgynb2xnnn65ush4q42wnsfhn2ds4@jpeg",
     "created_at": "2023-04-28T09:19:04+09:00",
-    "did": "did:plc:uqzpqmrjnptsxezjx4xuh2mn"
+    "did": "did:plc:uqzpqmrjnptsxezjx4xuh2mn",
+    "delete": true,
+    "delete-did": "did:plc:uqzpqmrjnptsxezjx4xuh2mn"
   },
   {
     "add": "weep.jp",
@@ -450,5 +458,53 @@
     "img": "https://cdn.bsky.social/imgproxy/-Tf7EdNpWmMboTi1OZGTu1T2ztRhQBAkEhRIe6F0OLQ/rs:fit:2000:2000:1:0/plain/bafkreibqlbu5kttudpkt2vhvb6ufkwehlyvdqfxng2kejiujk3ec6cbdi4@jpeg",
     "created_at": "2023-05-19T08:56:48+09:00",
     "did": "did:plc:656uaefudfh7ll6leflsi4xo"
+  },
+  {
+    "add": "syui.ai",
+    "link": "https://staging.bsky.app/profile/yssm.bsky.social/post/3jwfrdsrlg22k",
+    "author": "yssm.bsky.social",
+    "img": "https://cdn.bsky.social/imgproxy/dIGB6A3HyKIADjWXm-jqUFYOCPFo__OzzYU3dFsC-nI/rs:fit:1000:1000:1:0/plain/bafkreig46nq4hq6dshxdo436q3h4qmwevnbshoxa4k3tiksu222hsuvxhq@jpeg",
+    "created_at": "2023-05-24T13:34:19+09:00",
+    "did": "did:plc:uqzpqmrjnptsxezjx4xuh2mn"
+  },
+  {
+    "add": "syui.ai",
+    "link": "https://nostter.vercel.app/note1aeaguppazndhw9xvnsxamxh7a29zn4xp843v039ja3k6q74rzgqqdxgekx",
+    "author": "rira224.bsky.social",
+    "img": "https://nostr.build/i/e552cfa68d303e694accef45ac6404b9935a0736a9d868390e2fbf8c3ce3dea1.jpg",
+    "created_at": "2023-06-03T14:21:47+09:00",
+    "did": "did:plc:uqzpqmrjnptsxezjx4xuh2mn"
+  },
+  {
+    "add": "syui.ai",
+    "link": "https://bsky.app/profile/ocha2k.bsky.social/post/3jxdl5msnkc2s",
+    "author": "ocha2k.bsky.social",
+    "img": "https://cdn.bsky.social/imgproxy/JPhejySDWJpbqsnzOpVITWbgyA1pGatowFfcRsgernQ/rs:fit:1000:1000:1:0/plain/bafkreihalwyscacchlow6aseveowvuzvkz72icjeujyeewbwelh7ymwl6i@jpeg",
+    "created_at": "2023-06-04T20:46:50+09:00",
+    "did": "did:plc:uqzpqmrjnptsxezjx4xuh2mn"
+  },
+  {
+    "add": "syui.ai",
+    "link": "https://bsky.app/profile/krdrailway.gijirail.com/post/3jxgcspxzwg2i",
+    "author": "krdrailway.gijirail.com",
+    "img": "https://cdn.bsky.social/imgproxy/Q-BaTQ2Ych2L4W8v6FU03qiCf53oPa0broOlqY_kxLo/rs:fit:1000:1000:1:0/plain/bafkreibxutmsnofoel2hzdemsfom4oxltfw33v7kd2qmeomjmyj2p74f74@jpeg",
+    "created_at": "2023-06-05T23:08:49+09:00",
+    "did": "did:plc:uqzpqmrjnptsxezjx4xuh2mn"
+  },
+  {
+    "add": "syui.ai",
+    "link": "https://bsky.app/profile/yssm.bsky.social/post/3jxqdidicqb2l",
+    "author": "yssm.bsky.social",
+    "img": "https://cdn.bsky.social/imgproxy/yCbI0GzwypGXkEnHk3T8wtFEqGvFIbNuNeD28r7TGnw/rs:fit:1000:1000:1:0/plain/bafkreig333avomsco36pccng35l3qqtw35th2up2r7a7hz2kt74candkam@jpeg",
+    "created_at": "2023-06-09T23:01:48+09:00",
+    "did": "did:plc:uqzpqmrjnptsxezjx4xuh2mn"
+  },
+  {
+    "add": "syui.ai",
+    "link": "https://bsky.app/profile/tangure.bsky.social/post/3jyjnx6ljai2t",
+    "author": "tangure.bsky.social",
+    "img": "https://cdn.bsky.social/imgproxy/Eb4jzGjygRuW_Cc5R-dilarCt-Q2B-ExAtJW5MDQwUY/rs:fit:2000:2000:1:0/plain/bafkreih4ggbtjeasbopxjj5mmw2p7koqhtqxf4uq5yyncyy5mhsfnektwy@jpeg",
+    "created_at": "2023-06-20T21:36:40+09:00",
+    "did": "did:plc:uqzpqmrjnptsxezjx4xuh2mn"
   }
 ]

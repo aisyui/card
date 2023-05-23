@@ -203,5 +203,21 @@
 		"file": "/card/icon_3",
 		"owner": null,
 		"src": "icon_3"
+	},
+	{
+		"id": 24,
+		"h": "レイド",
+		"p": "ボスの勝利",
+		"file": "/card/icon_4",
+		"owner": null,
+		"src": "icon_4"
+	},
+	{
+		"id": 25,
+		"h": "魚",
+		"p": "サーモンレイド記念",
+		"file": "/card/icon_5",
+		"owner": null,
+		"src": "icon_5"
 	}
 ]

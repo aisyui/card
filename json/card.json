@@ -65,7 +65,8 @@
 		"h": "雷",
 		"p": "怒りと悲しみ",
 		"file": "/card/card_7",
-		"owner": null,
+		"owner": "cheebow",
+		"did": "did:plc:3jcfppic3dgrk73b7jefnvug",
 		"src": "yui_30"
 	},
 	{
@@ -127,7 +128,8 @@
 		"h": "超新星",
 		"p": "衝撃の予感",
 		"file": "/card/card_14",
-		"owner": null,
+		"owner": "nikolat",
+		"did" : "did:plc:656uaefudfh7ll6leflsi4xo",
 		"src": "yui_123"
 	},
 	{

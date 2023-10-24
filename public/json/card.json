@@ -927,5 +927,12 @@
 			"ten": "AEK",
 			"ten_skill": true,
 			"img": "bafkreicbiujlv6hiluzc5db25j5phg7u2m2pu5h4qinxnpizq226n4hbae"
+		},
+		{
+			"id": 79,
+			"h": "アイ・カード",
+			"p": "card",
+			"file": "/card/model_1",
+			"src": "model_1"
 		}
 ]

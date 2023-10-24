@@ -60,6 +60,7 @@
 						</span>
 					</div>
 				</div>
+
 				<div class="book-list" v-show="card_thd_skill" id="thd_skill">
 					<span v-for="(ii, index) in cards.data.filter((v) => v.skill == '3d')" class="book-list" >
 						<button v-if="index == 0" class="thd_button">v{{ ii.card }}</button>

@@ -1,6 +1,7 @@
 <template>
 	<div id="app">
 		<link rel="stylesheet" href="https://syui.ai/bower_components/icomoon/css/icomoon.css" />
+		<link rel="stylesheet" href="https://syui.ai/bower_components/font-awesome/css/all.min.css" />
 		<div class="menu">
 			<a href="/" class="top-icon"><span class="icon-ai"></span></a> 
 			
@@ -29,8 +30,10 @@
 					<span v-if="this.all === true" class="card-all-badge">
 						<span class="icon-ai"></span>
 					</span>
+					<span v-if="cards.data.find((v) => v.card == 65)" class="card-room-badge">
+						<span class="icon-ai"></span>
+					</span>
 					<span v-if="this.badge_aiten === true" class="card-aiten-badge">
-
 						<span class="icon-power"></span>
 					</span>
 				</h3>
@@ -64,28 +67,18 @@
 				<div class="book-list" v-show="card_thd_skill" id="thd_skill">
 					<span v-for="(ii, index) in cards.data.filter((v) => v.skill == '3d')" class="book-list" >
 						<button v-if="index == 0" class="thd_button">v{{ ii.card }}</button>
-						<span v-if="useragent.indexOf('edge') != -1 || useragent.indexOf('edg') != -1">
-							<model-viewer class="ar" v-if="ii.card <= 14 && index == 0" :src='"/obj/card_" + ii.card + ".glb"'
-								ar
-								camera-controls
-							></model-viewer>
-							<model-viewer class="ar" v-if="ii.card == 64 && index == 0" :src='"/obj/card_" + ii.card + ".glb"'
-								ar
-								camera-controls
-							></model-viewer>
-							</span>
-							<span v-else>
+						
 								<model-viewer class="ar" v-if="ii.card <= 14 && index == 0" :src='"/obj/card_" + ii.card + ".glb"'
 									:skybox-image='"/obj_bg/g" + thd_room + ".jpg"'
 									exposure="20"
-									:environment-image='"/obj_bg/g" + thd_room + ".avif"'
+									:environment-image='"/obj_bg/g" + thd_room + "l.jpg"'
 									ar
 									camera-controls
 								></model-viewer>
 								<model-viewer class="ar" v-if="ii.card == 64 && index == 0" :src='"/obj/card_" + ii.card + ".glb"'
 									:skybox-image='"/obj_bg/g31.jpg"'
 									exposure="20"
-									:environment-image='"/obj_bg/g31.avif"'
+									:environment-image='"/obj_bg/g31l.jpg"'
 									ar
 									camera-controls
 								></model-viewer>
@@ -93,12 +86,11 @@
 								<model-viewer class="ar" v-if="ii.card <= 14 && index == 0" :src='"/obj/test.glb"'
 									:skybox-image='"/obj_bg/g" + 0 + ".jpg"'
 									exposure="20"
-									:environment-image='"/obj_bg/g" + 0 + ".avif"'
+									:environment-image='"/obj_bg/g" + 0 + "l.jpg"'
 									ar
 									camera-controls
 								></model-viewer>
 								-->
-							</span>
 						</span>
 					</div>
 
@@ -108,28 +100,17 @@
 				<div class="book-list" v-if="ar_first == true" v-show="card_thd" id="thd">
 					<span v-for="(ii, index) in cards.data.filter((v) => v.status == '3d')" class="book-list" >
 						<button v-if="index == 0" class="thd_button">v{{ ii.card }}</button>
-						<span v-if="useragent.indexOf('edge') != -1 || useragent.indexOf('edg') != -1">
-							<model-viewer class="ar" v-if="ii.card <= 14 && index == 0" :src='"/obj/card_" + ii.card + ".glb"'
-								ar
-								camera-controls
-							></model-viewer>
-							<model-viewer class="ar" v-if="ii.card == 64 && index == 0" :src='"/obj/card_" + ii.card + ".glb"'
-								ar
-								camera-controls
-							></model-viewer>
-							</span>
-							<span v-else>
 								<model-viewer class="ar" v-if="ii.card <= 14 && index == 0" :src='"/obj/card_" + ii.card + ".glb"'
 									:skybox-image='"/obj_bg/g" + thd_room + ".jpg"'
 									exposure="20"
-									:environment-image='"/obj_bg/g" + thd_room + ".avif"'
+									:environment-image='"/obj_bg/g" + thd_room + "l.jpg"'
 									ar
 									camera-controls
 								></model-viewer>
 								<model-viewer class="ar" v-if="ii.card == 64 && index == 0" :src='"/obj/card_" + ii.card + ".glb"'
 									:skybox-image='"/obj_bg/g31.jpg"'
 									exposure="20"
-									:environment-image='"/obj_bg/g31.avif"'
+									:environment-image='"/obj_bg/g31l.jpg"'
 									ar
 									camera-controls
 								></model-viewer>
@@ -137,12 +118,11 @@
 								<model-viewer class="ar" v-if="ii.card <= 14 && index == 0" :src='"/obj/test.glb"'
 									:skybox-image='"/obj_bg/g" + 0 + ".jpg"'
 									exposure="20"
-									:environment-image='"/obj_bg/g" + 0 + ".avif"'
+									:environment-image='"/obj_bg/g" + 0 + "l.jpg"'
 									ar
 									camera-controls
 								></model-viewer>
 								-->
-							</span>
 						</span>
 					</div>
 
@@ -152,14 +132,14 @@
 						<model-viewer class="ar" v-if="ar_first == false && ar_second <= 14" :src='"/obj/card_" + ar_second + ".glb"'
 							:skybox-image='"/obj_bg/g" + randomNumber + ".jpg"'
 							exposure="20"
-							:environment-image='"/obj_bg/g" + randomNumber + ".avif"'
+							:environment-image='"/obj_bg/g" + randomNumber + "l.jpg"'
 							ar
 							camera-controls
 						></model-viewer>
 						<model-viewer class="ar" v-if="ar_first == false && ar_second == 64" :src='"/obj/card_" + ar_second + ".glb"'
 							:skybox-image='"/obj_bg/g" + 31 + ".jpg"'
 							exposure="20"
-							:environment-image='"/obj_bg/g" + 31 + ".avif"'
+							:environment-image='"/obj_bg/g" + 31 + "l.jpg"'
 							ar
 							camera-controls
 						></model-viewer>
@@ -284,6 +264,8 @@
 							</tr>
 						</thead>
 
+
+
 						<thead v-else-if="ii.card !== null" class="card-fav">
 							<tr class="author" v-if='ii.author'>
 								<img :src='"/card/card_origin_" + ii.card + ".webp"'>
@@ -356,6 +338,14 @@
 				</span>
 				<div class="card_kira_center">
 						<button v-on:click="cardoriginstatus" class="card_origin_status"><span class="icon-ai"></span></button> 
+					</div>
+
+					<div class="vrm_button" v-if="model == true">
+						<script type="module" src="https://unpkg.com/x-frame-bypass"></script>
+						<button v-on:click="vrmviewer" ><i class="fa-brands fa-unity" id="vrm_button"></i></button>
+						<div class="vrm" v-if="iframe_status == true">
+							<iframe :src="'https://vrm.syui.ai?id=' + id" allowfullscreen frameborder="0"></iframe>
+						</div>
 					</div>
 
 				<div class="card-button">
@@ -605,13 +595,13 @@
 				<div v-for="(ii, index) in rcards.data">
 					<div v-show="ii.id !== 0">
 						<div v-show="ii.id < 15" class="card-owner-one">
-							<button :id="ii.id">card : {{ ii.h }}</button>
+							<button :id="ii.id">card : {{ii.id }} / {{ ii.h }}</button>
 							<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
 							<p v-if="ii.owner">owner : <a :href="'/' + ii.owner">{{ ii.owner }}</a></p>
-							<p v-if="ii.owner === null">owner : <code>none</code></p>
+							<p v-if="ii.owner === null">owner : none</p>
 						</div>
 						<div v-show="ii.id == 22" class="card-owner-one">
-							<button :id="ii.id">card : {{ ii.h }}</button>
+							<button :id="ii.id">card : {{ii.id }} / {{ ii.h }}</button>
 							<span v-if='ii.owner == "none"' class="card-black">
 								<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
 							</span>
@@ -619,22 +609,22 @@
 								<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
 							</span>
 							<p v-if="ii.owner">owner : <a :href="'/' + ii.owner">{{ ii.owner }}</a></p>
-							<p v-if="ii.owner === null">owner : <code>none</code></p>
+							<p v-if="ii.owner === null">owner : none</p>
 						</div>
 						<div v-show="ii.id == 25" class="card-owner-one">
-							<button :id="ii.id">card : {{ ii.h }}</button>
+							<button :id="ii.id">card : {{ii.id }} / {{ ii.h }}</button>
 							<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
 							<p v-if="ii.owner">owner : <a :href="'/' + ii.owner">{{ ii.owner }}</a></p>
-							<p v-if="ii.owner === null">owner : <code>none</code></p>
+							<p v-if="ii.owner === null">owner : none</p>
 						</div>
 						<div v-show="ii.id == 26" class="card-owner-one">
-							<button :id="ii.id">card : {{ ii.h }}</button>
+							<button :id="ii.id">card : {{ii.id }} / {{ ii.h }}</button>
 							<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
 							<p v-if="ii.owner">owner : <a :href="'/' + ii.owner">{{ ii.owner }}</a></p>
-							<p v-if="ii.owner === null">owner : <code>none</code></p>
+							<p v-if="ii.owner === null">owner : none</p>
 						</div>
 						<div v-show="ii.id == 27" class="card-owner-one">
-							<button :id="ii.id">card : {{ ii.h }}</button>
+							<button :id="ii.id">card : {{ii.id }} / {{ ii.h }}</button>
 							<span v-if='ii.owner == "none"' class="card-black">
 								<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
 							</span>
@@ -642,10 +632,10 @@
 							<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
 							</span>
 							<p v-if="ii.owner">owner : <a :href="'/' + ii.owner">{{ ii.owner }}</a></p>
-							<p v-if="ii.owner === null">owner : <code>none</code></p>
+							<p v-if="ii.owner === null">owner : none</p>
 						</div>
 						<div v-show="ii.id == 29" class="card-owner-one">
-							<button :id="ii.id">card : {{ ii.h }}</button>
+							<button :id="ii.id">card : {{ii.id }} / {{ ii.h }}</button>
 							<span v-if='ii.owner == "none"' class="card-black">
 								<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
 							</span>
@@ -653,10 +643,10 @@
 							<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
 							</span>
 							<p v-if="ii.owner">owner : <a :href="'/' + ii.owner">{{ ii.owner }}</a></p>
-							<p v-if="ii.owner === null">owner : <code>none</code></p>
+							<p v-if="ii.owner === null">owner : none</p>
 						</div>
 						<div v-show="ii.id == 33" class="card-owner-one">
-							<button :id="ii.id">card : {{ ii.h }}</button>
+							<button :id="ii.id">card : {{ii.id }} / {{ ii.h }}</button>
 							<span v-if='ii.owner == "none"' class="card-black">
 								<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
 							</span>
@@ -664,10 +654,10 @@
 							<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
 							</span>
 							<p v-if="ii.owner">owner : <a :href="'/' + ii.owner">{{ ii.owner }}</a></p>
-							<p v-if="ii.owner === null">owner : <code>none</code></p>
+							<p v-if="ii.owner === null">owner : none</p>
 						</div>
 						<div v-show="ii.id == 36" class="card-owner-one">
-							<button :id="ii.id">card : {{ ii.h }}</button>
+							<button :id="ii.id">card : {{ii.id }} / {{ ii.h }}</button>
 							<span v-if='ii.owner == "none"' class="card-black">
 								<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
 							</span>
@@ -675,37 +665,37 @@
 							<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
 							</span>
 							<p v-if="ii.owner">owner : <a :href="'/' + ii.owner">{{ ii.owner }}</a></p>
-							<p v-if="ii.owner === null">owner : <code>none</code></p>
+							<p v-if="ii.owner === null">owner : none</p>
 						</div>
 						<div v-show="ii.id == 39" class="card-owner-one">
-							<button :id="ii.id">card : {{ ii.h }}</button>
+							<button :id="ii.id">card : {{ii.id }} / {{ ii.h }}</button>
 							<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
 							<p v-if="ii.owner">owner :<span v-for="(iii, index) in ii.owner"> <a :href="'/' + iii.user">{{ iii.user }}</a>, </span></p>
-							<p v-if="ii.owner === null">owner : <code>none</code></p>
+							<p v-if="ii.owner === null">owner : none</p>
 						</div>
 						<div v-show="ii.id == 40" class="card-owner-one">
-							<button :id="ii.id">card : {{ ii.h }}</button>
+							<button :id="ii.id">card : {{ii.id }} / {{ ii.h }}</button>
 							<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
 							<p v-if="ii.owner">owner :<span v-for="(iii, index) in ii.owner"> <a :href="'/' + iii.user">{{ iii.user }}</a>, </span></p>
-							<p v-if="ii.owner === null">owner : <code>none</code></p>
+							<p v-if="ii.owner === null">owner : none</p>
 						</div>
 						<div v-show="ii.id == 41" class="card-owner-one">
-							<button :id="ii.id">card : {{ ii.h }}</button>
+							<button :id="ii.id">card : {{ii.id }} / {{ ii.h }}</button>
 							<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
 							<p v-if="ii.owner">owner : <a :href="'/' + ii.owner">{{ ii.owner }}</a></p>
-							<p v-if="ii.owner === null">owner : <code>none</code></p>
+							<p v-if="ii.owner === null">owner : none</p>
 						</div>
 						<div v-show="ii.id == 44" class="card-owner-one">
-							<button :id="ii.id">card : {{ ii.h }}</button>
+							<button :id="ii.id">card : {{ii.id }} / {{ ii.h }}</button>
 							<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
 							<p v-if="ii.owner">owner : <a :href="'/' + ii.owner">{{ ii.owner }}</a></p>
-							<p v-if="ii.owner === null">owner : <code>none</code></p>
+							<p v-if="ii.owner === null">owner : none</p>
 						</div>
 			<div v-show="ii.id == 45" class="card-owner-one">
-							<button :id="ii.id">card : {{ ii.h }}</button>
+							<button :id="ii.id">card : {{ii.id }} / {{ ii.h }}</button>
 							<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
 							<p v-if="ii.owner">owner :<span v-for="(iii, index) in ii.owner"> <a :href="'/' + iii.user">{{ iii.user }}</a>, </span></p>
-							<p v-if="ii.owner === null">owner : <code>none</code></p>
+							<p v-if="ii.owner === null">owner : none</p>
 						</div>
 					</div>
 				</div>
@@ -861,6 +851,7 @@ export default {
 			cards: null,
 			loc: window.location.pathname.split('/').slice(-1)[0],
 			id: null,
+			model: null,
 			record: null,
 			url: null,
 			user: null,
@@ -904,6 +895,7 @@ export default {
 			thd_room: 0,
 			useragent: window.navigator.userAgent.toLowerCase(),
 			card_thd_skill: false,
+			iframe_status: false,
 		}
 	},
 	components: {
@@ -974,6 +966,7 @@ export default {
 				.then(response => { 
 					this.record = response;
 					this.id = this.record.data.find((v) => v.username == loc).id;
+					this.model = this.record.data.find((v) => v.username == loc).model;
 					this.did = this.record.data.find((v) => v.username == loc).did;
 					this.aiten = this.record.data.find((v) => v.username == loc).aiten;
 					this.bsky_mode = this.record.data.find((v) => v.username == loc).bsky;
@@ -1161,6 +1154,13 @@ export default {
 					this.card_origin_status = false;
 				}
 			},
+			vrmviewer() {
+				if (this.iframe_status == false) {
+					this.iframe_status = true;
+				} else {
+					this.iframe_status = false;
+				}
+			},
 			cardpremium(){
 				return this.cards.data.sort((a,b) => {
 					this.premium = true;
@@ -1317,7 +1317,11 @@ span.card-aiten-badge {
 	color: #abae00;
 	padding:0 5px;
 }
-
+span.card-room-badge {
+	text-shadow: rgba(0, 0, 0, 0.77) 1px 0 5px;
+	color: #fff700;
+	padding:0 5px;
+}
 .card-all-badge-bottom img {
 	padding: 0 7px 0 0;
 	width:25px;
@@ -1727,6 +1731,21 @@ img.sed_model {
 	width: 50px;
 	top: 50px;
 	left: 85px;
+}
+
+.vrm_button {
+	text-align: center;
+	padding: 0px 0px 50px 0px;
+}
+
+i#vrm_button {
+	font-size: 26px;
+	color: #fff;
+}
+
+iframe {
+	width: 100%;
+	height: 600px;
 }
 
 @media screen and (max-width:1000px) { 

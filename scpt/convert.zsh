@@ -49,5 +49,4 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$path_nvm_sh" ] && \. "$path_nvm_sh"
 nvm use 17
 nvm i squoosh-cli
-squoosh-cli --webp '{"quality":100}' -d ./ --resize '{width:825,height:1080}' card_7*.png
-squoosh-cli --webp '{"quality":100}' -d ./ --resize '{width:825,height:1080}' card_6*.png
+squoosh-cli --webp '{"quality":100}' -d ./ --resize '{width:825,height:1080}' card_8*.png

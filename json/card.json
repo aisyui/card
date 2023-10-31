@@ -934,5 +934,12 @@
 			"p": "card",
 			"file": "/card/model_1",
 			"src": "model_1"
+		},
+		{
+			"id": 80,
+			"h": "アイ・モード",
+			"p": "card",
+			"file": "/card/model_2",
+			"src": "model_2"
 		}
 ]

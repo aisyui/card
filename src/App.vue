@@ -342,9 +342,9 @@
 
 					<div class="vrm_button" v-if="model == true">
 						<script type="module" src="https://unpkg.com/x-frame-bypass"></script>
-						<button v-on:click="vrmviewer" ><i class="fa-brands fa-unity" id="vrm_button"></i></button>
+						<button v-on:click="vrmviewer" class="unity"><i class="fa-brands fa-unity" id="vrm_button"></i></button>
 						<div class="vrm" v-if="iframe_status == true">
-							<iframe :src="'https://vrm.syui.ai?id=' + id" allowfullscreen frameborder="0"></iframe>
+							<iframe :src="'https://vrm.syui.ai?id=' + id + '&card=7&card_su=' + cards.data.filter((v) => v.card == 7).length" allowfullscreen frameborder="0"></iframe>
 						</div>
 					</div>
 
@@ -373,7 +373,7 @@
 								<img :src='"/card/card_" + ii.card + ".webp"'>
 							</td>
 						</thead>
-						<tbody><tr><span v-if="ii.skill == 'critical'" class="icon-sandar"></span><span v-if="ii.skill == 'post'" class="icon-moon"></span><span v-if="ii.skill == 'luck'" class="icon-api"></span><span v-if="ii.skill == 'ten'" class="icon-power"></span><span v-if="ii.skill == 'dragon'" class="icon-home"></span><span v-if="ii.skill == 'nyan'">▲</span><span v-if="ii.skill == 'yui'" class="icon-ai"></span><span v-if="ii.skill == '3d'">■</span> {{ ii.cp }}</tr></tbody>
+						<tbody><tr><span v-if="ii.skill == 'critical'" class="icon-sandar"></span><span v-if="ii.skill == 'post'" class="icon-moon"></span><span v-if="ii.skill == 'luck'" class="icon-api"></span><span v-if="ii.skill == 'ten'" class="icon-power"></span><span v-if="ii.skill == 'dragon'" class="icon-home"></span><span v-if="ii.skill == 'nyan'">▲</span><span v-if="ii.skill == 'yui'" class="icon-ai"></span><span v-if="ii.skill == '3d'">■</span><span v-if="ii.skill == 'model'"><i class="fa-brands fa-unity"></i></span> {{ ii.cp }}</tr></tbody>
 						<tbody v-if="info == true"><tr>ID {{ ii.card }}</tr></tbody>
 						<tbody v-if="fav == true"><tr>CID {{ ii.id }}</tr></tbody>
 						<tbody v-if="card_skill == true"><tr>{{ ii.skill }}</tr></tbody>
@@ -403,7 +403,7 @@
 								</span>
 							</td>
 						</thead>
-						<tbody><tr><span v-if="ii.skill == 'critical'" class="icon-sandar"></span><span v-if="ii.skill == 'post'" class="icon-moon"></span><span v-if="ii.skill == 'luck'" class="icon-api"></span><span v-if="ii.skill == 'ten'" class="icon-power"></span><span v-if="ii.skill == 'dragon'" class="icon-home"></span><span v-if="ii.skill == 'nyan'">▲</span><span v-if="ii.skill == 'yui'" class="icon-ai"></span><span v-if="ii.skill == '3d'">■</span> {{ ii.cp }}</tr></tbody>
+						<tbody><tr><span v-if="ii.skill == 'critical'" class="icon-sandar"></span><span v-if="ii.skill == 'post'" class="icon-moon"></span><span v-if="ii.skill == 'luck'" class="icon-api"></span><span v-if="ii.skill == 'ten'" class="icon-power"></span><span v-if="ii.skill == 'dragon'" class="icon-home"></span><span v-if="ii.skill == 'nyan'">▲</span><span v-if="ii.skill == 'yui'" class="icon-ai"></span><span v-if="ii.skill == '3d'">■</span><span v-if="ii.skill == 'model'"><i class="fa-brands fa-unity"></i></span> {{ ii.cp }}</tr></tbody>
 						<tbody v-if="info == true"><tr>ID {{ ii.card }}</tr></tbody>
 						<tbody v-if="fav == true"><tr>CID {{ ii.id }}</tr></tbody>
 						<tbody v-if="card_skill == true"><tr>{{ ii.skill }}</tr></tbody>
@@ -1746,6 +1746,10 @@ i#vrm_button {
 iframe {
 	width: 100%;
 	height: 600px;
+}
+
+button.unity {
+	background-color: #000;
 }
 
 @media screen and (max-width:1000px) { 

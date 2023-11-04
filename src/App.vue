@@ -1691,14 +1691,11 @@ td.author {
 button.card_origin_status {
 	font-size: 22px;
 	border-radius: 2px;
-	border: solid 1px #b8af02;
-	background-color: #b8af02;
+	background-color: #343434;
 }
 
 button.card_origin_status:hover {
 	color:#ffff00;
-	background-color: #343434;
-	border: solid 1px #b8af02;
 }
 
 a.top-icon {
@@ -1749,7 +1746,11 @@ iframe {
 }
 
 button.unity {
-	background-color: #000;
+	background-color: #343434;
+}
+
+button.unity i#vrm_button:hover {
+	color: #fff700;
 }
 
 @media screen and (max-width:1000px) { 

@@ -344,7 +344,7 @@
 						<script type="module" src="https://unpkg.com/x-frame-bypass"></script>
 						<button v-on:click="vrmviewer" class="unity"><i class="fa-brands fa-unity" id="vrm_button"></i></button>
 						<div class="vrm" v-if="iframe_status == true">
-							<iframe :src="'https://vrm.syui.ai?id=' + id + '&card=7&card_su=' + cards.data.filter((v) => v.card == 7).length" allowfullscreen frameborder="0"></iframe>
+							<iframe :src="'https://vrm.syui.ai?id=' + id + '&card=0&card_su=' + cards.data.filter((v) => v.skill == 'lost').length" allowfullscreen frameborder="0"></iframe>
 						</div>
 					</div>
 

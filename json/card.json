@@ -931,15 +931,55 @@
 		{
 			"id": 79,
 			"h": "アイ・カード",
-			"p": "card",
+			"p": "ai-model card",
 			"file": "/card/model_1",
 			"src": "model_1"
 		},
 		{
 			"id": 80,
 			"h": "アイ・モード",
-			"p": "card",
+			"p": "ai-model card",
 			"file": "/card/model_2",
 			"src": "model_2"
+		},
+		{
+			"id": 81,
+			"h": "アタック",
+			"p": "ai-model card attack",
+			"file": "/card/ai_model_card_attack",
+			"src": "ai_model_card_attack",
+			"gif": true,
+			"blob": "",
+			"img": ""
+		},
+		{
+			"id": 82,
+			"h": "モード",
+			"p": "ai-model card mode",
+			"file": "/card/ai_model_card_mode",
+			"src": "ai_model_card_mode",
+			"gif": true,
+			"blob": "",
+			"img": ""
+		},
+		{
+			"id": 83,
+			"h": "スキル",
+			"p": "ai-model card skill",
+			"file": "/card/ai_model_card_skill",
+			"src": "ai_model_card_skill",
+			"gif": true,
+			"blob": "",
+			"img": ""
+		},
+		{
+			"id": 84,
+			"h": "リミット",
+			"p": "ai-model card limit",
+			"file": "/card/ai_model_card_limit",
+			"src": "ai_model_card_limit",
+			"gif": true,
+			"blob": "",
+			"img": ""
 		}
 ]

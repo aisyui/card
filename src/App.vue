@@ -454,6 +454,85 @@
 			</div>
 		</div>
 
+		<div v-if="loc === 'vr'">
+			<p>アイの3Dモデルを育成することができます。</p>
+			<p>モデルを有効にするには <i class="fa-brands fa-unity"></i> カードが必要になります。</p>
+			<p><i class="fa-brands fa-unity"></i> カードは低確率で排出されます。</p>
+			<h3>レベル</h3>
+			<p>レベルはlossのカード数によって算出されます。</p>
+			<h3>天性レベル</h3>
+			<p>それぞれの天性レベルはモデルになったカードに属します。</p>
+			<p>カードの効果は天性レベルx10されます。</p>
+			<table>
+				<thead>
+					<tr>
+						<th>天性レベル</th>
+					</tr>
+				</thead>
+				<tbody>
+
+					<tr>
+						<td>モード</td>
+						<td>アタック</td>
+						<td>スキル</td>
+						<td>バースト</td>
+					</tr>
+			
+					<tr>
+						<td>card:2</td>
+						<td>card:9</td>
+						<td>card:3</td>
+						<td>card:7</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<table>
+				<thead>
+					<tr>
+						<th>名称</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>mode</td>
+						<td>attack</td>
+						<td>skill</td>
+						<td>burst (limit)</td>
+					</tr>
+					<tr>
+						<td>アイ・モード</td>
+						<td>通常攻撃</td>
+						<td>原子スキル</td>
+						<td>原子バースト</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>モデルが有効であれば<code>/ten pay</code>で上がることがあります。</p>
+
+			<h3>会心系</h3>
+			<p>ステータスには会心率と会心ダメージがあります。</p>
+			<p>aitenで勝利するとステータスが上がることがあります。</p>
+
+			<table>
+				<thead>
+					<tr>
+						<th>会心系</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>会心率</td>
+						<td>会心ダメージ</td>
+					</tr>
+					<tr>
+						<td>+1%</td>
+						<td>+10%</td>
+					</tr>
+				</tbody>
+				</table>
+			</div>
+
 		<div v-if="loc === 'docs'">
 			<p>カードは1日に1回、引くことができます</p>
 			<p>カードの排出率は以下のとおりです</p>
@@ -523,7 +602,7 @@
 
 
 		<h3>link</h3>
-		<p><a class="menu-link" href="/fa">fanart</a> <a class="menu-link" href="/ph">photo</a> <a class="menu-link" href="/te">aiten</a> <a class="menu-link" href="/pr">fav</a></p>
+		<p><a class="menu-link" href="/fa">fanart</a> <a class="menu-link" href="/ph">photo</a> <a class="menu-link" href="/te">aiten</a> <a class="menu-link" href="/pr">fav</a> <a class="menu-link" href="/vr">model</a></p>
 	</div>
 
 		<div v-if="loc === 'en'">

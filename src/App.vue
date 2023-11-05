@@ -455,10 +455,34 @@
 		</div>
 
 		<div v-if="loc === 'vr'">
+			<h3>動作環境</h3>
+			<table>
+				<thead>
+					<tr>
+						<th>iphone/safari</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>ios17</td>
+						<td>ok</td>
+					</tr>
+					<tr>
+						<td>ios16</td>
+						<td>no</td>
+					</tr>
+				</tbody>
+			</table>
+			<p><li>Allow WebGL in Web Workers</li></p>
+			<p><li>GPU Process: Canvas Rendering</li></p>
+			<p><li>GPU Process: DOM Rendering</li></p>
+			<p><li>OffscreenCanvas in Workers</li></p>
+			<p><li>OffscreenCanvas</li></p>
+
+			<h3>3Dモデル</h3>
 			<p>アイの3Dモデルを育成することができます。</p>
 			<p>モデルを有効にするには <i class="fa-brands fa-unity"></i> カードが必要になります。</p>
 			<p><i class="fa-brands fa-unity"></i> カードは低確率で排出されます。</p>
-			<h3>レベル</h3>
 			<p>レベルはlossのカード数によって算出されます。</p>
 			<h3>天性レベル</h3>
 			<p>それぞれの天性レベルはモデルになったカードに属します。</p>
@@ -466,7 +490,6 @@
 			<table>
 				<thead>
 					<tr>
-						<th>天性レベル</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -490,7 +513,7 @@
 			<table>
 				<thead>
 					<tr>
-						<th>名称</th>
+						<th>正式名称</th>
 					</tr>
 				</thead>
 				<tbody>

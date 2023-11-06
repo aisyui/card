@@ -348,11 +348,11 @@
 						</div>
 					</div>
 
-				<div class="card-button">
-					<button v-on:click="cardtime">new</button> <button v-on:click="sort">cp</button> <button v-on:click="sortcard">card</button> <button v-on:click="cardinfo">id</button> <button v-on:click="cardstatus">status</button> <button v-on:click="cardpremium">premium</button> <button v-on:click="cardfav">fav(cid)</button> <button v-on:click="cardskill">skill</button>
+				<div class="card-button" >
+					<button v-on:click="cardtime">new</button> <button v-on:click="sort">cp</button> <button v-on:click="sortcard" >card</button> <button v-on:click="cardinfo">id</button> <button v-on:click="cardstatus">status</button> <button v-on:click="cardpremium">premium</button> <button v-on:click="cardfav">fav(cid)</button> <button v-on:click="cardskill">skill</button>
 				</div>
 				<span class="menu-right"><code><strong>ID</strong> {{ id }}</code> <code><span class="icon-power"></span> {{ aiten }}</code></span>
-			<table>
+			<table >
 				<span v-for="(ii, index) in cards.data">
 					<span v-if="ii.status == 'normal' && ii.card !== null">
 						<thead v-if="ii.card == 43">
@@ -398,9 +398,11 @@
 								<span class="reflection" v-else-if="ii.skill == '3d'">
 									<a href="#thd_skill" class="thd_link"><img :src='"/card/card_" + ii.card + ".webp"' v-on:click="thd_skill"></a>
 								</span>
-								<span class="reflection" v-else>
+								<!--ちらつき-->
+								<span v-else>
 									<img :src='"/card/card_" + ii.card + ".webp"'>
 								</span>
+								<!--ちらつき-->
 							</td>
 						</thead>
 						<tbody><tr><span v-if="ii.skill == 'critical'" class="icon-sandar"></span><span v-if="ii.skill == 'post'" class="icon-moon"></span><span v-if="ii.skill == 'luck'" class="icon-api"></span><span v-if="ii.skill == 'ten'" class="icon-power"></span><span v-if="ii.skill == 'dragon'" class="icon-home"></span><span v-if="ii.skill == 'nyan'">▲</span><span v-if="ii.skill == 'yui'" class="icon-ai"></span><span v-if="ii.skill == '3d'">■</span><span v-if="ii.skill == 'model'"><i class="fa-brands fa-unity"></i></span> {{ ii.cp }}</tr></tbody>
@@ -998,6 +1000,7 @@ export default {
 			useragent: window.navigator.userAgent.toLowerCase(),
 			card_thd_skill: false,
 			iframe_status: false,
+			sort_key: null,
 		}
 	},
 	components: {
@@ -1168,9 +1171,6 @@ export default {
 				if (this.premium) {
 					this.premium = false;
 					let url = this.api_url + "users/" + this.id + "/card?itemsPerPage=2000";
-					axios
-						.get(url,{ crossdomain: true })
-						.then(response => (this.cards = response));
 				}
 				return this.cards.data.sort((a, b) => {
 					return b.cp - a.cp;
@@ -1179,14 +1179,13 @@ export default {
 			sortcard(){
 				if (this.premium) {
 					this.premium = false;
-					let url = this.api_url + "users/" + this.id + "/card?itemsPerPage=2000";
-					axios
-						.get(url,{ crossdomain: true })
-						.then(response => (this.cards = response));
 				}
 				return this.cards.data.sort((a, b) => {
 					return b.card - a.card;
 				});
+			},
+			sortBy(key) {
+				this.sort_key = key;
 			},
 			tagsort(){
 				this.memo.sort(function(a,b){
@@ -1215,6 +1214,7 @@ export default {
 				this.fav = true;
 				this.card_skill = false;
 				this.card_status = false;
+
 			},
 			cardstatus(){
 				this.cards = {};
@@ -1420,7 +1420,7 @@ span.card-aiten-badge {
 	padding:0 5px;
 }
 span.card-room-badge {
-	text-shadow: rgba(0, 0, 0, 0.77) 1px 0 5px;
+	text-shadow: rgba(0, 0, 0, 0.77) 0px 0 5px;
 	color: #fff700;
 	padding:0 5px;
 }

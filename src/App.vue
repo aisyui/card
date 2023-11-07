@@ -457,6 +457,11 @@
 		</div>
 
 		<div v-if="loc === 'vr'">
+
+			<h3>3Dモデル</h3>
+			<p>アイの3Dモデルを育成することができます。</p>
+			<p>モデルを有効にするには <i class="fa-brands fa-unity"></i> カードが必要になります。</p>
+			<p><i class="fa-brands fa-unity"></i> カードは低確率で排出されます。</p>
 			<h3>動作環境</h3>
 			<table>
 				<thead>
@@ -480,29 +485,20 @@
 			<p><li>GPU Process: DOM Rendering</li></p>
 			<p><li>OffscreenCanvas in Workers</li></p>
 			<p><li>OffscreenCanvas</li></p>
-
-			<h3>3Dモデル</h3>
-			<p>アイの3Dモデルを育成することができます。</p>
-			<p>モデルを有効にするには <i class="fa-brands fa-unity"></i> カードが必要になります。</p>
-			<p><i class="fa-brands fa-unity"></i> カードは低確率で排出されます。</p>
-			<p>レベルはlossのカード数によって算出されます。</p>
 			<h3>天性レベル</h3>
 			<p>それぞれの天性レベルはモデルになったカードに属します。</p>
-			<p>カードの効果は天性レベルx10されます。</p>
 			<table>
 				<thead>
 					<tr>
 					</tr>
 				</thead>
 				<tbody>
-
 					<tr>
 						<td>モード</td>
 						<td>アタック</td>
 						<td>スキル</td>
 						<td>バースト</td>
 					</tr>
-			
 					<tr>
 						<td>card:2</td>
 						<td>card:9</td>
@@ -511,6 +507,8 @@
 					</tr>
 				</tbody>
 			</table>
+			<p>他で使用するカードの効果が天性レベルx10されることがあります。</p>
+			<p>モデルが有効であれば<code>/ten pay</code>でレベルを上げられます。</p>
 
 			<table>
 				<thead>
@@ -533,8 +531,6 @@
 					</tr>
 				</tbody>
 			</table>
-			<p>モデルが有効であれば<code>/ten pay</code>で上がることがあります。</p>
-
 
 			<h3>固有天性</h3>
 			<p>キャラごとに固有天性が3つあります。</p>
@@ -562,7 +558,7 @@
 
 			<h3>会心系</h3>
 			<p>ステータスには会心率と会心ダメージがあります。</p>
-			<p>aitenで勝利するとステータスが上がることがあります。</p>
+			<p><code>/ten</code>で勝利するとステータスが上がります。</p>
 
 			<table>
 				<thead>
@@ -580,8 +576,11 @@
 						<td>+10%</td>
 					</tr>
 				</tbody>
-				</table>
-			</div>
+			</table>
+
+			<h3>その他</h3>
+			<p>キャラのレベルはlossのカード数によって算出されます。</p>
+		</div>
 
 		<div v-if="loc === 'docs'">
 			<p>カードは1日に1回、引くことができます</p>

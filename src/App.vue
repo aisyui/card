@@ -351,7 +351,7 @@
 				<div class="card-button" >
 					<button v-on:click="cardtime">new</button> <button v-on:click="sort">cp</button> <button v-on:click="sortcard" >card</button> <button v-on:click="cardinfo">id</button> <button v-on:click="cardstatus">status</button> <button v-on:click="cardpremium">premium</button> <button v-on:click="cardfav">fav(cid)</button> <button v-on:click="cardskill">skill</button>
 				</div>
-				<span class="menu-right"><code><strong>ID</strong> {{ id }}</code> <code><span class="icon-power"></span> {{ aiten }}</code></span>
+				<span class="menu-right"><code><strong>ID</strong> {{ id }}</code> <code><span class="icon-power"></span> {{ aiten }}</code> <code><i class="fa-brands fa-unity"></i> {{ cards.data.filter((v) => v.skill == 'lost').length }}</code></span>
 			<table >
 				<span v-for="(ii, index) in cards.data">
 					<span v-if="ii.status == 'normal' && ii.card !== null">
@@ -450,7 +450,7 @@
 
 			<div v-if="record" class="bluesky-record">
 				<li v-for="i in record.data">
-					<p v-if="i.delete === false"><span class="menu-right-top"><button v-if="i.fav != '0'">✧</button> <button>ID {{ i.id }}</button></span></p>
+					<p v-if="i.delete === false"><span class="menu-right-top"><button v-if="i.model === true"><i class="fa-brands fa-unity"></i></button> <button v-if="i.fav != '0'">✧</button> <button>ID {{ i.id }}</button></span></p>
 					<p v-if="i.delete === false"><span class="text"><a :href="'/' + i.username">{{ i.username }}</a></span></p>
 				</li>
 			</div>
@@ -579,7 +579,7 @@
 			</table>
 
 			<h3>その他</h3>
-			<p>キャラのレベルはlossのカード数によって算出されます。</p>
+			<p>キャラのレベルはlostのカード数によって算出されます。</p>
 		</div>
 
 		<div v-if="loc === 'docs'">

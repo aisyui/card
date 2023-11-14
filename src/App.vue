@@ -340,7 +340,7 @@
 						<button v-on:click="cardoriginstatus" class="card_origin_status"><span class="icon-ai"></span></button> 
 					</div>
 
-					<div class="vrm_button" v-if="model == true">
+					<div class="vrm_button" v-if="model == true || cards.data.filter((v) => v.skill == 'model').length >= 1">
 						<script type="module" src="https://unpkg.com/x-frame-bypass"></script>
 						<button v-on:click="vrmviewer" class="unity"><i class="fa-brands fa-unity" id="vrm_button"></i></button>
 						<div class="vrm" v-if="iframe_status == true">

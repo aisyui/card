@@ -783,9 +783,9 @@
 		},
 		{
 			"id": 63,
-			"h": "hello world! bluesky 2",
-			"h_en": "hello world! bluesky 2",
-			"p": "技術書2",
+			"h": "hello world! bluesky2",
+			"h_en": "hello world! bluesky2",
+			"p": "技術書",
 			"file": "/card/book_2",
 			"owner": null,
 			"src": "book_2"
@@ -988,5 +988,19 @@
 			"p": "shin-ryuu",
 			"file": "/card/yui_156",
 			"src": "yui_156"
+		},
+		{
+			"id": 86,
+			"h": "天空",
+			"p": "ten-kuu",
+			"file": "/card/yui_157",
+			"src": "yui_157"
+		},
+		{
+			"id": 87,
+			"h": "神卵",
+			"p": "シンオウの卵",
+			"file": "/card/icon_23",
+			"src": "icon_23"
 		}
 ]

@@ -466,17 +466,17 @@
 			<table>
 				<thead>
 					<tr>
-						<th>iphone/safari</th>
+						<th>ios/safari</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
 						<td>ios17</td>
-						<td>ok</td>
+						<td class="green">ok</td>
 					</tr>
 					<tr>
 						<td>ios16</td>
-						<td>no</td>
+						<td class="red">no</td>
 					</tr>
 				</tbody>
 			</table>
@@ -485,6 +485,32 @@
 			<p><li>GPU Process: DOM Rendering</li></p>
 			<p><li>OffscreenCanvas in Workers</li></p>
 			<p><li>OffscreenCanvas</li></p>
+			<table>
+				<thead>
+					<tr>
+						<th>pc</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>chrome/chromium</td>
+						<td class="green">ok</td>
+					</tr>
+					<tr>
+						<td>edge</td>
+						<td class="green">ok</td>
+					</tr>
+					<tr>
+						<td>firefox</td>
+						<td class="red">no</td>
+					</tr>
+					<tr>
+						<td>safari</td>
+						<td class="red">no</td>
+					</tr>
+				</tbody>
+			</table>
+
 			<h3>天性レベル</h3>
 			<p>それぞれの天性レベルはモデルになったカードに属します。</p>
 			<table>
@@ -1921,5 +1947,12 @@ tr.card-status-first {
 tr.card-status-first {
 		height: calc(25vh);
 	}
+}
+
+td.red {
+	background-color:#FFCCCC;
+}
+td.green {
+	background-color:#CCFF00;
 }
 </style>

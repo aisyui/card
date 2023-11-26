@@ -991,16 +991,30 @@
 		},
 		{
 			"id": 86,
-			"h": "天空",
+			"h": "雲海",
 			"p": "ten-kuu",
 			"file": "/card/yui_157",
 			"src": "yui_157"
 		},
 		{
 			"id": 87,
+			"h": "天神",
+			"p": "ten-shin",
+			"file": "/card/yui_158",
+			"src": "yui_158"
+		},
+		{
+			"id": 88,
 			"h": "神卵",
 			"p": "シンオウの卵",
 			"file": "/card/icon_23",
 			"src": "icon_23"
+		},
+		{
+			"id": 89,
+			"h": "天空",
+			"p": "ten-kuu",
+			"file": "/card/yui_159",
+			"src": "yui_159"
 		}
 ]

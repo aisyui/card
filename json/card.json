@@ -995,6 +995,7 @@
 			"p": "ten-kuu",
 			"file": "/card/yui_157",
 			"img": "bafkreibgk6v7p4ycs4ff2tezth6cocpowiaqxeq64cbbwc7grm7rozam4e",
+			"ten_skill": true,
 			"ten": "ETU",
 			"src": "yui_157"
 		},
@@ -1019,6 +1020,7 @@
 			"p": "ten-kuu",
 			"file": "/card/yui_159",
 			"img": "bafkreic57baxmheaj6upvx4o4ve4ijrbfonuyltanptccx6lh6y5z6bev4",
+			"ten_skill": true,
 			"ten": "ETW",
 			"src": "yui_159"
 		}

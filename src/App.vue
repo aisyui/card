@@ -866,7 +866,7 @@
 							<p :id="ii.id">[{{ ii.ten }}] {{ ii.h }} / {{ ii.id }}00</p>
 							<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
 						</div>
-						<div v-show="ii.id == 29 || ii.id == 33 || ii.id == 36 || ii.id == 46 || ii.id == 47 || ii.id == 60 || ii.id == 64 || ii.id == 67 || ii.id == 69 || ii.id == 76 || ii.id == 77 || ii.id == 78" class="card-owner-one">
+						<div v-show="ii.id == 29 || ii.id == 33 || ii.id == 36 || ii.id == 46 || ii.id == 47 || ii.id == 60 || ii.id == 64 || ii.id == 67 || ii.id == 69 || ii.id == 76 || ii.id == 77 || ii.id == 78|| ii.id == 86|| ii.id == 89" class="card-owner-one">
 							<p :id="ii.id"><button>id:{{ ii.id }}</button></p>
 							<p :id="ii.id">[{{ ii.ten }}] {{ ii.h }} / {{ ii.id }}00 <span class="icon-power"></span></p>
 							<p><img :src='"/card/card_" + ii.id + ".webp"'></p>

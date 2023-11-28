@@ -1023,5 +1023,14 @@
 			"ten_skill": true,
 			"ten": "ETW",
 			"src": "yui_159"
+		},
+		{
+			"id": 90,
+			"h": "天空極",
+			"p": "ten-kuu-kyoku",
+			"file": "/card/yui_160",
+			"img": "",
+			"ten_skill": false,
+			"src": "yui_160"
 		}
 ]

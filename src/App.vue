@@ -342,7 +342,7 @@
 
 					<div class="vrm_button" v-if="model == true || cards.data.filter((v) => v.skill == 'model').length >= 1">
 						<script type="module" src="https://unpkg.com/x-frame-bypass"></script>
-						<button v-on:click="vrmviewer" class="unity"><i class="fa-brands fa-unity" id="vrm_button"></i></button>
+						<button v-on:click="vrmviewer" class="unity"><i class="fa-solid fa-cube" id="vrm_button"></i></button>
 						<div class="vrm" v-if="iframe_status == true">
 							<iframe :src="'https://vrm.syui.ai?id=' + id + '&card=0&card_su=' + cards.data.filter((v) => v.skill == 'lost').length" allowfullscreen frameborder="0"></iframe>
 						</div>
@@ -351,7 +351,7 @@
 				<div class="card-button" >
 					<button v-on:click="cardtime">new</button> <button v-on:click="sort">cp</button> <button v-on:click="sortcard" >card</button> <button v-on:click="cardinfo">id</button> <button v-on:click="cardstatus">status</button> <button v-on:click="cardpremium">premium</button> <button v-on:click="cardfav">fav(cid)</button> <button v-on:click="cardskill">skill</button>
 				</div>
-				<span class="menu-right"><code><strong>ID</strong> {{ id }}</code> <code><span class="icon-power"></span> {{ aiten }}</code> <code><i class="fa-brands fa-unity"></i> {{ cards.data.filter((v) => v.skill == 'lost').length }}</code></span>
+				<span class="menu-right"><code><strong>ID</strong> {{ id }}</code> <code><span class="icon-power"></span> {{ aiten }}</code> <code><i class="fa-solid fa-cube"></i> {{ cards.data.filter((v) => v.skill == 'lost').length }}</code></span>
 			<table >
 				<span v-for="(ii, index) in cards.data">
 					<span v-if="ii.status == 'normal' && ii.card !== null">
@@ -373,7 +373,7 @@
 								<img :src='"/card/card_" + ii.card + ".webp"'>
 							</td>
 						</thead>
-						<tbody><tr><span v-if="ii.skill == 'critical'" class="icon-sandar"></span><span v-if="ii.skill == 'post'" class="icon-moon"></span><span v-if="ii.skill == 'luck'" class="icon-api"></span><span v-if="ii.skill == 'ten'" class="icon-power"></span><span v-if="ii.skill == 'dragon'" class="icon-home"></span><span v-if="ii.skill == 'nyan'">▲</span><span v-if="ii.skill == 'yui'" class="icon-ai"></span><span v-if="ii.skill == '3d'">■</span><span v-if="ii.skill == 'model'"><i class="fa-brands fa-unity"></i></span> {{ ii.cp }}</tr></tbody>
+						<tbody><tr><span v-if="ii.skill == 'critical'" class="icon-sandar"></span><span v-if="ii.skill == 'post'" class="icon-moon"></span><span v-if="ii.skill == 'luck'" class="icon-api"></span><span v-if="ii.skill == 'ten'" class="icon-power"></span><span v-if="ii.skill == 'dragon'" class="icon-home"></span><span v-if="ii.skill == 'nyan'">▲</span><span v-if="ii.skill == 'yui'" class="icon-ai"></span><span v-if="ii.skill == '3d'">■</span><span v-if="ii.skill == 'model'"><i class="fa-solid fa-cube"></i></span> {{ ii.cp }}</tr></tbody>
 						<tbody v-if="info == true"><tr>ID {{ ii.card }}</tr></tbody>
 						<tbody v-if="fav == true"><tr>CID {{ ii.id }}</tr></tbody>
 						<tbody v-if="card_skill == true"><tr>{{ ii.skill }}</tr></tbody>
@@ -405,7 +405,7 @@
 								<!--ちらつき-->
 							</td>
 						</thead>
-						<tbody><tr><span v-if="ii.skill == 'critical'" class="icon-sandar"></span><span v-if="ii.skill == 'post'" class="icon-moon"></span><span v-if="ii.skill == 'luck'" class="icon-api"></span><span v-if="ii.skill == 'ten'" class="icon-power"></span><span v-if="ii.skill == 'dragon'" class="icon-home"></span><span v-if="ii.skill == 'nyan'">▲</span><span v-if="ii.skill == 'yui'" class="icon-ai"></span><span v-if="ii.skill == '3d'">■</span><span v-if="ii.skill == 'model'"><i class="fa-brands fa-unity"></i></span> {{ ii.cp }}</tr></tbody>
+						<tbody><tr><span v-if="ii.skill == 'critical'" class="icon-sandar"></span><span v-if="ii.skill == 'post'" class="icon-moon"></span><span v-if="ii.skill == 'luck'" class="icon-api"></span><span v-if="ii.skill == 'ten'" class="icon-power"></span><span v-if="ii.skill == 'dragon'" class="icon-home"></span><span v-if="ii.skill == 'nyan'">▲</span><span v-if="ii.skill == 'yui'" class="icon-ai"></span><span v-if="ii.skill == '3d'">■</span><span v-if="ii.skill == 'model'"><i class="fa-solid fa-cube"></i></span> {{ ii.cp }}</tr></tbody>
 						<tbody v-if="info == true"><tr>ID {{ ii.card }}</tr></tbody>
 						<tbody v-if="fav == true"><tr>CID {{ ii.id }}</tr></tbody>
 						<tbody v-if="card_skill == true"><tr>{{ ii.skill }}</tr></tbody>
@@ -450,7 +450,7 @@
 
 			<div v-if="record" class="bluesky-record">
 				<li v-for="i in record.data">
-					<p v-if="i.delete === false"><span class="menu-right-top"><button v-if="i.model === true"><i class="fa-brands fa-unity"></i></button> <button v-if="i.fav != '0'">✧</button> <button>ID {{ i.id }}</button></span></p>
+					<p v-if="i.delete === false"><span class="menu-right-top"><button v-if="i.model === true"><i class="fa-solid fa-cube"></i></button> <button v-if="i.fav != '0'">✧</button> <button>ID {{ i.id }}</button></span></p>
 					<p v-if="i.delete === false"><span class="text"><a :href="'/' + i.username">{{ i.username }}</a></span></p>
 				</li>
 			</div>
@@ -460,8 +460,8 @@
 
 			<h3>3Dモデル</h3>
 			<p>アイの3Dモデルを育成することができます。</p>
-			<p>モデルを有効にするには <i class="fa-brands fa-unity"></i> カードが必要になります。</p>
-			<p><i class="fa-brands fa-unity"></i> カードは低確率で排出されます。</p>
+			<p>モデルを有効にするには <i class="fa-solid fa-cube"></i> カードが必要になります。</p>
+			<p><i class="fa-solid fa-cube"></i> カードは低確率で排出されます。</p>
 			<h3>動作環境</h3>
 			<table>
 				<thead>

@@ -1032,5 +1032,12 @@
 			"img": "bafkreihgubbbwcsvpl6hj5h4ijfzqy5yyqpvjsqkry4rtjs7rcjjqzun5a",
 			"ten_skill": false,
 			"src": "yui_160"
+		},
+		{
+			"id": 91,
+			"h": "ゲーム",
+			"p": "game",
+			"file": "/card/yui_161",
+			"src": "yui_161"
 		}
 ]

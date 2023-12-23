@@ -20,6 +20,13 @@ n=`cat $json|jq "length"`
 n=`expr $n - 1`
 bg=$static/card_bg_origin.png
 br=$static/card_br.png
+
+cd $dir
+export NVM_DIR="$HOME/.nvm"
+[ -s "$path_nvm_sh" ] && \. "$path_nvm_sh"
+nvm use 17
+nvm i squoosh-cli
+
 for ((i=0;i<=$n;i++))
 do
 	p=`cat $json|jq -r ".[$i].p"`
@@ -36,17 +43,11 @@ do
 		curl -sL $url/yui_${sid}.png -o $s
 	fi
 
-	#if [ ! -f $o ];then
+	if [ ! -f $o ] && [ -z "`echo $s|grep ai_model`" ];then
 		composite -gravity north  -geometry +0+160 -compose over $s $bg $o.back
 		composite -gravity north  -geometry +0+0 -compose over $br $o.back $o
+		squoosh-cli --webp '{"quality":100}' -d ./ --resize '{width:825,height:1080}' $o
 		rm $o.back
-	#fi
+	fi
 
 done
-
-cd $dir
-export NVM_DIR="$HOME/.nvm"
-[ -s "$path_nvm_sh" ] && \. "$path_nvm_sh"
-nvm use 17
-nvm i squoosh-cli
-squoosh-cli --webp '{"quality":100}' -d ./ --resize '{width:825,height:1080}' card_origin_*.png

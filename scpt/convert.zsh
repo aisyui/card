@@ -44,11 +44,19 @@ do
 		curl -sL $url/yui_${sid}.png -o $s
 	fi
 
-	if [ ! -f $o ] && [ -z "`echo $s|grep ai_model`" ];then
+	if [ ! -f $o ] && [ -n "`echo $s|grep ai_model`" ];then
+		model_card=$dir/${sid}.png
+		model_webp=$dir/${sid}.webp
+		cp -rf $model_card $o
+		squoosh-cli --webp '{"quality":100}' -d ./ --resize '{width:825,height:1080}' $o
+	fi
+
+	if [ ! -f $o ];then
+	#if [ ! -f $o ] && [ -z "`echo $s|grep ai_model`" ];then
 		composite -gravity north  -geometry +0+160 -compose over $s $bg $o.back
 		composite -gravity north  -geometry +0+0 -compose over $br $o.back $o
 		squoosh-cli --webp '{"quality":100}' -d ./ --resize '{width:825,height:1080}' $o
 		rm $o.back
 	fi
-
+	
 done

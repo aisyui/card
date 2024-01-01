@@ -1072,6 +1072,9 @@ export default {
 		} else if (window.location.host === "192.168.11.12:8080"){
 			this.api_url = "/api/";
 		} else {
+			if (location.protocol !== "https:") {
+				location.replace("https:" + location.href.substring(location.protocol.length));
+			}
 			this.api_url = "https://api.syui.ai/";
 		}
 		if (loc === 'owner' || loc === 'te'){

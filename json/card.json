@@ -1039,5 +1039,12 @@
 			"p": "game",
 			"file": "/card/yui_161",
 			"src": "yui_161"
+		},
+		{
+			"id": 92,
+			"h": "月上",
+			"p": "game",
+			"file": "/card/yui_162",
+			"src": "yui_162"
 		}
 ]

@@ -1053,5 +1053,12 @@
 			"p": "20240214",
 			"file": "/card/yui_163",
 			"src": "yui_163"
+		},
+		{
+			"id": 94,
+			"h": "g",
+			"p": "ai-moji-v2-g",
+			"file": "/card/yui_164",
+			"src": "yui_164"
 		}
 ]

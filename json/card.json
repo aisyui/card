@@ -1059,6 +1059,7 @@
 			"h": "g",
 			"p": "ai-moji-v2-g",
 			"file": "/card/yui_164",
+			"coin_skill": true,
 			"src": "yui_164"
 		}
 ]

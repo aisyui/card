@@ -1061,5 +1061,16 @@
 			"file": "/card/yui_164",
 			"coin_skill": true,
 			"src": "yui_164"
+		},
+		{
+			"id": 95,
+			"h": "地核",
+			"p": "ti-kaku",
+			"img": "bafkreievictaowlofn3uxxoy3qxcogc2v3edgbbw32pfo7fozex76zqx6e",
+			"ten_skill": true,
+			"ten": "IKU",
+			"file": "/card/yui_165",
+			"coin_skill": true,
+			"src": "yui_165"
 		}
 ]

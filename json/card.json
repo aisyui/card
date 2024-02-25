@@ -1098,5 +1098,16 @@
 		{ "id": 117, "h": "w", "h_en": "a", "p": "ai-moji-v2-w", "file": "/card/moji_23_w", "ten_skill": true, "src": "moji_23_w" },
 		{ "id": 118, "h": "x", "h_en": "a", "p": "ai-moji-v2-x", "file": "/card/moji_24_x", "ten_skill": true, "src": "moji_24_x" },
 		{ "id": 119, "h": "y", "h_en": "a", "p": "ai-moji-v2-y", "file": "/card/moji_25_y", "ten_skill": true, "src": "moji_25_y" },
-		{ "id": 120, "h": "z", "h_en": "a", "p": "ai-moji-v2-z", "file": "/card/moji_26_z", "ten_skill": true, "src": "moji_26_z" }
+		{ "id": 120, "h": "z", "h_en": "a", "p": "ai-moji-v2-z", "file": "/card/moji_26_z", "ten_skill": true, "src": "moji_26_z" },
+		{
+			"id": 121,
+			"h": "未知",
+			"p": "miti",
+			"img": "bafkreidlg7cotwp6mx64h7xdvu64zar4iafzwrakdc4coogvezcg3lx26u",
+			"ten_skill": true,
+			"ten": "IIT",
+			"file": "/card/yui_166",
+			"coin_skill": true,
+			"src": "yui_166"
+		}
 ]

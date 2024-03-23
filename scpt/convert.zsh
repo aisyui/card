@@ -2,6 +2,9 @@
 d=${0:a:h}
 dd=${0:a:h:h}
 
+echo "1 : [d]efault(no), [b]lack, [s]ilver"
+read
+
 url=syui.ai/img
 
 case $OSTYPE in
@@ -12,14 +15,27 @@ case $OSTYPE in
 esac
 
 dir=$dd/public/card
-static=$dd/static/img
+static=$dd/public/static/img
 json=$dd/public/json/card.json
 mkdir -p $dir
 mkdir -p $static
 n=`cat $json|jq "length"`
 n=`expr $n - 1`
-bg=$static/card_bg.png
-br=$static/card_br.png
+
+case $1 in
+	silver|s)
+		bg=$static/card_bg_silver.png
+		br=$static/card_br.png
+		;;
+	black|b)
+		bg=$static/card_bg_black.png
+		br=$static/card_br.png
+		;;
+	default|d|*)
+		bg=$static/card_bg.png
+		br=$static/card_br.png
+		;;
+esac
 
 cd $dir
 export NVM_DIR="$HOME/.nvm"
@@ -34,7 +50,6 @@ do
 	s=$static/${sid}.png
 	id=`cat $json|jq -r ".[$i].id"`
 	o=$dir/card_$id.png
-	gif=$dir/card_$id.gif
 
 	if [ -f $o ];then
 		continue

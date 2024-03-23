@@ -60,7 +60,7 @@
 				</div>
 
 				<div class="card_kira_center">
-					<button v-on:click="cardoriginstatus" class="card_origin_status"><span class="icon-ai"></span></button> <button v-if="cards.data.filter((v) => v.skill == '3d' && (v.card >= 0 && v.card <= 14 || v.card == 64))[0]" v-on:click="glb_status = !glb_status"><i class="fa-solid fa-star-half-stroke"></i></button> <button v-if="model == true || cards.data.filter((v) => v.skill == 'model').length >= 1" v-on:click="vrmviewer" class="unity"><i class="fa-solid fa-cube" id="vrm_button"></i></button>
+					<button v-on:click="cardoriginstatus" class="card_origin_status"><span class="icon-ai"></span></button> <button v-if="cards.data.filter((v) => v.skill == '3d' && (v.card >= 0 && v.card <= 14 || v.card == 64))[0]" v-on:click="glb_status = !glb_status"  class="unity"><i class="fa-solid fa-cube" id="vrm_button"></i></button> <button v-if="model == true || cards.data.filter((v) => v.skill == 'model').length >= 1" v-on:click="vrmviewer"><i class="fa-solid fa-gamepad"></i></button> <button v-if="game == true" v-on:click="term_status = !term_status"><i class="fa-solid fa-terminal"></i></button>
 				</div>
 
 				<span class="card-fav" v-if="card_origin_status">
@@ -142,8 +142,17 @@
 					<model-viewer v-if="glb_next !== 0" class="ar" :src="'/obj/card_' + glb_next + '.glb'" ar-modes="scene-viewer webxr quick-look" auto-rotate autoplay ar camera-controls></model-viewer>
 					<model-viewer v-else class="ar" :src="'/obj/card_' + cards.data.filter((v) => v.skill == '3d' && (v.card >= 1 && v.card <= 14 || v.card == 64))[0].card + '.glb'" ar-modes="scene-viewer webxr quick-look" auto-rotate autoplay ar camera-controls></model-viewer>
 					<span v-for="(ii, index) in cards.data.filter((v) => v.skill == '3d' && (v.card >= 1 && v.card <= 14 || v.card == 64))" class="glb">
-						<img :src='"/card/card_" + ii.card + ".webp"' v-on:click="glb_next = ii.card">
+						<thead>
+							<tr>
+								<img :src='"/card/card_" + ii.card + ".webp"' v-on:click="glb_next = ii.card">
+							</tr>
+							<tr>{{ ii.cp }}</tr>
+						</thead>
 					</span>
+				</div>
+
+				<div class="term" v-if="term_status == true">
+					<iframe :src="'https://term.syui.ai?user=' + username + '&id=' + id" allowfullscreen frameborder="0"></iframe>
 				</div>
 
 				<!-- 
@@ -925,6 +934,7 @@ export default {
 			card: null,
 			cards: null,
 			loc: window.location.pathname.split('/').slice(-1)[0],
+			username: null,
 			id: null,
 			model: null,
 			record: null,
@@ -956,6 +966,7 @@ export default {
 			model_attack: null,
 			model_critical: null,
 			model_critical_d: null,
+			game: null,
 			game_lv: null,
 			api_url: null,
 			bsky_mode: false,
@@ -963,6 +974,7 @@ export default {
 			card_origin_status: false,
 			useragent: window.navigator.userAgent.toLowerCase(),
 			iframe_status: false,
+			term_status: false,
 			sort_key: null,
 		}
 	},
@@ -1007,18 +1019,20 @@ export default {
 			axios.get(url,{ crossdomain: true })
 				.then(response => { 
 					this.record = response;
+					this.username = this.record.data.find((v) => v.username == loc).username;
 					this.id = this.record.data.find((v) => v.username == loc).id;
 					this.model = this.record.data.find((v) => v.username == loc).model;
 					this.did = this.record.data.find((v) => v.username == loc).did;
 					this.aiten = this.record.data.find((v) => v.username == loc).aiten;
 					this.bsky_mode = this.record.data.find((v) => v.username == loc).bsky;
 					this.user_fav = this.record.data.find((v) => v.username == loc).fav;
+					this.game = this.record.data.find((v) => v.username == loc).game;
 					this.game_lv = this.record.data.find((v) => v.username == loc).game_lv;
 					this.model_attack = this.record.data.find((v) => v.username == loc).model_attack;
 					this.model_critical = this.record.data.find((v) => v.username == loc).model_critical;
 					this.model_critical_d = this.record.data.find((v) => v.username == loc).model_critical_d;
 					this.user_room = this.record.data.find((v) => v.username == loc).room;
-					let url = this.api_url + "users/" + this.id + "/card?itemsPerPage=3000";
+					let url = this.api_url + "users/" + this.id + "/card?itemsPerPage=4000";
 					axios
 					.get("/json/card.json")
 					.then(response => (this.rcards = response));
@@ -1823,7 +1837,7 @@ span.glb {
 blockquote.did {
 	background-color: #fff;
 	color: #000;
-
 	text-align: left;
 }
+
 </style>

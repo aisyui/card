@@ -5,7 +5,7 @@ d=${0:a:h}
 dd=${0:a:h:h}
 dir=$dd/public/card
 o_dir=$dd/public/static/img
-static=$dd/static/img
+static=$dd/public/static/img
 json=$dd/public/json/card.json
 mkdir -p $dir
 mkdir -p $static

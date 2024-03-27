@@ -25,6 +25,7 @@ do
 	index=$o_dir/$id/index.html
 
 	if [ ! -f $oo ];then
+		echo $oo
 		convert $o -gravity center -extent 8000x4000 $oo
 	fi
 

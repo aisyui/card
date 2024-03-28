@@ -1110,5 +1110,26 @@
 			"file": "/card/yui_166",
 			"coin_skill": true,
 			"src": "yui_166"
+		},
+		{
+			"id": 123,
+			"h": "雷雲",
+			"p": "raiun",
+			"file": "/card/yui_167",
+			"src": "yui_167"
+		},
+		{
+			"id": 124,
+			"h": "快晴",
+			"p": "kaisei",
+			"file": "/card/yui_168",
+			"src": "yui_168"
+		},
+		{
+			"id": 125,
+			"h": "虹色",
+			"p": "nijiiro",
+			"file": "/card/yui_169",
+			"src": "yui_169"
 		}
 ]

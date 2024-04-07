@@ -1116,6 +1116,8 @@
 			"id": 123,
 			"h": "雷雲",
 			"p": "raiun",
+			"ten_skill": true,
+			"ten": "RAI",
 			"file": "/card/yui_167",
 			"src": "yui_167"
 		},

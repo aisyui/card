@@ -1,12 +1,14 @@
 <template>
 	<div id="app">
-		<link rel="stylesheet" href="https://syui.ai/bower_components/icomoon/css/icomoon.css" />
-		<link rel="stylesheet" href="https://syui.ai/bower_components/font-awesome/css/all.min.css" />
+		<link rel="stylesheet" href="https://yui.syui.ai/pkg/icomoon/icomoon.css" />
+		<link rel="stylesheet" href="https://yui.syui.ai/pkg/font-awesome/css/all.min.css" />
 		<div class="menu">
 			<a href="/" class="top-icon"><span class="icon-ai"></span></a> 
 			<code v-if="loc === 'te'"><a href="https://bsky.app/profile/yui.syui.ai" target="_blank">@yui.syui.ai</a> /ten</code>
 			<code v-else-if="loc === 'pr'"><a href="https://bsky.app/profile/yui.syui.ai" target="_blank">@yui.syui.ai</a> /fav 1234567</code>
 			<code v-else-if="loc === 'docs' || loc === 'en'"><a href="https://bsky.app/profile/yui.syui.ai" target="_blank">@yui.syui.ai</a> /help</code>
+			<code v-else-if="loc === 'di'"><a href="https://bsky.app/profile/yui.syui.ai" target="_blank">@yui.syui.ai</a> /did</code>
+			<code v-else-if="loc === 'svn'"><a href="https://bsky.app/profile/yui.syui.ai" target="_blank">@yui.syui.ai</a> /ten pay 7</code>
 			<code v-else><a href="https://bsky.app/profile/yui.syui.ai" target="_blank">@yui.syui.ai</a> /card</code>
 		</div>
 
@@ -22,7 +24,7 @@
 		</div>
 
 		<p>
-			<a href="/docs"><button>help</button></a> <a href="/en"><button>en</button></a> <a href="/pr"><button>fav</button></a> <a href="/te"><button>ten</button></a> <button v-if="loc.length == 0" v-on:click="did_enable = !did_enable">did</button> <a v-else href="/di"><button>did</button></a> 
+			<a href="/docs"><button>help</button></a> <a href="/en"><button>en</button></a> <a href="/pr"><button>fav</button></a> <a href="/te"><button>ten</button></a> <button v-if="loc.length == 0" v-on:click="did_enable = !did_enable">did</button> <a v-else href="/di"><button>did</button></a> <a href="/c"><button>all</button></a> <a href="/svn"><button>seven</button></a> 
 		</p>
 
 		<div v-if="loc.length > 1">
@@ -60,59 +62,30 @@
 				</div>
 
 				<div class="card_kira_center">
-					<button v-on:click="cardoriginstatus" class="card_origin_status"><span class="icon-ai"></span></button> <button v-if="cards.data.filter((v) => v.skill == '3d' && (v.card >= 0 && v.card <= 14 || v.card == 64))[0]" v-on:click="glb_status = !glb_status"  class="unity"><i class="fa-solid fa-cube" id="vrm_button"></i></button> <button v-if="model == true || cards.data.filter((v) => v.skill == 'model').length >= 1" v-on:click="vrmviewer"><i class="fa-solid fa-gamepad"></i></button> <button v-if="game == true" v-on:click="term_status = !term_status"><i class="fa-solid fa-terminal"></i></button>
+					<button v-on:click="cardoriginstatus" class="card_origin_status"><span class="icon-ai"></span></button> <button v-if="cards.data.filter((v) => v.skill == '3d' && (v.card >= 0 && v.card <= 14 || v.card == 64))[0]" v-on:click="glb_status = !glb_status"  class="unity"><span class="icon-cube"></span></button> <button v-if="model == true || cards.data.filter((v) => v.skill == 'model').length >= 1" v-on:click="vrmviewer"><span class="icon-game"></span></button> <button v-if="game == true" v-on:click="term_status = !term_status"><span class="icon-aiterm"></span></button>
 				</div>
+
+				<!--
+				1st first
+				2nd second 
+				3rd third
+				4th fourth
+				5th fifth
+				6th sixth
+				7th seventh
+				8th eighth
+				-->
 
 				<span class="card-fav" v-if="card_origin_status">
 					<span class="card-fav" v-for="k in cards.data">
-						<tr class="card-status-first" v-if="k.status == 'first' && k.card !== null" >
+						<tr class="card-status-first" v-if="k.status == 'yui' || k.status == 'first' || k.status == 'second' || k.status == 'second' || k.status == 'third' || k.status == 'fourth' || k.status == 'fifth' || k.status == 'sixth' || k.status == 'seven'" >
 							<span class="card-wrapper">
 								<span class="reflection">
 									<img :src='"/card/card_" + k.card + ".webp"' class="card">
 								</span>
-								<span class="card pattern"></span>
-								<span class="card color"></span>
-								<span class="card highlight"></span>
-							</span>
-						</tr>
-						<tr class="card-status-first" v-else-if="k.status == 'second' && k.card !== null">
-							<span class="card-wrapper">
-								<span class="reflection">
-									<img :src='"/card/card_" + k.card + ".webp"' class="card">
-								</span>
-								<span class="card pattern-s"></span>
-								<span class="card color-s"></span>
-								<span class="card highlight-s"></span>
-							</span>
-						</tr>
-						<tr class="card-status-first" v-else-if="k.status == 'third' && k.card !== null">
-							<span class="card-wrapper">
-								<span class="reflection">
-									<img :src='"/card/card_" + k.card + ".webp"' class="card">
-								</span>
-								<span class="card pattern-t"></span>
-								<span class="card color-t"></span>
-								<span class="card highlight-t"></span>
-							</span>
-						</tr>
-						<tr class="card-status-first" v-else-if="k.status == 'fourth' && k.card !== null">
-							<span class="card-wrapper">
-								<span class="reflection">
-									<img :src='"/card/card_" + k.card + ".webp"' class="card">
-								</span>
-								<span class="card pattern-f"></span>
-								<span class="card color-f"></span>
-								<span class="card highlight-f"></span>
-							</span>
-						</tr>
-						<tr class="card-status-first" v-else-if="k.status == 'yui' && k.card !== null">
-							<span class="card-wrapper">
-								<span class="reflection">
-									<img :src='"/card/card_" + k.card + ".webp"' class="card">
-								</span>
-								<span class="card pattern-yui"></span>
-								<span class="card color-yui"></span>
-								<span class="card highlight-yui"></span>
+								<span :class="'card pattern-' + k.status"></span>
+								<span :class="'card color-' + k.status"></span>
+								<span :class="'card highlight-' + k.status"></span>
 							</span>
 						</tr>
 					</span>
@@ -139,6 +112,7 @@
 				</div>
 
 				<div class="glb" v-if="glb_status == true">
+					<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 					<model-viewer v-if="glb_next !== 0" class="ar" :src="'/obj/card_' + glb_next + '.glb'" ar-modes="scene-viewer webxr quick-look" auto-rotate autoplay ar camera-controls></model-viewer>
 					<model-viewer v-else class="ar" :src="'/obj/card_' + cards.data.filter((v) => v.skill == '3d' && (v.card >= 1 && v.card <= 14 || v.card == 64))[0].card + '.glb'" ar-modes="scene-viewer webxr quick-look" auto-rotate autoplay ar camera-controls></model-viewer>
 					<span v-for="(ii, index) in cards.data.filter((v) => v.skill == '3d' && (v.card >= 1 && v.card <= 14 || v.card == 64))" class="glb">
@@ -154,10 +128,6 @@
 				<div class="term" v-if="term_status == true">
 					<iframe :src="'https://term.syui.ai?user=' + username + '&did=' + did + '&id=' + id" allowfullscreen frameborder="0"></iframe>
 				</div>
-
-				<!-- 
-				first(ファースト) second(セカンド) third(サード) fourth(フォース) fifth(フィフス) sixth(スィクスス) seventh(セヴンス) eighth(エイトス) ninth(ナインス) tenth(テンス) eleventh(イレヴンス) twelfth(トウェルフス) thirteenth(サーティーンス) fifteenth(フィフティーンス) sixteenth(スィクスティーンス) seventeenth(セヴンティーンス) eighteenth(エイティーンス) nineteenth(ナインティーンス) twentieth(トウィンティイス)
-				-->
 
 				<span class="menu-right-top" v-if="cards.data.find((v) => v.card == 43)">
 					<button v-on:click="book_user = !book_user">book</button>
@@ -183,80 +153,16 @@
 							{{ ii = cards.data.find((v) => v.id == user_fav) }}
 						</span>
 
-						<thead v-if="ii.status == 'first' && ii.card !== null" class="card-fav">
-							<tr class="card-status-first">
-								<span class="card-wrapper">
-									<span class="reflection">
-										<img :src='"/card/card_" + ii.card + ".webp"' class="card">
-									</span>
-									<span class="card pattern"></span>
-									<span class="card color"></span>
-									<span class="card highlight"></span>
-								</span>
-							</tr>
-						</thead>
 
-						<thead v-else-if="ii.status == 'second' && ii.card !== null" class="card-fav">
+						<thead v-if="ii.status == 'yui' || ii.status == 'first' || ii.status == 'second' || ii.status == 'second' || ii.status == 'third' || ii.status == 'fourth' || ii.status == 'fifth' || ii.status == 'sixth' || ii.status == 'seven'" class="card-fav">
 							<tr class="card-status-first">
 								<span class="card-wrapper">
 									<span class="reflection">
 										<img :src='"/card/card_" + ii.card + ".webp"' class="card">
 									</span>
-									<span class="card pattern-s"></span>
-									<span class="card color-s"></span>
-									<span class="card highlight-s"></span>
-								</span>
-							</tr>
-						</thead>
-
-						<thead v-else-if="ii.status == 'third' && ii.card !== null" class="card-fav">
-							<tr class="card-status-first">
-								<span class="card-wrapper">
-									<span class="reflection">
-										<img :src='"/card/card_" + ii.card + ".webp"' class="card">
-									</span>
-									<span class="card pattern-t"></span>
-									<span class="card color-t"></span>
-									<span class="card highlight-t"></span>
-								</span>
-							</tr>
-						</thead>
-
-						<thead v-else-if="ii.status == 'yui' && ii.card !== null" class="card-fav">
-							<tr class="card-status-first">
-								<span class="card-wrapper">
-									<span class="reflection">
-										<img :src='"/card/card_" + ii.card + ".webp"' class="card">
-									</span>
-									<span class="card pattern-yui"></span>
-									<span class="card color-yui"></span>
-									<span class="card highlight-yui"></span>
-								</span>
-							</tr>
-						</thead>
-
-						<thead v-else-if="ii.status == 'fourth' && ii.card !== null" class="card-fav">
-							<tr class="card-status-first">
-								<span class="card-wrapper">
-									<span class="reflection">
-										<img :src='"/card/card_" + ii.card + ".webp"' class="card">
-									</span>
-									<span class="card pattern-f"></span>
-									<span class="card color-f"></span>
-									<span class="card highlight-f"></span>
-								</span>
-							</tr>
-						</thead>
-
-						<thead v-else-if="ii.status == 'fifth' && ii.card !== null" class="card-fav">
-							<tr class="card-status-first">
-								<span class="card-wrapper">
-									<span class="reflection">
-										<img :src='"/card/card_" + ii.card + ".webp"' class="card">
-									</span>
-									<span class="card pattern-fifth"></span>
-									<span class="card color-fifth"></span>
-									<span class="card highlight-fifth"></span>
+									<span :class="'card pattern-' + ii.status"></span>
+									<span :class="'card color-' + ii.status"></span>
+									<span :class="'card highlight-' + ii.status"></span>
 								</span>
 							</tr>
 						</thead>
@@ -273,7 +179,7 @@
 							</tr>
 						</thead>
 						<tbody><tr v-if='ii.author'>@{{ ii.author }}</tr></tbody>
-						<tbody><tr><span v-if="ii.skill == 'critical'" class="icon-sandar"></span><span v-if="ii.skill == 'post'" class="icon-moon"></span><span v-if="ii.skill == 'luck'" class="icon-api"></span><span v-if="ii.skill == 'ten'" class="icon-power"></span><span v-if="ii.skill == 'lost'">●</span><span v-if="ii.skill == 'dragon'" class="icon-home"></span><span v-if="ii.skill == 'nyan'">▲</span><span v-if="ii.skill == 'yui'" class="icon-ai"></span><span v-if="ii.skill == '3d'">■</span> {{ ii.cp }}</tr></tbody>
+						<tbody><tr><span v-if="ii.skill == 'critical'" class="icon-sandar"></span><span v-if="ii.skill == 'post'" class="icon-moon"></span><span v-if="ii.skill == 'luck'" class="icon-api"></span><span v-if="ii.skill == 'ten'" class="icon-power"></span><span v-if="ii.skill == 'lost'">●</span><span v-if="ii.skill == 'dragon'" class="icon-home"></span><span v-if="ii.skill == 'nyan'">▲</span><span v-if="ii.skill == 'yui'" class="icon-ai"></span><span v-if="ii.skill == '3d'">■</span><span v-if="ii.skill == 'first'" class="icon-moji_a"></span> {{ ii.cp }}</tr></tbody>
 						<tbody><tr class="card-fav-status">✧ {{ ii.status }}</tr></tbody>
 						<tbody v-if="info == true"><tr>ID {{ ii.card }}</tr>
 							<tr>CID {{ ii.id }}</tr></tbody>
@@ -327,7 +233,7 @@
 									<img :src='"/card/card_" + ii.card + ".webp"'>
 								</td>
 							</thead>
-							<tbody><tr><span v-if="ii.skill == 'critical'" class="icon-sandar"></span><span v-if="ii.skill == 'post'" class="icon-moon"></span><span v-if="ii.skill == 'luck'" class="icon-api"></span><span v-if="ii.skill == 'ten'" class="icon-power"></span><span v-if="ii.skill == 'dragon'" class="icon-home"></span><span v-if="ii.skill == 'nyan'">▲</span><span v-if="ii.skill == 'yui' or ii.skill == 'first'" class="icon-ai"></span><span v-if="ii.skill == '3d'">■</span><span v-if="ii.skill == 'model'"><i class="fa-solid fa-cube"></i></span> {{ ii.cp }}</tr></tbody>
+							<tbody><tr><span v-if="ii.skill == 'critical'" class="icon-sandar"></span><span v-if="ii.skill == 'post'" class="icon-moon"></span><span v-if="ii.skill == 'luck'" class="icon-api"></span><span v-if="ii.skill == 'ten'" class="icon-power"></span><span v-if="ii.skill == 'dragon'" class="icon-home"></span><span v-if="ii.skill == 'nyan'">▲</span><span v-if="ii.skill == 'yui'" class="icon-ai"></span><span v-if="ii.skill == '3d'">■</span><span v-if="ii.skill == 'model'"><i class="fa-solid fa-cube"></i></span><span v-if="ii.skill == 'first'" class="icon-moji_a"></span> {{ ii.cp }}</tr></tbody>
 							<tbody v-if="info == true"><tr>ID {{ ii.card }}</tr>
 								<tr>CID {{ ii.id }}</tr>
 								<tr>{{ ii.skill }}</tr>
@@ -369,7 +275,7 @@
 									<!--ちらつき-->
 								</td>
 							</thead>
-							<tbody><tr><span v-if="ii.skill == 'critical'" class="icon-sandar"></span><span v-if="ii.skill == 'post'" class="icon-moon"></span><span v-if="ii.skill == 'luck'" class="icon-api"></span><span v-if="ii.skill == 'ten'" class="icon-power"></span><span v-if="ii.skill == 'dragon'" class="icon-home"></span><span v-if="ii.skill == 'nyan'">▲</span><span v-if="ii.skill == 'yui' or ii.skill == 'first'" class="icon-ai"></span><span v-if="ii.skill == '3d'">■</span><span v-if="ii.skill == 'model'"><i class="fa-solid fa-cube"></i></span> {{ ii.cp }}</tr></tbody>
+							<tbody><tr><span v-if="ii.skill == 'critical'" class="icon-sandar"></span><span v-if="ii.skill == 'post'" class="icon-moon"></span><span v-if="ii.skill == 'luck'" class="icon-api"></span><span v-if="ii.skill == 'ten'" class="icon-power"></span><span v-if="ii.skill == 'dragon'" class="icon-home"></span><span v-if="ii.skill == 'nyan'">▲</span><span v-if="ii.skill == 'yui'" class="icon-ai"></span><span v-if="ii.skill == '3d'">■</span><span v-if="ii.skill == 'model'"><i class="fa-solid fa-cube"></i></span><span v-if="ii.skill == 'first'" class="icon-moji_a"></span> {{ ii.cp }}</tr></tbody>
 							<tbody v-if="info == true"><tr>ID {{ ii.card }}</tr>
 								<tr>CID {{ ii.id }}</tr>
 								<tr>{{ ii.skill }}</tr>
@@ -402,7 +308,7 @@
 		<div v-if="loc.length == 0">
 
 			<div v-if="cards" class="bluesky-card">
-				<p>user : <a :href='"/" + user.data.username'><code>{{ user.data.username }}</code></a></p>
+				<p>user : <a :href='"/" + user.data.username'><code v-if="user.data.username">{{ user.data.username }}</code></a></p>
 				<p>id : <code>{{ user.data.id }}</code></p>
 				<p>did : <code>{{ user.data.did }}</code></p>
 				<p>aiten : <code>{{ user.data.aiten }}</code></p>
@@ -425,7 +331,7 @@
 				<li v-for="i in record.data">
 					<p v-if="i.delete === false"><span class="menu-right-top"> 
 							<button v-if="i.model === true"><i class="fa-solid fa-cube"></i></button> <button v-if="i.fav != '0'">✧</button> <a :href="'https://git.syui.ai/' + i.username"  target="_blank"><button v-if="i.username == 'ai'"><i class="fa-brands fa-git-alt"></i></button></a> <button>ID {{ i.id }}</button></span></p>
-					<p v-if="i.delete === false"><span class="text"><a :href="'/' + i.username">{{ i.username }}</a></span></p>
+					<p v-if="i.delete === false"><span class="text"><a :href="'/' + i.username" v-if="i.username">{{ i.username }}</a></span></p>
 					<span class="menu-right-did" v-if="i.delete === false && did_enable === true && i.did.includes('did:') === true">
 						<button><a :href="'https://plc.directory/' + i.did + '/log'" target="_blank">{{ i.did }}</a></button> 
 					</span>
@@ -654,9 +560,8 @@
 			<p>集めた人は<a href="https://bsky.app/profile/syui.ai">@syui</a>まで連絡してみて</p>
 			<p>ただし、リアルカードに変わるのは、こちらの<a href="/owner">所有者</a>がいないカードに限られます</p>
 
-
 			<h3>link</h3>
-			<p><a class="menu-link" href="/fa">fanart</a> <a class="menu-link" href="/ph">photo</a> <a class="menu-link" href="/te">aiten</a> <a class="menu-link" href="/pr">fav</a> <a class="menu-link" href="/vr">model</a></p>
+			<p><a class="menu-link" href="/fa">fanart</a> <a class="menu-link" href="/te">aiten</a> <a class="menu-link" href="/vr">model</a></p>
 		</div>
 
 		<div v-if="loc === 'en'"  class="text-content">
@@ -726,7 +631,6 @@
 
 		<div v-if="loc === 'owner'"  class="text-content">
 			<div v-for="(ii, index) in rcards.data">
-				<div v-show="ii.id !== 0">
 					<div v-show="ii.id < 15" class="card-owner-one">
 						<button :id="ii.id">card : {{ii.id }} / {{ ii.h }}</button>
 						<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
@@ -831,7 +735,6 @@
 						<p v-if="ii.owner === null">owner : none</p>
 					</div>
 				</div>
-			</div>
 		</div>
 
 		<div v-if="loc === 'te'" class="text-content">
@@ -845,7 +748,7 @@
 						<p :id="ii.id">[{{ ii.ten }}] {{ ii.h }} / {{ ii.id }}00</p>
 						<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
 					</div>
-					<div v-show="ii.id == 29 || ii.id == 33 || ii.id == 36 || ii.id == 46 || ii.id == 47 || ii.id == 60 || ii.id == 64 || ii.id == 67 || ii.id == 69 || ii.id == 76 || ii.id == 77 || ii.id == 78|| ii.id == 86|| ii.id == 89 || ii.id == 90 || ii.id == 95||ii.id == 122" class="card-owner-one">
+					<div v-show="ii.id == 29 || ii.id == 33 || ii.id == 36 || ii.id == 46 || ii.id == 47 || ii.id == 60 || ii.id == 64 || ii.id == 67 || ii.id == 69 || ii.id == 76 || ii.id == 77 || ii.id == 78|| ii.id == 86|| ii.id == 89 || ii.id == 90 || ii.id == 95||ii.id == 122||ii.id == 123||ii.id == 126" class="card-owner-one">
 						<p :id="ii.id"><button>id:{{ ii.id }}</button></p>
 						<p :id="ii.id">[{{ ii.ten }}] {{ ii.h }} / {{ ii.id }}00 <span class="icon-power"></span></p>
 						<p><img :src='"/card/card_" + ii.id + ".webp"'></p>
@@ -854,11 +757,57 @@
 			</div>
 		</div>
 
+		<div v-if="loc === 'c'" class="text-content">
+			<div class="iten-start">
+			<p><span class="icon-moji_a"></span> <code>all</code> card</p>
+			</div>
+			<table id="card-box">
+				<span v-for="(ii, index) in rcards.data">
+					<thead>
+						<td>
+							<img :src='"/card/card_" + ii.id + ".webp"'>
+						</td>
+					</thead>
+					<tbody>
+						<tr>
+							<button>id : {{ ii.id }}</button>
+						</tr>
+						<tr> <button v-if="ii.ten"><span class="icon-power"></span></button> <button v-if="ii.ten_skill == true" ><span class="icon-ai"></span></button> <button v-if="ii.first_skill == true" ><span class="icon-moji_a"></span></button>
+						</tr>
+					</tbody>
+				</span>
+			</table>
+		</div>
+
+		<div v-if="loc === 'svn'" class="text-content">
+			<p><span class="icon-moji_a"></span> <code>seven</code> owner</p>
+			<div class="card-fav" v-for="(ii, index) in sevens.data">
+				<table class="card-fav" v-if="ii.card !== 0 && ii.count == 0">
+					<thead class="card-fav">
+						<tr class="card-status-first">
+							<span class="card-wrapper">
+								<span class="reflection">
+									<img :src='"/card/card_" + ii.card + ".webp"' class="card">
+								</span>
+								<span class="card pattern-seven"></span>
+								<span class="card color-seven"></span>
+								<span class="card highlight-seven"></span>
+							</span>
+						</tr>
+					</thead>
+					<tbody>
+						<tr v-if='ii.handle'><a :href="'/' + ii.handle">@{{ ii.handle }}</a></tr>
+						<tr v-if='ii.cp'>{{ ii.cp }}</tr>
+					</tbody>
+				</table>
+			</div>
+			<p><code>/ten pay 7</code> <code><span class="icon-power"></span> 70,000,000</code></p>
+		</div>
+
 		<div v-if="loc === 'te'" class="text-content">
 			<div class="iten-start">
 				<p><code>/ten h</code> : ヘルプ</p>
 				<p><code>/ten start</code> : 7ターンまでに文字をそろえる</p>
-				<blockquote>ACEHIKMOSTUWYZ</blockquote>
 			</div>
 		</div>
 
@@ -902,6 +851,7 @@
 <script>
 import axios from 'axios'
 import moment from "moment";
+
 var loc = window.location.pathname.split('/').slice(-1)[0];
 
 export default {
@@ -928,64 +878,70 @@ export default {
 	data () {
 		return {
 			host: window.location.host,
-			all: null,
-			badge_aiten: null,
-			card: null,
-			cards: null,
+			all: "",
+			badge_aiten: "",
+			card: "",
+			cards: "",
 			loc: window.location.pathname.split('/').slice(-1)[0],
-			username: null,
-			id: null,
-			model: null,
-			record: null,
-			url: null,
-			user: null,
-			userid: null,
-			ucard: null,
-			status: null,
+			username: "ai",
+			id: "",
+			model: "",
+			record: "",
+			url: "",
+			user: "",
+			userid: "",
+			ucard: "",
+			status: "",
 			premium: false,
-			premium_text: null,
-			rcards: null,
-			fanarts: null,
-			photos: null,
+			premium_text: "",
+			rcards: "",
+			fanarts: "",
+			photos: "",
 			info: false,
-			time: null,
-			aiten: null,
-			fav: null,
-			card_fav: null,
-			user_fav: null,
-			book_user: null,
+			time: "",
+			aiten: "",
+			fav: "",
+			card_fav: "",
+			user_fav: "",
+			book_user: "",
 			glb_status: false,
 			glb_next: 0,
 			moji_status: false,
-			did_enable: null,
-			chara_user: null,
+			did_enable: "",
+			chara_user: "",
 			card_sed: false,
-			card_status: null,
-			card_skill: null,
-			model_attack: null,
-			model_critical: null,
-			model_critical_d: null,
-			game: null,
-			game_lv: null,
-			api_url: null,
+			card_status: "",
+			card_skill: "",
+			model_attack: "",
+			model_critical: "",
+			model_critical_d: "",
+			sevens: "",
+			game: "",
+			game_lv: "",
+			api_url: "",
 			bsky_mode: false,
-			did: null,
+			did: "",
 			card_origin_status: false,
 			useragent: window.navigator.userAgent.toLowerCase(),
 			iframe_status: false,
 			term_status: false,
-			sort_key: null,
+			sort_key: "",
+			mount_google_md: false,
 		}
-	},
-	components: {
 	},
 	filters: {
 		moment: function(date) {
 			return moment.unix(date).format("YYYY.MM.DD");
 		},
 	},
+	computed: {
+		loadComponent() {
+			return () => import('@google/model-viewer');
+		}
+	},
 	mounted() {
-		this.loadComponent();
+		this.username = "ai";
+		this.mount_google_md = false;
 		if (window.location.host === "localhost:8080") {
 			this.api_url = "/api/";
 		} else if (window.location.host === "192.168.11.12:8080"){
@@ -996,24 +952,28 @@ export default {
 			}
 			this.api_url = "https://api.syui.ai/";
 		}
-		if (loc === 'owner' || loc === 'te'){
+		if (loc === 'owner' || loc === 'te' || loc === 'c'){
+			this.rcards = "";
 			axios
 				.get("/json/card.json")
 				.then(response => (this.rcards = response));
-				if (loc.length > 1){
-					axios
-						.get(url,{ crossdomain: true })
-						.then(response => (this.cards = response));
-				}
-		} else if (loc === 'fa'){
+		} else if (loc === 'svn'){
+			this.cards = "";
+			let url = this.api_url + "sevs?itemsPerPage=4000";
 			axios
-				.get("/json/fanart.json")
-				.then(response => (this.fanarts = response));
-		} else if (loc === 'ph'){
-			axios
-				.get("/json/photo.json")
-				.then(response => (this.photos = response));
+				.get(url)
+				.then(response => (this.sevens = response));
+		} else if (loc === null || loc === undefined || loc === ''){
+			let url = this.api_url + "users?itemsPerPage=3000";
+			axios.get(url,{ crossdomain: true })
+				.then(response => { 
+					this.record = response;
+				})
 		} else {
+			if (this.mount_google_md === false) {
+				//this.loadComponent();
+				this.mount_google_md = true;
+			}
 			let url = this.api_url + "users?itemsPerPage=3000";
 			axios.get(url,{ crossdomain: true })
 				.then(response => { 
@@ -1033,38 +993,32 @@ export default {
 					this.user_room = this.record.data.find((v) => v.username == loc).room;
 					let url = this.api_url + "users/" + this.id + "/card?itemsPerPage=4000";
 					axios
-					.get("/json/card.json")
-					.then(response => (this.rcards = response));
-					if (loc.length > 1){
-						axios
-							.get(url,{ crossdomain: true })
-							.then(response => { this.cards = response
-													for (let i = 1; i <= 14; i++) {
-														this.all = this.cards.data.some(
-															b => b.card === i,
-															);
-															if (this.all === false) {
-																break;
-															}
-													}
-													for (let i = 65; i <= 67; i++) {
-														this.badge_aiten = this.cards.data.some(
-															b => b.card === i,
-															);
-															if (this.badge_aiten === false) {
-																break;
-															}
-													}
-							});
-					}
-			})
-			.catch(error => console.log(error));
+						.get("/json/card.json")
+						.then(response => (this.rcards = response));
+						if (loc.length > 1){
+							axios
+								.get(url,{ crossdomain: true })
+								.then(response => { this.cards = response
+														for (let i = 1; i <= 14; i++) {
+															this.all = this.cards.data.some(
+																b => b.card === i,
+																);
+																if (this.all === false) {
+																	break;
+																}
+														}
+														for (let i = 65; i <= 67; i++) {
+															this.badge_aiten = this.cards.data.some(
+																b => b.card === i,
+																);
+																if (this.badge_aiten === false) {
+																	break;
+																}
+														}
+								});
+						}
+				})
 		}},
-		computed: {
-			loadComponent() {
-				return () => import('@google/model-viewer');
-			}
-		},
 		methods: {
 			submit() {
 				let url = this.api_url + "users/" + this.id + "/card?itemsPerPage=3000";
@@ -1111,7 +1065,7 @@ export default {
 				});
 			},
 			cardinfo(){
-				this.cards = {};
+				this.cards = "";
 				let url = this.api_url + "users/" + this.id + "/card?itemsPerPage=4000";
 				axios
 					.get(url,{ crossdomain: true })
@@ -1166,10 +1120,19 @@ export default {
 </script>
 
 <style>
-body{
+html {
+	text-size-adjust:100%;
+	-webkit-text-size-adjust:100%;
+}
+body {
+	text-size-adjust:100%;
+	-webkit-text-size-adjust:100%;
 	background-color: #f1f1f1;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 18px;
+	overflow-wrap: anywhere;
+	word-break: normal;
+	line-break: strict;
 }
 
 a {
@@ -1218,9 +1181,7 @@ span.text {
 footer#footer {
 	text-align: center;
 }
-span.text {
-	word-break: break-all;
-}
+
 p.tl-avatar img {
 	width: 20px;
 }
@@ -1356,60 +1317,6 @@ span.card-fav-su {
 	display:none;
 }
 
-span.pattern-s {
-  background: repeating-radial-gradient(circle at -150% -25%, #000, #777 3px, #000 3px);
-  background-position: 50% 50%;
-  background-size: 120% 120%;
-  mix-blend-mode: color-dodge;
-  opacity: 0.3;
-}
-
-span.color-s {
-  background: linear-gradient(115deg, transparent 20%, #000 30%, transparent 48% 52%, #000 70%, transparent);
-  background-position: 50% 50%;
-  background-size: 200% 200%;
-  mix-blend-mode: overlay;
-}
-
-span.card-wrapper:hover > span.pattern-s {
-  background-position: calc(50% + (var(--ratio-x) * -50%)) calc(50% + (var(--ratio-y) * -50%));
-}
-
-span.card-wrapper:hover > span.color-s {
-  background-position: calc(50% + (var(--ratio-x) * -50%)) calc(50% + (var(--ratio-y) * -50%));
-}
-
-span.card-wrapper:hover > span.highlight-s {
-  background-repeat: no-repeat;
-}
-
-span.pattern-t {
-  background: repeating-radial-gradient(circle at -150% -25%, #c71585, #777 3px, #ffff00 3px);
-  background-position: 50% 50%;
-  background-size: 120% 120%;
-  mix-blend-mode: color-dodge;
-  opacity: 0.3;
-}
-
-span.color-t {
-  background: linear-gradient(115deg, transparent 20%, #c71585 30%, transparent 48% 52%, #c71585 70%, transparent);
-  background-position: 50% 50%;
-  background-size: 200% 200%;
-  mix-blend-mode: overlay;
-}
-
-span.card-wrapper:hover > span.pattern-t {
-  background-position: calc(50% + (var(--ratio-x) * -50%)) calc(50% + (var(--ratio-y) * -50%));
-}
-
-span.card-wrapper:hover > span.color-t {
-  background-position: calc(50% + (var(--ratio-x) * -50%)) calc(50% + (var(--ratio-y) * -50%));
-}
-
-span.card-wrapper:hover > span.highlight-t {
-  background-repeat: no-repeat;
-}
-
 span.pattern-yui {
   background: repeating-radial-gradient(circle at -150% -25%, #ffff00, #000 3px, #ffff00 3px);
   background-position: 50% 50%;
@@ -1425,19 +1332,7 @@ span.color-yui {
   mix-blend-mode: overlay;
 }
 
-span.card-wrapper:hover > span.pattern-yui {
-  background-position: calc(50% + (var(--ratio-x) * -50%)) calc(50% + (var(--ratio-y) * -50%));
-}
-
-span.card-wrapper:hover > span.color-yui {
-  background-position: calc(50% + (var(--ratio-x) * -50%)) calc(50% + (var(--ratio-y) * -50%));
-}
-
-span.card-wrapper:hover > span.highlight-yui {
-  background-repeat: no-repeat;
-}
-
-span.pattern-f {
+span.pattern-first {
   background: repeating-radial-gradient(circle at -150% -25%, #000, #32cd32 3px, #1e90ff 3px);
   background-position: 50% 50%;
   background-size: 120% 120%;
@@ -1445,19 +1340,56 @@ span.pattern-f {
   opacity: 0.3;
 }
 
-span.color-f {
+span.color-first {
   background: linear-gradient(115deg, transparent 20%, #00ffff 30%, transparent 48% 52%, #40e0d0 70%, transparent);
   background-position: 50% 50%;
   background-size: 200% 200%;
   mix-blend-mode: overlay;
 }
 
-span.card-wrapper:hover > span.pattern-f {
-  background-position: calc(50% + (var(--ratio-x) * -50%)) calc(50% + (var(--ratio-y) * -50%));
+span.pattern-second {
+  background: repeating-radial-gradient(circle at -150% -25%, #000, #777 3px, #000 3px);
+  background-position: 50% 50%;
+  background-size: 120% 120%;
+  mix-blend-mode: color-dodge;
+  opacity: 0.3;
 }
 
-span.card-wrapper:hover > span.color-f {
-  background-position: calc(50% + (var(--ratio-x) * -50%)) calc(50% + (var(--ratio-y) * -50%));
+span.color-second {
+  background: linear-gradient(115deg, transparent 20%, #000 30%, transparent 48% 52%, #000 70%, transparent);
+  background-position: 50% 50%;
+  background-size: 200% 200%;
+  mix-blend-mode: overlay;
+}
+
+span.pattern-third {
+  background: repeating-radial-gradient(circle at -150% -25%, #c71585, #777 3px, #ffff00 3px);
+  background-position: 50% 50%;
+  background-size: 120% 120%;
+  mix-blend-mode: color-dodge;
+  opacity: 0.3;
+}
+
+span.color-third {
+  background: linear-gradient(115deg, transparent 20%, #c71585 30%, transparent 48% 52%, #c71585 70%, transparent);
+  background-position: 50% 50%;
+  background-size: 200% 200%;
+  mix-blend-mode: overlay;
+}
+
+span.pattern-fourth {
+  background: repeating-radial-gradient(circle at -150% -25%, #fff, #777 3px, #fff 3px);
+  background-position: 50% 50%;
+  background-size: 120% 120%;
+  mix-blend-mode: color-dodge;
+  opacity: 0.3;
+}
+
+span.color-fourth {
+  background: linear-gradient(115deg, transparent 20%, #40A4BF 30%, transparent 48% 52%, #404FBF 70%, transparent);
+  background-position: 50% 50%;
+  background-size: 200% 200%;
+  mix-blend-mode: overlay;
 }
 
 span.pattern-fifth {
@@ -1475,43 +1407,45 @@ span.color-fifth {
   mix-blend-mode: overlay;
 }
 
-span.card-wrapper:hover > span.pattern-fifth {
-  background-position: calc(50% + (var(--ratio-x) * -50%)) calc(50% + (var(--ratio-y) * -50%));
-}
-
-span.card-wrapper:hover > span.color-fifth {
-  background-position: calc(50% + (var(--ratio-x) * -50%)) calc(50% + (var(--ratio-y) * -50%));
-}
-
-span.card-wrapper:hover > span.highlight-yui {
-  background-repeat: no-repeat;
-}
-
-span.pattern {
-  background: repeating-radial-gradient(circle at -150% -25%, #fff, #777 3px, #fff 3px);
+span.pattern-sixth {
+  background: repeating-radial-gradient(circle at center, #f1f1f1, #313131 3px, #fff700 3px);
   background-position: 50% 50%;
   background-size: 120% 120%;
   mix-blend-mode: color-dodge;
   opacity: 0.3;
 }
 
-span.color {
-  background: linear-gradient(115deg, transparent 20%, #40A4BF 30%, transparent 48% 52%, #404FBF 70%, transparent);
+span.color-sixth {
+  background: linear-gradient(115deg, transparent 20%, #f1f1f1 30%, transparent 48% 52%, #313131 70%, transparent);
   background-position: 50% 50%;
   background-size: 200% 200%;
   mix-blend-mode: overlay;
 }
 
-span.card-wrapper:hover > span.pattern {
+span.pattern-seven {
+  background: repeating-radial-gradient(circle at center, #fff700, #313131 3px, #000700 3px);
+  background-position: 50% 50%;
+  background-size: 120% 120%;
+  mix-blend-mode: color-dodge;
+  opacity: 0.3;
+}
+
+span.color-seven {
+  background: linear-gradient(115deg, transparent 20%, #fff700 30%, transparent 48% 52%, #fff700 70%, transparent);
+  background-position: 50% 50%;
+  background-size: 200% 200%;
+  mix-blend-mode: overlay;
+}
+
+span.card-wrapper:hover > span.pattern-yui,span.card-wrapper:hover >  span.pattern-first,span.card-wrapper:hover >  span.pattern-second,span.card-wrapper:hover >  span.pattern-third,span.card-wrapper:hover >  span.pattern-fourth,span.card-wrapper:hover >  span.pattern-fifth, span.card-wrapper:hover >  span.pattern-sixth, span.card-wrapper:hover >  span.pattern-seven {
   background-position: calc(50% + (var(--ratio-x) * -50%)) calc(50% + (var(--ratio-y) * -50%));
 }
 
-span.card-wrapper:hover > span.color {
+span.card-wrapper:hover > span.color-yui,span.card-wrapper:hover > span.color-first,span.card-wrapper:hover > span.color-second,span.card-wrapper:hover > span.color-third,span.card-wrapper:hover > span.color-fourth,span.card-wrapper:hover > span.color-fifth, span.card-wrapper:hover > span.color-sixth, span.card-wrapper:hover > span.color-seven {
   background-position: calc(50% + (var(--ratio-x) * -50%)) calc(50% + (var(--ratio-y) * -50%));
 }
 
-span.card-wrapper:hover > span.highlight {
-  background: radial-gradient(circle at calc(var(--ratio-x) * 100%) calc(var(--ratio-y) * 100%), hsl(0 0% 100% / 0.2), transparent 50%);
+span.card-wrapper:hover > span.highlight-yui,span.card-wrapper:hover > span.highlight-first,span.card-wrapper:hover > span.highlight-second,span.card-wrapper:hover > span.highlight-third,span.card-wrapper:hover > span.highlight-fourth,span.card-wrapper:hover > span.highlight-fifth, span.card-wrapper:hover > span.highlight-sixth, span.card-wrapper:hover > span.highlight-seven {
   background-repeat: no-repeat;
 }
 
@@ -1736,9 +1670,6 @@ button.unity i#vrm_button:hover {
 	.bluesky-record p{padding:0 20px 0}
 	.bluesky-record{border-radius:10px;margin:0px 0px 0 0}
 	footer#footer{text-align:center}
-	span.text {
-		word-break: break-all;
-	}
 	code {
 		padding: 10px;
 		background-color: #fff;
@@ -1830,7 +1761,6 @@ span.glb {
 
 .menu-right code {
 	padding: 0;
-	word-break: break-all;
 }
 
 blockquote.did {

@@ -1114,11 +1114,11 @@
 		},
 		{
 			"id": 123,
-			"h": "雷雲",
-			"p": "raiun",
+			"h": "星雲",
+			"p": "seiun",
 			"img": "bafkreiezatp5gyzrvbsetjaa5e5c4ugw75u4rw3zg2iemiffug3aat344i",
 			"ten_skill": true,
-			"ten": "RAI",
+			"ten": "SEI",
 			"file": "/card/yui_167",
 			"src": "yui_167"
 		},

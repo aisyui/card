@@ -1145,7 +1145,7 @@
 			"ten": "SIN",
 			"ten_skill": true,
 			"first_skill": true,
-			"pay_first": true,
+			"pay_seven": true,
 			"file": "/card/yui_170",
 			"src": "yui_170"
 		}

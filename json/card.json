@@ -1136,5 +1136,17 @@
 			"p": "たくさんの色",
 			"file": "/card/yui_169",
 			"src": "yui_169"
+		},
+		{
+			"id": 126,
+			"h": "深淵",
+			"p": "底知れないふち",
+			"img": "bafkreigfnyf245gfecu4nvdz5zjvfcvzizvng3e7u7wefufpho3y7fpiqm",
+			"ten": "SIN",
+			"ten_skill": true,
+			"first_skill": true,
+			"pay_first": true,
+			"file": "/card/yui_170",
+			"src": "yui_170"
 		}
 ]

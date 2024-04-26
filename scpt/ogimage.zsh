@@ -26,7 +26,7 @@ do
 
 	if [ ! -f $oo ];then
 		echo $oo
-		convert $o -gravity center -extent 8000x4000 $oo
+		magick convert $o -gravity center -extent 8000x4000 $oo
 	fi
 
 #	mkdir -p $o_dir/$id

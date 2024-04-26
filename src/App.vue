@@ -1,7 +1,7 @@
 <template>
 	<div id="app">
-		<link rel="stylesheet" href="https://yui.syui.ai/pkg/icomoon/icomoon.css" />
-		<link rel="stylesheet" href="https://yui.syui.ai/pkg/font-awesome/css/all.min.css" />
+		<link rel="stylesheet" href="https://syui.ai/bower_components/icomoon/style.css" />
+		<link rel="stylesheet" href="https://syui.ai/bower_components/font-awesome/css/all.min.css" />
 		<div class="menu">
 			<a href="/" class="top-icon"><span class="icon-ai"></span></a> 
 			<code v-if="loc === 'te'"><a href="https://bsky.app/profile/yui.syui.ai" target="_blank">@yui.syui.ai</a> /ten</code>
@@ -90,7 +90,7 @@
 						</tr>
 					</span>
 				</span>
-
+				
 				<div class="vrm" v-if="iframe_status == true">
 					<iframe src="https://vrm.syui.ai" allowfullscreen frameborder="0"></iframe>
 					<table>
@@ -152,8 +152,6 @@
 						<span class="card-fav-su">
 							{{ ii = cards.data.find((v) => v.id == user_fav) }}
 						</span>
-
-
 						<thead v-if="ii.status == 'yui' || ii.status == 'first' || ii.status == 'second' || ii.status == 'second' || ii.status == 'third' || ii.status == 'fourth' || ii.status == 'fifth' || ii.status == 'sixth' || ii.status == 'seven'" class="card-fav">
 							<tr class="card-status-first">
 								<span class="card-wrapper">
@@ -186,12 +184,56 @@
 					</table>
 				</div>
 
+				<div class="card-planet" v-if="planet_status == true">
+					<table class="card-fav">
+						<thead>
+							<span class="card-planet" v-if="planet > 1000000">
+								<iframe :src="planet_url" scrolling="no" frameborder="0" style="width:155px;height:200px;padding-bottom: 14px;"></iframe>
+							</span>
+							<span class="card-planet" v-else-if="planet > 466666">
+								<iframe :src="planet_url + '?g=neutron'" scrolling="no" frameborder="0" style="width:155px;height:200px;padding-bottom: 14px;"></iframe>
+							</span>
+							<span class="card-planet" v-else-if="planet > 333000">
+								<iframe :src="planet_url + '?m=ai_normal&g=sun'" scrolling="no" frameborder="0" style="width:155px;height:200px;padding-bottom: 14px;"></iframe>
+							</span>
+							<span class="card-planet" v-else-if="planet > 0">
+								<iframe :src="planet_url + '?m=ai_default&g=moon'" scrolling="no" frameborder="0" style="width:155px;height:200px;padding-bottom: 14px;"></iframe>
+							</span>
+
+							<!--test
+							<span class="card-planet" v-if="username === 'ai'">
+								<iframe :src="planet_url" scrolling="no" frameborder="0" style="width:155px;height:200px;padding-bottom: 14px;"></iframe>
+							</span>
+							<span class="card-planet" v-if="username === 'ai'">
+								<iframe :src="planet_url + '?g=neutron'" scrolling="no" frameborder="0" style="width:155px;height:200px;padding-bottom: 14px;"></iframe>
+							</span>
+							<span class="card-planet" v-if="username === 'ai'">
+								<iframe :src="planet_url + '?m=ai_normal&g=sun'" scrolling="no" frameborder="0" style="width:155px;height:200px;padding-bottom: 14px;"></iframe>
+							</span>
+							<span class="card-planet" v-if="username === 'ai'">
+								<iframe :src="planet_url + '?m=ai_default&g=moon'" scrolling="no" frameborder="0" style="width:155px;height:200px;padding-bottom: 14px;"></iframe>
+							</span>
+							-->
+
+						</thead>
+						<tbody><tr v-if="planet">M {{ planet }}</tr></tbody>
+						<tbody>
+							<tr v-if="planet > 1000000"><span class="icon-ai"></span></tr>
+							<tr v-else-if="planet > 466666"><span class="icon-home"></span></tr>
+							<tr v-else-if="planet > 333000"><span class="icon-ten"></span></tr>
+							<tr v-else-if="planet > 0"><span class="icon-moon"></span></tr>
+						</tbody>
+
+					</table>
+				</div>
+
 				<div class="card-button" >
 					<button v-on:click="cardtime">new</button> <button v-on:click="sort">cp</button> <button v-on:click="sortcard" >card</button> <button v-on:click="cardinfo">info</button>
 				</div>
-				<div class="menu-right"><code><strong>ID</strong> {{ id }}</code> <code><span class="icon-power"></span> {{ aiten }}</code> <code><i class="fa-solid fa-cube"></i> {{ cards.data.filter((v) => v.skill == 'lost').length }}</code>
+				<div class="menu-right"><code><strong>ID</strong> {{ id }}</code> <code><span class="icon-power"></span> {{ aiten }}</code> <code><i class="fa-solid fa-cube"></i> {{ cards.data.filter((v) => v.skill == 'lost').length }}</code> 
 					<code class="moji-comp" v-if="26 == (cards.data.filter((v) => v.card >= 96 && v.card <= 121).length)" v-on:click="background_change"><span class="icon-ai"></span> {{ (cards.data.filter((v) => v.card >= 96 && v.card <= 121).length) }}</code>
 					<code v-else><span class="icon-ai"></span> {{ (cards.data.filter((v) => v.card >= 96 && v.card <= 121).length) }}</code>
+					<code><i class="fa-solid fa-earth-americas"></i> {{ planet }}</code> 
 				</div>
 
 				<div class="moji" v-if="moji_status == true">
@@ -922,11 +964,14 @@ export default {
 			bsky_mode: false,
 			did: "",
 			card_origin_status: false,
+			planet_status: false,
+			planet: 0,
 			useragent: window.navigator.userAgent.toLowerCase(),
 			iframe_status: false,
 			term_status: false,
 			sort_key: "",
 			mount_google_md: false,
+			planet_url: "/planet/index.html",
 		}
 	},
 	filters: {
@@ -944,6 +989,7 @@ export default {
 		this.mount_google_md = false;
 		if (window.location.host === "localhost:8080") {
 			this.api_url = "/api/";
+			//this.planet_url = "http://localhost:3000";
 		} else if (window.location.host === "192.168.11.12:8080"){
 			this.api_url = "/api/";
 		} else {
@@ -980,6 +1026,7 @@ export default {
 					this.record = response;
 					this.username = this.record.data.find((v) => v.username == loc).username;
 					this.id = this.record.data.find((v) => v.username == loc).id;
+					this.planet = this.record.data.find((v) => v.username == loc).planet;
 					this.model = this.record.data.find((v) => v.username == loc).model;
 					this.did = this.record.data.find((v) => v.username == loc).did;
 					this.aiten = this.record.data.find((v) => v.username == loc).aiten;
@@ -991,6 +1038,10 @@ export default {
 					this.model_critical = this.record.data.find((v) => v.username == loc).model_critical;
 					this.model_critical_d = this.record.data.find((v) => v.username == loc).model_critical_d;
 					this.user_room = this.record.data.find((v) => v.username == loc).room;
+
+					if (this.planet > 0){
+						this.planet_status = true;
+					}
 					let url = this.api_url + "users/" + this.id + "/card?itemsPerPage=4000";
 					axios
 						.get("/json/card.json")
@@ -1504,9 +1555,9 @@ span.reflection:after {
 }
 
 .viewer {
-    background-color: #fff;
-    margin: 10px 0px;
-    padding: 20px;
+	background-color: #fff;
+	margin: 10px 0px;
+	padding: 20px;
 }
 
 span.card-black p {
@@ -1662,7 +1713,11 @@ button.unity i#vrm_button:hover {
 		padding: 50px 0 50px 0;
 		margin: 30px 0 30px 0;
 	}
-	div#app{list-style:none;margin:0px}
+	div#app{
+		list-style:none;
+		margin:0px auto;
+		text-align: center;
+	}
 	.bluesky-avatar img{width:55px}
 	span.time{color:#00f}
 	span.name{background-color:rgba(163,195,255,.10196078431372549);padding:10px}
@@ -1769,4 +1824,17 @@ blockquote.did {
 	text-align: left;
 }
 
+span.card-planet {
+    background-image: url(/card/card_0.webp);
+    background-size: cover;
+    background-position: center;
+    display: inline-block;
+    width: 200px;
+    border-radius: 3px;
+    padding: 23px 0;
+}
+
+.card-planet table thead {
+	background-color: #fff;
+}
 </style>

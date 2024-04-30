@@ -1148,5 +1148,17 @@
 			"pay_seven": true,
 			"file": "/card/yui_170",
 			"src": "yui_170"
+		},
+		{
+			"id": 127,
+			"h": "電子",
+			"p": "原子核の周りに分布して原子のもと",
+			"img": "bafkreifdhgflmaaavjgbks2gam5m4wxyofzbcie3viwvkpf5j7ykeaxzx4",
+			"ten": "DEN",
+			"ten_skill": true,
+			"first_skill": true,
+			"pay_seven": true,
+			"file": "/card/yui_171",
+			"src": "yui_171"
 		}
 ]

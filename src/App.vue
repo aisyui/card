@@ -781,7 +781,7 @@
 
 		<div v-if="loc === 'svn'" class="text-content">
 			<p><span class="icon-moji_a"></span> <code>seven</code> owner</p>
-			<div class="card-fav" v-for="(ii, index) in sevens.data">
+			<div class="card-fav" v-for="(ii, index) in sevens.data.reverse()">
 				<table class="card-fav" v-if="ii.card !== 0 && ii.count == 0">
 					<thead class="card-fav">
 						<tr class="card-status-first">

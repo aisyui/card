@@ -1180,5 +1180,15 @@
 			"pay_seven": false,
 			"file": "/card/yui_173",
 			"src": "yui_173"
+		},
+		{
+			"id": 130,
+			"h": "島の街",
+			"p": "ゲーム上の島街",
+			"ten_skill": false,
+			"first_skill": false,
+			"pay_seven": false,
+			"file": "/card/yui_174",
+			"src": "yui_174"
 		}
 ]

@@ -1160,5 +1160,25 @@
 			"pay_seven": true,
 			"file": "/card/yui_171",
 			"src": "yui_171"
+		},
+		{
+			"id": 128,
+			"h": "草原",
+			"p": "始まりの草原",
+			"ten_skill": false,
+			"first_skill": false,
+			"pay_seven": false,
+			"file": "/card/yui_172",
+			"src": "yui_172"
+		},
+		{
+			"id": 129,
+			"h": "空の柱",
+			"p": "ゲーム上の空の柱",
+			"ten_skill": false,
+			"first_skill": false,
+			"pay_seven": false,
+			"file": "/card/yui_173",
+			"src": "yui_173"
 		}
 ]

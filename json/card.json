@@ -1190,5 +1190,19 @@
 			"pay_seven": false,
 			"file": "/card/yui_174",
 			"src": "yui_174"
+		},
+		{
+			"id": 131,
+			"h": "創種",
+			"p": "衣装の更新ではじめてのマント",
+			"ten_skill": false,
+			"first_skill": false,
+			"pay_seven": true,
+			"file": "/card/yui_175",
+			"src": "yui_175",
+			"img": "bafkreifdhgflmaaavjgbks2gam5m4wxyofzbcie3viwvkpf5j7ykeaxzx4",
+			"ten": "SOU",
+			"ten_skill": true,
+			"first_skill": true
 		}
 ]

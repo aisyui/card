@@ -92,7 +92,7 @@
 				</span>
 				
 				<div class="vrm" v-if="iframe_status == true">
-					<iframe src="https://vrm.syui.ai" allowfullscreen frameborder="0"></iframe>
+					<iframe src="https://vrm.syui.ai" allowfullscreen frameborder="0" loading="lazy"></iframe>
 					<table>
 						<tbody>
 							<tr>
@@ -126,7 +126,7 @@
 				</div>
 
 				<div class="term" v-if="term_status == true">
-					<iframe :src="'https://term.syui.ai?user=' + username + '&did=' + did + '&id=' + id" allowfullscreen frameborder="0"></iframe>
+					<iframe :src="'https://term.syui.ai?user=' + username + '&did=' + did + '&id=' + id" allowfullscreen frameborder="0" loading="lazy"></iframe>
 				</div>
 
 				<span class="menu-right-top" v-if="cards.data.find((v) => v.card == 43)">
@@ -188,16 +188,16 @@
 					<table class="card-fav">
 						<thead>
 							<span class="card-planet" v-if="planet > 1000000">
-								<iframe :src="planet_url" scrolling="no" frameborder="0" style="width:155px;height:200px;padding-bottom: 14px;"></iframe>
+								<iframe :src="planet_url" scrolling="no" frameborder="0" style="width:155px;height:200px;padding-bottom:14px;" loading="lazy"></iframe>
 							</span>
 							<span class="card-planet" v-else-if="planet > 466666">
-								<iframe :src="planet_url + '?g=neutron'" scrolling="no" frameborder="0" style="width:155px;height:200px;padding-bottom: 14px;"></iframe>
+								<iframe :src="planet_url + '?g=neutron'" scrolling="no" frameborder="0" style="width:155px;height:200px;padding-bottom:14px;" loading="lazy"></iframe>
 							</span>
 							<span class="card-planet" v-else-if="planet > 333000">
-								<iframe :src="planet_url + '?m=ai_normal&g=sun'" scrolling="no" frameborder="0" style="width:155px;height:200px;padding-bottom: 14px;"></iframe>
+								<iframe :src="planet_url + '?m=ai_normal&g=sun'" scrolling="no" frameborder="0" style="width:155px;height:200px;padding-bottom:14px;" loading="lazy"></iframe>
 							</span>
 							<span class="card-planet" v-else-if="planet > 0">
-								<iframe :src="planet_url + '?m=ai_default&g=moon'" scrolling="no" frameborder="0" style="width:155px;height:200px;padding-bottom: 14px;"></iframe>
+								<iframe :src="planet_url + '?m=ai_default&g=moon'" scrolling="no" frameborder="0" style="width:155px;height:200px;padding-bottom:14px;" loading="lazy"></iframe>
 							</span>
 
 							<!--test

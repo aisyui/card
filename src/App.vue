@@ -188,13 +188,16 @@
 					<table class="card-fav">
 						<thead>
 							<span class="card-planet" v-if="planet > 1000000">
-								<iframe :src="planet_url" scrolling="no" frameborder="0" style="width:155px;height:200px;padding-bottom:14px;" loading="lazy"></iframe>
+								<iframe :src="planet_url + '?m=ai_item&g=galaxy'" scrolling="no" frameborder="0" style="width:155px;height:200px;padding-bottom:14px;" loading="lazy"></iframe>
 							</span>
 							<span class="card-planet" v-else-if="planet > 466666">
-								<iframe :src="planet_url + '?g=neutron'" scrolling="no" frameborder="0" style="width:155px;height:200px;padding-bottom:14px;" loading="lazy"></iframe>
+								<iframe :src="planet_url + '?m=t&g=neutron'" scrolling="no" frameborder="0" style="width:155px;height:200px;padding-bottom:14px;" loading="lazy"></iframe>
 							</span>
 							<span class="card-planet" v-else-if="planet > 333000">
-								<iframe :src="planet_url + '?m=ai_normal&g=sun'" scrolling="no" frameborder="0" style="width:155px;height:200px;padding-bottom:14px;" loading="lazy"></iframe>
+								<iframe :src="planet_url + '?m=t&g=sun'" scrolling="no" frameborder="0" style="width:155px;height:200px;padding-bottom:14px;" loading="lazy"></iframe>
+							</span>
+							<span class="card-planet" v-else-if="planet > 1">
+								<iframe :src="planet_url + '?m=ai_normal&g=earth'" scrolling="no" frameborder="0" style="width:155px;height:200px;padding-bottom:14px;" loading="lazy"></iframe>
 							</span>
 							<span class="card-planet" v-else-if="planet > 0">
 								<iframe :src="planet_url + '?m=ai_default&g=moon'" scrolling="no" frameborder="0" style="width:155px;height:200px;padding-bottom:14px;" loading="lazy"></iframe>
@@ -218,10 +221,11 @@
 						</thead>
 						<tbody><tr v-if="planet">M {{ planet }}</tr></tbody>
 						<tbody>
-							<tr v-if="planet > 1000000"><span class="icon-ai"></span></tr>
-							<tr v-else-if="planet > 466666"><span class="icon-home"></span></tr>
-							<tr v-else-if="planet > 333000"><span class="icon-ten"></span></tr>
-							<tr v-else-if="planet > 0"><span class="icon-moon"></span></tr>
+							<tr v-if="planet > 1000000"><span class="icon-ai"></span> galaxy</tr>
+							<tr v-else-if="planet > 466666"><span class="icon-home"></span> neutron</tr>
+							<tr v-else-if="planet > 333000"><span class="icon-ten"></span> sun</tr>
+							<tr v-else-if="planet > 1"><i class="fa-solid fa-earth-americas"></i> earth</tr>
+							<tr v-else-if="planet > 0"><span class="icon-moon"></span> moon</tr>
 						</tbody>
 
 					</table>

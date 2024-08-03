@@ -92,7 +92,7 @@
 				</span>
 				
 				<div class="vrm" v-if="iframe_status == true">
-					<iframe src="https://vrm.syui.ai" allowfullscreen frameborder="0"></iframe>
+					<iframe src="https://vrm.syui.ai" allowfullscreen frameborder="0" loading="lazy"></iframe>
 					<table>
 						<tbody>
 							<tr>
@@ -126,7 +126,7 @@
 				</div>
 
 				<div class="term" v-if="term_status == true">
-					<iframe :src="'https://term.syui.ai?user=' + username + '&did=' + did + '&id=' + id" allowfullscreen frameborder="0"></iframe>
+					<iframe :src="'https://term.syui.ai?user=' + username + '&did=' + did + '&id=' + id" allowfullscreen frameborder="0" loading="lazy"></iframe>
 				</div>
 
 				<span class="menu-right-top" v-if="cards.data.find((v) => v.card == 43)">
@@ -187,43 +187,81 @@
 				<div class="card-planet" v-if="planet_status == true">
 					<table class="card-fav">
 						<thead>
-							<span class="card-planet" v-if="planet > 1000000">
-								<iframe :src="planet_url" scrolling="no" frameborder="0" style="width:155px;height:200px;padding-bottom: 14px;"></iframe>
+							<span class="card-planet" v-if="planet >= 1000000">
+								<iframe :src="planet_url + '?g=galaxy'" scrolling="no" frameborder="0" style="width:155px;height:200px;padding-bottom:14px;" loading="lazy"></iframe>
 							</span>
-							<span class="card-planet" v-else-if="planet > 466666">
-								<iframe :src="planet_url + '?g=neutron'" scrolling="no" frameborder="0" style="width:155px;height:200px;padding-bottom: 14px;"></iframe>
+							<span class="card-planet" v-else-if="planet >= 466666">
+								<iframe :src="planet_url + '?g=neutron'" scrolling="no" frameborder="0" style="width:155px;height:200px;padding-bottom:14px;" loading="lazy"></iframe>
 							</span>
-							<span class="card-planet" v-else-if="planet > 333000">
-								<iframe :src="planet_url + '?m=ai_normal&g=sun'" scrolling="no" frameborder="0" style="width:155px;height:200px;padding-bottom: 14px;"></iframe>
+							<span class="card-planet" v-else-if="planet >= 333000">
+								<iframe :src="planet_url + '?g=sun'" scrolling="no" frameborder="0" style="width:155px;height:200px;padding-bottom:14px;" loading="lazy"></iframe>
+							</span>
+							<span class="card-planet" v-else-if="planet >= 1.0">
+								<iframe :src="planet_url + '?g=earth'" scrolling="no" frameborder="0" style="width:155px;height:200px;padding-bottom:14px;" loading="lazy"></iframe>
 							</span>
 							<span class="card-planet" v-else-if="planet > 0">
-								<iframe :src="planet_url + '?m=ai_default&g=moon'" scrolling="no" frameborder="0" style="width:155px;height:200px;padding-bottom: 14px;"></iframe>
+								<iframe :src="planet_url + '?g=moon'" scrolling="no" frameborder="0" style="width:155px;height:200px;padding-bottom:14px;" loading="lazy"></iframe>
 							</span>
-
-							<!--test
-							<span class="card-planet" v-if="username === 'ai'">
-								<iframe :src="planet_url" scrolling="no" frameborder="0" style="width:155px;height:200px;padding-bottom: 14px;"></iframe>
-							</span>
-							<span class="card-planet" v-if="username === 'ai'">
-								<iframe :src="planet_url + '?g=neutron'" scrolling="no" frameborder="0" style="width:155px;height:200px;padding-bottom: 14px;"></iframe>
-							</span>
-							<span class="card-planet" v-if="username === 'ai'">
-								<iframe :src="planet_url + '?m=ai_normal&g=sun'" scrolling="no" frameborder="0" style="width:155px;height:200px;padding-bottom: 14px;"></iframe>
-							</span>
-							<span class="card-planet" v-if="username === 'ai'">
-								<iframe :src="planet_url + '?m=ai_default&g=moon'" scrolling="no" frameborder="0" style="width:155px;height:200px;padding-bottom: 14px;"></iframe>
-							</span>
-							-->
 
 						</thead>
 						<tbody><tr v-if="planet">M {{ planet }}</tr></tbody>
 						<tbody>
-							<tr v-if="planet > 1000000"><span class="icon-ai"></span></tr>
-							<tr v-else-if="planet > 466666"><span class="icon-home"></span></tr>
-							<tr v-else-if="planet > 333000"><span class="icon-ten"></span></tr>
-							<tr v-else-if="planet > 0"><span class="icon-moon"></span></tr>
+							<tr v-if="planet >= 1000000"><span class="icon-ai"></span> galaxy</tr>
+							<tr v-else-if="planet >= 466666"><span class="icon-home"></span> neutron</tr>
+							<tr v-else-if="planet >= 333000"><span class="icon-ten"></span> sun</tr>
+							<tr v-else-if="planet >= 1"><i class="fa-solid fa-earth-americas"></i> earth</tr>
+							<tr v-else-if="planet > 0"><span class="icon-moon"></span> moon</tr>
 						</tbody>
+					</table>
+				</div>
 
+				<div class="game-card" v-if="game_login == true && game_screen == true">
+					<button v-on:click="gamescreen">min</button>
+					<iframe class="game-app" src="https://ue.syui.ai/?AutoConnect=true&hoveringMouse=true&MatchViewportRes=true&AutoPlayVideo=true&FakeMouseWithTouches=true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe>
+			<table>
+				<tbody>
+					<tr>
+						<td>Lv0</td>
+						<td>space</td>
+						<td>jump</td>
+					</tr>
+					<tr>
+						<td>Lv0</td>
+						<td>w, s, a, d</td>
+						<td>move</td>
+					</tr>
+					<tr>
+						<td>Lv1</td>
+						<td>1</td>
+						<td class="blue">attack</td>
+					</tr>
+					<tr>
+						<td>Lv2</td>
+						<td>2</td>
+						<td class="green">skill</td>
+					</tr>
+					<tr>
+						<td>Lv3</td>
+						<td>3</td>
+						<td class="red">burst</td>
+					</tr>
+				</tbody>
+			</table>
+					<table class="card-fav">
+						<thead style="background-color:#fff;">
+						</thead>
+						<tbody><i class="fa-solid fa-keyboard"></i></tbody>
+					</table>
+				</div>
+				<div class="game-card" v-else-if="game_login == true && game_screen == false">
+					<table class="card-fav">
+						<thead style="background-color:#fff;">
+							<span class="card-planet">
+								<iframe class="game-app" src="https://ue.syui.ai/?AutoConnect=true&hoveringMouse=true&MatchViewportRes=true&AutoPlayVideo=true&FakeMouseWithTouches=true" scrolling="no" frameborder="0" loading="lazy" width="768" height="1024" style="width:160px; height:210px; padding-bottom:14px;"></iframe>
+							</span>
+						</thead>
+						<tbody><button v-on:click="gamescreen">full</button></tbody>
+						<tbody>E {{ game_exp }}</tbody>
 					</table>
 				</div>
 
@@ -960,11 +998,14 @@ export default {
 			sevens: "",
 			game: "",
 			game_lv: "",
+			game_exp: 0,
 			api_url: "",
 			bsky_mode: false,
 			did: "",
 			card_origin_status: false,
 			planet_status: false,
+			game_login: false,
+			game_screen: false,
 			planet: 0,
 			useragent: window.navigator.userAgent.toLowerCase(),
 			iframe_status: false,
@@ -1005,7 +1046,7 @@ export default {
 				.then(response => (this.rcards = response));
 		} else if (loc === 'svn'){
 			this.cards = "";
-			let url = this.api_url + "sevs?itemsPerPage=4000";
+			let url = this.api_url + "sevs?itemsPerPage=8000";
 			axios
 				.get(url)
 				.then(response => (this.sevens = response));
@@ -1038,11 +1079,16 @@ export default {
 					this.model_critical = this.record.data.find((v) => v.username == loc).model_critical;
 					this.model_critical_d = this.record.data.find((v) => v.username == loc).model_critical_d;
 					this.user_room = this.record.data.find((v) => v.username == loc).room;
+					this.game_login = this.record.data.find((v) => v.username == loc).login;
+					this.game_exp = this.record.data.find((v) => v.username == loc).game_exp;
 
+					if (this.username === "syui") {
+						this.game_login = true;
+					}
 					if (this.planet > 0){
 						this.planet_status = true;
 					}
-					let url = this.api_url + "users/" + this.id + "/card?itemsPerPage=4000";
+					let url = this.api_url + "users/" + this.id + "/card?itemsPerPage=8000";
 					axios
 						.get("/json/card.json")
 						.then(response => (this.rcards = response));
@@ -1082,7 +1128,7 @@ export default {
 			},
 			page() {
 				this.id = this.record.data.find((v) => v.username == this.userid).id;
-				let url = this.api_url + "users/" + this.id + "/card?itemsPerPage=4000";
+				let url = this.api_url + "users/" + this.id + "/card?itemsPerPage=8000";
 				axios
 					.get(url,{ crossdomain: true })
 					.then(response => (this.ucard = response));
@@ -1091,7 +1137,7 @@ export default {
 			sort(){
 				if (this.premium) {
 					this.premium = false;
-					let url = this.api_url + "users/" + this.id + "/card?itemsPerPage=4000";
+					let url = this.api_url + "users/" + this.id + "/card?itemsPerPage=8000";
 				}
 				return this.cards.data.sort((a, b) => {
 					return b.cp - a.cp;
@@ -1117,7 +1163,7 @@ export default {
 			},
 			cardinfo(){
 				this.cards = "";
-				let url = this.api_url + "users/" + this.id + "/card?itemsPerPage=4000";
+				let url = this.api_url + "users/" + this.id + "/card?itemsPerPage=8000";
 				axios
 					.get(url,{ crossdomain: true })
 					.then(response => (this.cards = response));
@@ -1126,6 +1172,13 @@ export default {
 					} else {
 						this.info = false;
 					}
+			},
+			gamescreen(){
+				if (this.game_screen == true) {
+					this.game_screen = false;
+				} else {
+					this.game_screen = true;
+				}
 			},
 			cardtime(){
 					this.cards.data = this.cards.data.slice().reverse();
@@ -1834,7 +1887,24 @@ span.card-planet {
     padding: 23px 0;
 }
 
+span.game-card {
+    background-image: url(/card/card_0.webp);
+    background-size: cover;
+    background-position: center;
+    display: inline-block;
+    width: 200px;
+    border-radius: 3px;
+    padding: 23px 0;
+}
+
 .card-planet table thead {
 	background-color: #fff;
 }
+/*
+iframe.game-app {
+	width:160px;
+	height:210px;
+	padding-bottom:14px;
+}
+*/
 </style>

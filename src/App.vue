@@ -188,19 +188,19 @@
 					<table class="card-fav">
 						<thead>
 							<span class="card-planet" v-if="planet > 1000000">
-								<iframe :src="planet_url + '?m=ai_item&g=galaxy'" scrolling="no" frameborder="0" style="width:155px;height:200px;padding-bottom:14px;" loading="lazy"></iframe>
+								<iframe :src="planet_url + '?g=galaxy'" scrolling="no" frameborder="0" style="width:155px;height:200px;padding-bottom:14px;" loading="lazy"></iframe>
 							</span>
 							<span class="card-planet" v-else-if="planet > 466666">
-								<iframe :src="planet_url + '?m=t&g=neutron'" scrolling="no" frameborder="0" style="width:155px;height:200px;padding-bottom:14px;" loading="lazy"></iframe>
+								<iframe :src="planet_url + '?g=neutron'" scrolling="no" frameborder="0" style="width:155px;height:200px;padding-bottom:14px;" loading="lazy"></iframe>
 							</span>
 							<span class="card-planet" v-else-if="planet > 333000">
-								<iframe :src="planet_url + '?m=t&g=sun'" scrolling="no" frameborder="0" style="width:155px;height:200px;padding-bottom:14px;" loading="lazy"></iframe>
+								<iframe :src="planet_url + '?g=sun'" scrolling="no" frameborder="0" style="width:155px;height:200px;padding-bottom:14px;" loading="lazy"></iframe>
 							</span>
 							<span class="card-planet" v-else-if="planet > 1">
-								<iframe :src="planet_url + '?m=ai_normal&g=earth'" scrolling="no" frameborder="0" style="width:155px;height:200px;padding-bottom:14px;" loading="lazy"></iframe>
+								<iframe :src="planet_url + '?g=earth'" scrolling="no" frameborder="0" style="width:155px;height:200px;padding-bottom:14px;" loading="lazy"></iframe>
 							</span>
 							<span class="card-planet" v-else-if="planet > 0">
-								<iframe :src="planet_url + '?m=ai_default&g=moon'" scrolling="no" frameborder="0" style="width:155px;height:200px;padding-bottom:14px;" loading="lazy"></iframe>
+								<iframe :src="planet_url + '?g=moon'" scrolling="no" frameborder="0" style="width:155px;height:200px;padding-bottom:14px;" loading="lazy"></iframe>
 							</span>
 
 							<!--test

@@ -1,5 +1,5 @@
 /*!
- * @pixiv/three-vrm v3.0.0
+ * @pixiv/three-vrm v3.1.0
  * VRM file loader for three.js.
  *
  * Copyright (c) 2019-2024 pixiv Inc.
@@ -8,7 +8,7 @@
  */
 
 /*!
- * @pixiv/three-vrm-animation v3.0.0
+ * @pixiv/three-vrm-animation v3.1.0
  * The implementation of VRM Animation
  *
  * Copyright (c) 2019-2024 pixiv Inc.

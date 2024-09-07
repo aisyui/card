@@ -1204,5 +1204,17 @@
 			"ten": "SOU",
 			"ten_skill": true,
 			"first_skill": true
+		},
+		{
+			"id": 132,
+			"h": "遊戯",
+			"p": "ゲーム配信でアバターを動かす",
+			"ten_skill": false,
+			"first_skill": false,
+			"pay_seven": false,
+			"file": "/card/yui_176",
+			"src": "yui_176",
+			"ten_skill": false,
+			"first_skill": false
 		}
 ]

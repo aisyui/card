@@ -1207,13 +1207,37 @@
 		},
 		{
 			"id": 132,
-			"h": "遊戯",
+			"h": "遊戯笛",
 			"p": "ゲーム配信でアバターを動かす",
 			"ten_skill": false,
 			"first_skill": false,
 			"pay_seven": false,
 			"file": "/card/yui_176",
 			"src": "yui_176",
+			"ten_skill": false,
+			"first_skill": false
+		},
+		{
+			"id": 133,
+			"h": "遊戯鳥",
+			"p": "ゲーム配信でアバターを動かす",
+			"ten_skill": false,
+			"first_skill": false,
+			"pay_seven": false,
+			"file": "/card/yui_177",
+			"src": "yui_177",
+			"ten_skill": false,
+			"first_skill": false
+		},
+		{
+			"id": 134,
+			"h": "遊戯飛",
+			"p": "ゲーム配信でアバターを動かす",
+			"ten_skill": false,
+			"first_skill": false,
+			"pay_seven": false,
+			"file": "/card/yui_178",
+			"src": "yui_178",
 			"ten_skill": false,
 			"first_skill": false
 		}

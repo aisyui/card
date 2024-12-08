@@ -1009,7 +1009,7 @@ export default {
 				.then(response => (this.rcards = response));
 		} else if (loc === 'svn'){
 			this.cards = "";
-			let url = this.api_url + "sevs?itemsPerPage=4000";
+			let url = this.api_url + "sevs?itemsPerPage=8000";
 			axios
 				.get(url)
 				.then(response => (this.sevens = response));
@@ -1046,7 +1046,7 @@ export default {
 					if (this.planet > 0){
 						this.planet_status = true;
 					}
-					let url = this.api_url + "users/" + this.id + "/card?itemsPerPage=4000";
+					let url = this.api_url + "users/" + this.id + "/card?itemsPerPage=8000";
 					axios
 						.get("/json/card.json")
 						.then(response => (this.rcards = response));
@@ -1086,7 +1086,7 @@ export default {
 			},
 			page() {
 				this.id = this.record.data.find((v) => v.username == this.userid).id;
-				let url = this.api_url + "users/" + this.id + "/card?itemsPerPage=4000";
+				let url = this.api_url + "users/" + this.id + "/card?itemsPerPage=8000";
 				axios
 					.get(url,{ crossdomain: true })
 					.then(response => (this.ucard = response));
@@ -1095,7 +1095,7 @@ export default {
 			sort(){
 				if (this.premium) {
 					this.premium = false;
-					let url = this.api_url + "users/" + this.id + "/card?itemsPerPage=4000";
+					let url = this.api_url + "users/" + this.id + "/card?itemsPerPage=8000";
 				}
 				return this.cards.data.sort((a, b) => {
 					return b.cp - a.cp;
@@ -1121,7 +1121,7 @@ export default {
 			},
 			cardinfo(){
 				this.cards = "";
-				let url = this.api_url + "users/" + this.id + "/card?itemsPerPage=4000";
+				let url = this.api_url + "users/" + this.id + "/card?itemsPerPage=8000";
 				axios
 					.get(url,{ crossdomain: true })
 					.then(response => (this.cards = response));

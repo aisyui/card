@@ -59,7 +59,7 @@ export default function UserPage() {
             {/* Favorite Card Section */}
             {user.fav && user.fav !== '0' && cards?.data && (
               (() => {
-                const favCard = cards.data.find(card => card.id === parseInt(user.fav));
+                const favCard = cards.data.find(card => card.id === parseInt(user.fav || '0'));
                 if (favCard) {
                   return (
                     <div className="mb-8">

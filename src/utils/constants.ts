@@ -9,7 +9,8 @@ export const SKILL_ICONS = {
   yui: 'icon-ai',
   '3d': '■',
   model: 'fa-solid fa-cube',
-  first: 'icon-moji_a'
+  first: 'icon-moji_a',
+  normal: ''
 } as const;
 
 export const PLANET_THRESHOLDS = {

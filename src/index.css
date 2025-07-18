@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply text-lg;
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+  }
+  
+  body {
+    @apply bg-light font-sans;
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    line-break: strict;
+  }
+  
+  a {
+    @apply text-primary no-underline hover:text-secondary;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-3 py-1 rounded border border-primary bg-primary text-white hover:border-light hover:bg-secondary transition-colors;
+  }
+  
+  .btn-sm {
+    @apply px-2 py-1 text-sm rounded border border-primary bg-primary text-white hover:border-light;
+  }
+  
+  .card-reflection {
+    @apply block relative overflow-hidden;
+  }
+  
+  .card-reflection::after {
+    content: "";
+    @apply absolute top-0 left-0 w-8 h-full bg-white/40 opacity-0;
+    transform: rotate(45deg) translateX(-180px);
+    animation: reflection 4s ease-in-out infinite;
+  }
+  
+  .card-wrapper {
+    @apply grid place-items-center relative;
+  }
+  
+  .card-status {
+    @apply aspect-[5/7] rounded-lg shadow-lg absolute w-full h-full;
+  }
+}
+
+@keyframes reflection {
+  0% { transform: scale(0) rotate(45deg); opacity: 0; }
+  80% { transform: scale(0) rotate(45deg); opacity: 0.5; }
+  81% { transform: scale(4) rotate(45deg); opacity: 1; }
+  100% { transform: scale(50) rotate(45deg); opacity: 0; }
+}

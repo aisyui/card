@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git commit:*)",
+      "Bash(git checkout:*)",
+      "Bash(mkdir:*)",
+      "Bash(npm install)",
+      "Bash(nvm use:*)",
+      "Bash(npm run dev:*)",
+      "Bash(npm run build:*)",
+      "Bash(npm run preview:*)",
+      "Bash(pkill:*)",
+      "Bash(npx serve:*)",
+      "Bash(python3:*)",
+      "Bash(git add:*)"
+    ],
+    "deny": []
+  }
+}

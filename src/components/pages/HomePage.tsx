@@ -8,13 +8,15 @@ export default function HomePage() {
   
   const { data: users, isLoading } = useQuery({
     queryKey: ['users'],
-    queryFn: () => fetchUsers(),
+    queryFn: () => fetchUsers()
   });
 
   if (isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="text-xl">Loading...</div>
+        <div className="text-center">
+          <i className="fa-solid fa-spinner fa-spin text-6xl text-yellow-500"></i>
+        </div>
       </div>
     );
   }
@@ -39,7 +41,7 @@ export default function HomePage() {
           <a href="/svn" className="btn ml-2">seven</a>
         </div>
 
-        {users && (
+        {users?.data && Array.isArray(users.data) && users.data.length > 0 && (
           <div className="bg-white rounded-lg p-6">
             <div className="grid gap-4">
               {users.data.map((user) => (
@@ -106,6 +108,7 @@ export default function HomePage() {
             </div>
           </div>
         )}
+
       </div>
     </div>
   );

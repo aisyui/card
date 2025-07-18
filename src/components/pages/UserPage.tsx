@@ -8,7 +8,7 @@ import { fetchUsers, fetchUserCards } from '../../utils/api';
 export default function UserPage() {
   const { username } = useParams<{ username: string }>();
   
-  const { data: users } = useQuery({
+  const { data: users, isLoading } = useQuery({
     queryKey: ['users'],
     queryFn: () => fetchUsers(),
   });
@@ -21,12 +21,22 @@ export default function UserPage() {
     enabled: !!user?.id,
   });
 
-  if (!user) {
+  if (!user && !isLoading) {
     return (
       <div className="min-h-screen">
         <Navigation />
         <div className="max-w-6xl mx-auto px-4 py-8">
           <div className="text-center text-xl">User not found</div>
+        </div>
+      </div>
+    );
+  }
+
+  if (!user) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <i className="fa-solid fa-spinner fa-spin text-6xl text-yellow-500"></i>
         </div>
       </div>
     );
@@ -40,7 +50,9 @@ export default function UserPage() {
         <UserProfile user={user} cards={cards?.data || []} />
         
         {cardsLoading ? (
-          <div className="text-center py-8">Loading cards...</div>
+          <div className="text-center py-8">
+            <i className="fa-solid fa-spinner fa-spin text-4xl text-yellow-500"></i>
+          </div>
         ) : (
           <CardGrid cards={cards?.data || []} user={user} />
         )}

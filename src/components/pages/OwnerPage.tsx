@@ -15,7 +15,7 @@ export default function OwnerPage() {
       <div className="min-h-screen">
         <Navigation />
         <div className="flex items-center justify-center py-8">
-          <div className="text-xl">Loading...</div>
+          <i className="fa-solid fa-spinner fa-spin text-6xl text-yellow-500"></i>
         </div>
       </div>
     );

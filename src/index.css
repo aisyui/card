@@ -28,6 +28,17 @@
     @apply px-3 py-1 rounded border border-primary bg-primary text-white hover:border-light hover:bg-secondary transition-colors;
   }
   
+  button.btn {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    vertical-align: baseline;
+    margin: 0;
+    border: none;
+    background: none;
+    padding: 0;
+  }
+  
   .btn-sm {
     @apply px-2 py-1 text-sm rounded border border-primary bg-primary text-white hover:border-light;
   }

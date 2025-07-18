@@ -24,10 +24,13 @@ export interface Card {
   id: number;
   card: number;
   cp: number;
-  status: 'normal' | 'yui' | 'first' | 'second' | 'third' | 'fourth' | 'fifth' | 'sixth' | 'seven';
-  skill: 'critical' | 'post' | 'luck' | 'ten' | 'lost' | 'dragon' | 'nyan' | 'yui' | '3d' | 'model' | 'first';
+  status: 'normal' | 'yui' | 'first' | 'second' | 'third' | 'fourth' | 'fifth' | 'sixth' | 'seven' | 'super' | 'lost';
+  skill: 'critical' | 'post' | 'luck' | 'ten' | 'lost' | 'dragon' | 'nyan' | 'yui' | '3d' | 'model' | 'first' | 'normal';
   author?: string;
   url?: string;
+  count?: number;
+  created_at?: string;
+  user_id?: number;
 }
 
 export interface CardOwner {

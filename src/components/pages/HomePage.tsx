@@ -33,30 +33,6 @@ export default function HomePage() {
             <div className="grid gap-4">
               {users.data.map((user) => (
                 <div key={user.id} className="border-b pb-4 last:border-b-0">
-                  <div className="flex justify-between items-center mb-2">
-                    <div className="flex items-center gap-4">
-                      {user.model && (
-                        <button className="text-lg">
-                          <i className="fa-solid fa-cube"></i>
-                        </button>
-                      )}
-                      {user.fav !== '0' && (
-                        <button className="text-lg">✧</button>
-                      )}
-                      {user.username === 'ai' && (
-                        <a 
-                          href={`https://git.syui.ai/${user.username}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-lg"
-                        >
-                          <i className="fa-brands fa-git-alt"></i>
-                        </a>
-                      )}
-                      <button className="btn-sm">ID {user.id}</button>
-                    </div>
-                  </div>
-                  
                   <div className="text-lg">
                     <a href={`/${user.username}`} className="font-semibold">
                       {user.username}

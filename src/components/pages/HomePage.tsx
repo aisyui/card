@@ -62,34 +62,6 @@ export default function HomePage() {
                       {user.username}
                     </a>
                   </div>
-                  
-                  {didEnable && user.did && (
-                    <div className="mt-2">
-                      {user.did.includes('did:') ? (
-                        <button className="btn-sm">
-                          <a 
-                            href={`https://plc.directory/${user.did}/log`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-light"
-                          >
-                            {user.did}
-                          </a>
-                        </button>
-                      ) : user.did.includes('http') ? (
-                        <button className="btn-sm">
-                          <a 
-                            href={user.did}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-light"
-                          >
-                            {user.did}
-                          </a>
-                        </button>
-                      ) : null}
-                    </div>
-                  )}
                 </div>
               ))}
             </div>

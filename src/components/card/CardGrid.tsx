@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { Card, User } from '../../types';
-import { SKILL_ICONS, CARD_STATUS_COLORS } from '../../utils/constants';
+import { SKILL_ICONS } from '../../utils/constants';
+import '../../styles/card-effects.css';
 
 interface CardGridProps {
   cards: Card[];
@@ -87,7 +88,8 @@ export default function CardGrid({ cards }: CardGridProps) {
                       className="w-full rounded-lg"
                     />
                   </div>
-                  <div className={`card-status ${CARD_STATUS_COLORS[card.status]}`}></div>
+                  <div className={`card-status pattern-${card.status}`}></div>
+                  <div className={`card-status color-${card.status}`}></div>
                 </div>
               </div>
             ) : (

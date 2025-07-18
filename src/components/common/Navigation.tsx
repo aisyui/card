@@ -45,32 +45,6 @@ export default function Navigation({ username: _username }: NavigationProps) {
           </code>
         </div>
         
-        <div className="flex gap-2 hidden md:flex">
-          <form className="flex gap-2">
-            <input 
-              type="text" 
-              placeholder="user" 
-              className="px-2 py-1 text-black rounded"
-            />
-            <input 
-              type="submit" 
-              value="Go"
-              className="px-3 py-1 bg-primary text-white rounded hover:bg-secondary cursor-pointer"
-            />
-          </form>
-          <form className="flex gap-2">
-            <input 
-              type="text" 
-              placeholder="id" 
-              className="px-2 py-1 text-black rounded"
-            />
-            <input 
-              type="submit" 
-              value="Go"
-              className="px-3 py-1 bg-primary text-white rounded hover:bg-secondary cursor-pointer"
-            />
-          </form>
-        </div>
       </div>
     </div>
   );

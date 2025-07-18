@@ -4,27 +4,27 @@ on:
   push:
     branches:
     - main
+    - react-migration
 
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
+      with:
+        ref: ${{ github.ref }}
+        fetch-depth: 0
     - uses: actions/setup-node@v4
       with:
-        node-version: 16
-        ref: main
-        submodules: true
-        fetch-depth: 0
+        node-version: 23
     - run: |
-           npm install -g yarn@1.22.19  # ← yarn 1系を使う！
-           yarn install --frozen-lockfile --ignore-engines
+           npm install
 
     - name: Build
       env: 
         TZ: "Asia/Tokyo"
       run: |
-           yarn build
+           npm run build
 
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3

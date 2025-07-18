@@ -1,0 +1,351 @@
+/* Card Holographic Effects */
+.card-wrapper {
+  display: grid;
+  place-items: center;
+  position: relative;
+  aspect-ratio: 5/7;
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.card-reflection {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  border-radius: 7px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-reflection img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card-reflection::after {
+  content: "";
+  height: 100%;
+  width: 30px;
+  position: absolute;
+  top: -180px;
+  left: 0;
+  background-color: #ffffffa8;
+  opacity: 0;
+  transform: rotate(45deg);
+  animation: reflection 4s ease-in-out infinite;
+}
+
+@keyframes reflection {
+  0% { transform: scale(0) rotate(45deg); opacity: 0; }
+  80% { transform: scale(0) rotate(45deg); opacity: 0.5; }
+  81% { transform: scale(2) rotate(45deg); opacity: 1; }
+  100% { transform: scale(3) rotate(45deg); opacity: 0; }
+}
+
+.card-status {
+  aspect-ratio: 5/7;
+  border-radius: 7px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.card-wrapper {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.card-wrapper:hover {
+  transform: scale(1.05);
+}
+
+/* Status Effects */
+.pattern-yui {
+  background: repeating-radial-gradient(circle at -150% -25%, rgba(255, 255, 0, 0.3), transparent 3px, rgba(255, 255, 0, 0.2) 6px);
+  background-position: 50% 50%;
+  background-size: 120% 120%;
+  mix-blend-mode: screen;
+  opacity: 0.7;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+.color-yui {
+  background: linear-gradient(115deg, 
+    transparent 0%, 
+    rgba(255, 255, 0, 0.4) 25%, 
+    transparent 50%, 
+    rgba(255, 255, 0, 0.3) 75%, 
+    transparent 100%);
+  background-position: 50% 50%;
+  background-size: 200% 200%;
+  mix-blend-mode: soft-light;
+  opacity: 0.8;
+  animation: gradient-shift 4s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% { opacity: 0.4; background-size: 120% 120%; }
+  50% { opacity: 0.6; background-size: 140% 140%; }
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.pattern-first {
+  background: repeating-radial-gradient(circle at -150% -25%, 
+    rgba(0, 255, 255, 0.3), 
+    transparent 3px, 
+    rgba(64, 224, 208, 0.2) 6px);
+  background-position: 50% 50%;
+  background-size: 120% 120%;
+  mix-blend-mode: screen;
+  opacity: 0.7;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+.color-first {
+  background: linear-gradient(115deg, 
+    transparent 0%, 
+    rgba(0, 255, 255, 0.4) 25%, 
+    transparent 50%, 
+    rgba(64, 224, 208, 0.3) 75%, 
+    transparent 100%);
+  background-position: 50% 50%;
+  background-size: 200% 200%;
+  mix-blend-mode: soft-light;
+  opacity: 0.6;
+  animation: gradient-shift 4s ease-in-out infinite;
+}
+
+.pattern-second {
+  background: repeating-radial-gradient(circle at -150% -25%, #000, #777 3px, #000 3px);
+  background-position: 50% 50%;
+  background-size: 120% 120%;
+  mix-blend-mode: color-dodge;
+  opacity: 0.3;
+}
+
+.color-second {
+  background: linear-gradient(115deg, transparent 20%, #000 30%, transparent 48% 52%, #000 70%, transparent);
+  background-position: 50% 50%;
+  background-size: 200% 200%;
+  mix-blend-mode: overlay;
+}
+
+.pattern-third {
+  background: repeating-radial-gradient(circle at -150% -25%, #c71585, #777 3px, #ffff00 3px);
+  background-position: 50% 50%;
+  background-size: 120% 120%;
+  mix-blend-mode: color-dodge;
+  opacity: 0.3;
+}
+
+.color-third {
+  background: linear-gradient(115deg, transparent 20%, #c71585 30%, transparent 48% 52%, #c71585 70%, transparent);
+  background-position: 50% 50%;
+  background-size: 200% 200%;
+  mix-blend-mode: overlay;
+}
+
+.pattern-fourth {
+  background: repeating-radial-gradient(circle at -150% -25%, #fff, #777 3px, #fff 3px);
+  background-position: 50% 50%;
+  background-size: 120% 120%;
+  mix-blend-mode: color-dodge;
+  opacity: 0.3;
+}
+
+.color-fourth {
+  background: linear-gradient(115deg, transparent 20%, #40A4BF 30%, transparent 48% 52%, #404FBF 70%, transparent);
+  background-position: 50% 50%;
+  background-size: 200% 200%;
+  mix-blend-mode: overlay;
+}
+
+.pattern-fifth {
+  background: repeating-radial-gradient(circle at -150% -25%, #000, #990033 3px, #990033 3px);
+  background-position: 50% 50%;
+  background-size: 120% 120%;
+  mix-blend-mode: color-dodge;
+  opacity: 0.3;
+}
+
+.color-fifth {
+  background: linear-gradient(115deg, transparent 20%, #FF0000 30%, transparent 48% 52%, #990033 70%, transparent);
+  background-position: 50% 50%;
+  background-size: 200% 200%;
+  mix-blend-mode: overlay;
+}
+
+.pattern-sixth {
+  background: repeating-radial-gradient(circle at center, #f1f1f1, #313131 3px, #fff700 3px);
+  background-position: 50% 50%;
+  background-size: 120% 120%;
+  mix-blend-mode: color-dodge;
+  opacity: 0.3;
+}
+
+.color-sixth {
+  background: linear-gradient(115deg, transparent 20%, #f1f1f1 30%, transparent 48% 52%, #313131 70%, transparent);
+  background-position: 50% 50%;
+  background-size: 200% 200%;
+  mix-blend-mode: overlay;
+}
+
+.pattern-seven {
+  background: repeating-radial-gradient(circle at center, #fff700, #313131 3px, #000700 3px);
+  background-position: 50% 50%;
+  background-size: 120% 120%;
+  mix-blend-mode: color-dodge;
+  opacity: 0.3;
+}
+
+.color-seven {
+  background: linear-gradient(115deg, transparent 20%, #fff700 30%, transparent 48% 52%, #fff700 70%, transparent);
+  background-position: 50% 50%;
+  background-size: 200% 200%;
+  mix-blend-mode: overlay;
+}
+
+/* Global animation for all pattern effects */
+.pattern-second, .pattern-third, .pattern-fourth, .pattern-fifth, .pattern-sixth, .pattern-seven {
+  animation: shimmer 3s ease-in-out infinite;
+  mix-blend-mode: screen;
+  opacity: 0.6;
+}
+
+.color-second, .color-third, .color-fourth, .color-fifth, .color-sixth, .color-seven {
+  animation: gradient-shift 4s ease-in-out infinite;
+  mix-blend-mode: soft-light;
+  opacity: 0.5;
+}
+
+/* Hover Effects */
+.card-wrapper:hover > .pattern-yui,
+.card-wrapper:hover > .pattern-first,
+.card-wrapper:hover > .pattern-second,
+.card-wrapper:hover > .pattern-third,
+.card-wrapper:hover > .pattern-fourth,
+.card-wrapper:hover > .pattern-fifth,
+.card-wrapper:hover > .pattern-sixth,
+.card-wrapper:hover > .pattern-seven {
+  animation-duration: 1.5s;
+  opacity: 0.7;
+}
+
+.card-wrapper:hover > .color-yui,
+.card-wrapper:hover > .color-first,
+.card-wrapper:hover > .color-second,
+.card-wrapper:hover > .color-third,
+.card-wrapper:hover > .color-fourth,
+.card-wrapper:hover > .color-fifth,
+.card-wrapper:hover > .color-sixth,
+.card-wrapper:hover > .color-seven {
+  animation-duration: 2s;
+  opacity: 0.8;
+}
+
+.card-wrapper:hover > .highlight-yui,
+.card-wrapper:hover > .highlight-first,
+.card-wrapper:hover > .highlight-second,
+.card-wrapper:hover > .highlight-third,
+.card-wrapper:hover > .highlight-fourth,
+.card-wrapper:hover > .highlight-fifth,
+.card-wrapper:hover > .highlight-sixth,
+.card-wrapper:hover > .highlight-seven {
+  background-repeat: no-repeat;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}
+
+/* Enhanced holographic effects */
+.card-status.pattern-yui::after,
+.card-status.pattern-first::after,
+.card-status.pattern-second::after,
+.card-status.pattern-third::after,
+.card-status.pattern-fourth::after,
+.card-status.pattern-fifth::after,
+.card-status.pattern-sixth::after,
+.card-status.pattern-seven::after {
+  content: "";
+  position: absolute;
+  top: -180px;
+  left: 0;
+  width: 30px;
+  height: 100%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+  opacity: 0;
+  transform: rotate(45deg);
+  animation: holographic-sweep 6s ease-in-out infinite;
+}
+
+@keyframes holographic-sweep {
+  0% { transform: scale(0) rotate(45deg) translateX(-50px); opacity: 0; }
+  10% { transform: scale(0) rotate(45deg) translateX(-50px); opacity: 0; }
+  15% { transform: scale(1) rotate(45deg) translateX(-25px); opacity: 0.6; }
+  20% { transform: scale(1.5) rotate(45deg) translateX(0px); opacity: 1; }
+  25% { transform: scale(2) rotate(45deg) translateX(25px); opacity: 0.8; }
+  30% { transform: scale(2.5) rotate(45deg) translateX(50px); opacity: 0; }
+  100% { transform: scale(0) rotate(45deg) translateX(75px); opacity: 0; }
+}
+
+/* Rainbow shimmer effect for special cards */
+.card-status.color-yui,
+.card-status.color-first {
+  background: linear-gradient(45deg, 
+    #ff0000, #ff7f00, #ffff00, #00ff00, 
+    #0000ff, #4b0082, #9400d3, #ff0000);
+  background-size: 400% 400%;
+  animation: rainbow-flow 3s ease-in-out infinite;
+  mix-blend-mode: color-dodge;
+  opacity: 0.3;
+}
+
+@keyframes rainbow-flow {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Floating particles effect */
+.card-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(255, 255, 255, 0.6), transparent),
+    radial-gradient(1px 1px at 90px 40px, rgba(255, 255, 255, 0.4), transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(255, 255, 255, 0.7), transparent);
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  animation: float-particles 8s linear infinite;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 15;
+}
+
+.card-wrapper:hover::before {
+  opacity: 1;
+}
+
+@keyframes float-particles {
+  0% { transform: translateY(0px) translateX(0px); }
+  33% { transform: translateY(-10px) translateX(5px); }
+  66% { transform: translateY(-5px) translateX(-5px); }
+  100% { transform: translateY(0px) translateX(0px); }
+}

@@ -19,7 +19,8 @@
       "Bash(find:*)",
       "Bash(rm:*)",
       "Bash(grep:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(cp:*)"
     ],
     "deny": []
   }

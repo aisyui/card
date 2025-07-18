@@ -33,7 +33,7 @@ export default function Navigation({ username: _username }: NavigationProps) {
           <a href="/" className="text-accent text-2xl px-4">
             <span className="icon-ai"></span>
           </a>
-          <code className="bg-dark p-0">
+          <code className="bg-dark p-0 hidden md:block">
             <a 
               href="https://bsky.app/profile/yui.syui.ai" 
               target="_blank" 
@@ -45,7 +45,7 @@ export default function Navigation({ username: _username }: NavigationProps) {
           </code>
         </div>
         
-        <div className="flex gap-2">
+        <div className="flex gap-2 hidden md:flex">
           <form className="flex gap-2">
             <input 
               type="text" 

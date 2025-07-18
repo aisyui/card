@@ -1,10 +1,8 @@
-import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import Navigation from '../common/Navigation';
 import { fetchUsers } from '../../utils/api';
 
 export default function HomePage() {
-  const [didEnable, setDidEnable] = useState(false);
   
   const { data: users, isLoading } = useQuery({
     queryKey: ['users'],
@@ -28,17 +26,6 @@ export default function HomePage() {
       <div className="max-w-6xl mx-auto px-4">
         <div className="mb-8">
           <a href="/docs" className="btn">help</a>
-          <a href="/en" className="btn ml-2">en</a>
-          <a href="/pr" className="btn ml-2">fav</a>
-          <a href="/te" className="btn ml-2">ten</a>
-          <button 
-            onClick={() => setDidEnable(!didEnable)}
-            className="btn ml-2"
-          >
-            did
-          </button>
-          <a href="/c" className="btn ml-2">all</a>
-          <a href="/svn" className="btn ml-2">seven</a>
         </div>
 
         {users?.data && Array.isArray(users.data) && users.data.length > 0 && (

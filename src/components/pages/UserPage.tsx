@@ -63,7 +63,6 @@ export default function UserPage() {
                 if (favCard) {
                   return (
                     <div className="mb-8">
-                      <h2 className="text-xl font-bold mb-4 text-center">Favorite Card</h2>
                       <div className="flex justify-center">
                         <SpecialCard card={favCard} />
                       </div>

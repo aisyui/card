@@ -7,6 +7,7 @@
   width: 100%;
   max-width: 200px;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 .card-reflection {
@@ -39,8 +40,8 @@
 @keyframes reflection {
   0% { transform: scale(0) rotate(45deg); opacity: 0; }
   80% { transform: scale(0) rotate(45deg); opacity: 0.5; }
-  81% { transform: scale(4) rotate(45deg); opacity: 1; }
-  100% { transform: scale(50) rotate(45deg); opacity: 0; }
+  81% { transform: scale(2) rotate(45deg); opacity: 1; }
+  100% { transform: scale(3) rotate(45deg); opacity: 0; }
 }
 
 .card-status {
@@ -291,13 +292,13 @@
 }
 
 @keyframes holographic-sweep {
-  0% { transform: scale(0) rotate(45deg) translateX(-200px); opacity: 0; }
-  10% { transform: scale(0) rotate(45deg) translateX(-200px); opacity: 0; }
-  15% { transform: scale(2) rotate(45deg) translateX(-100px); opacity: 0.6; }
-  20% { transform: scale(4) rotate(45deg) translateX(0px); opacity: 1; }
-  25% { transform: scale(6) rotate(45deg) translateX(100px); opacity: 0.8; }
-  30% { transform: scale(8) rotate(45deg) translateX(200px); opacity: 0; }
-  100% { transform: scale(0) rotate(45deg) translateX(300px); opacity: 0; }
+  0% { transform: scale(0) rotate(45deg) translateX(-50px); opacity: 0; }
+  10% { transform: scale(0) rotate(45deg) translateX(-50px); opacity: 0; }
+  15% { transform: scale(1) rotate(45deg) translateX(-25px); opacity: 0.6; }
+  20% { transform: scale(1.5) rotate(45deg) translateX(0px); opacity: 1; }
+  25% { transform: scale(2) rotate(45deg) translateX(25px); opacity: 0.8; }
+  30% { transform: scale(2.5) rotate(45deg) translateX(50px); opacity: 0; }
+  100% { transform: scale(0) rotate(45deg) translateX(75px); opacity: 0; }
 }
 
 /* Rainbow shimmer effect for special cards */

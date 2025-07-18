@@ -33,7 +33,8 @@ export default function HomePage() {
             <div className="grid gap-4">
               {users.data.map((user) => (
                 <div key={user.id} className="border-b pb-4 last:border-b-0">
-                  <div className="text-lg">
+                  <div className="text-lg flex items-center gap-2">
+                    <button className="btn-sm">{user.id}</button>
                     <a href={`/${user.username}`} className="font-semibold">
                       {user.username}
                     </a>

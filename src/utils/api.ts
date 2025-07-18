@@ -52,6 +52,16 @@ export const fetchUserCards = async (userId: number, itemsPerPage = 8000): Promi
   }
 };
 
+export const fetchCardById = async (cardId: number): Promise<Card | null> => {
+  try {
+    const response = await api.get(`cards/${cardId}`);
+    return response.data;
+  } catch (error) {
+    console.error('Failed to fetch card by ID:', error);
+    return null;
+  }
+};
+
 export const fetchUser = async (userId: number): Promise<{ data: User }> => {
   const response = await api.get(`users/${userId}`);
   return response.data;

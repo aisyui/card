@@ -85,18 +85,6 @@ export default function DocsPage({ isEnglish = false, page }: DocsPageProps) {
           </tbody>
         </table>
 
-        <h3>{isEnglish ? 'Battle' : '対戦について'}</h3>
-        <p><code>@yui.syui.ai /card -b</code></p>
-        <p>{isEnglish ? 'Random match, one of the top 3 cards on hand will be chosen at random' : 'ランダムマッチ、手持ちの上位3枚のうち1枚がランダムで選ばれます'}</p>
-
-        <h3>Mastodon</h3>
-        <p>
-          <code>
-            <a href="https://mstdn.syui.ai/@yui" target="_blank" rel="noopener noreferrer">
-              @yui@syui.ai
-            </a> /card
-          </code>
-        </p>
       </div>
     );
   };

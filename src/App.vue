@@ -1,7 +1,7 @@
 <template>
 	<div id="app">
-		<link rel="stylesheet" href="https://syui.ai/bower_components/icomoon/style.css" />
-		<link rel="stylesheet" href="https://syui.ai/bower_components/font-awesome/css/all.min.css" />
+		<link rel="stylesheet" href="https://syui.github.io/bower_components/icomoon/style.css" />
+		<link rel="stylesheet" href="https://syui.github.io/bower_components/font-awesome/css/all.min.css" />
 		<div class="menu">
 			<a href="/" class="top-icon"><span class="icon-ai"></span></a> 
 			<code v-if="loc === 'te'"><a href="https://bsky.app/profile/yui.syui.ai" target="_blank">@yui.syui.ai</a> /ten</code>

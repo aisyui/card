@@ -21,5 +21,8 @@
   },
   "devDependencies": {
     "@vue/cli-service": "~4.5.15"
+  },
+  "resolutions": {
+    "minimatch": "^3.1.2"
   }
 }

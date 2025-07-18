@@ -3,6 +3,7 @@ import { useQuery } from '@tanstack/react-query';
 import Navigation from '../common/Navigation';
 import CardGrid from '../card/CardGrid';
 import UserProfile from '../user/UserProfile';
+import SpecialCard from '../card/SpecialCard';
 import { fetchUsers, fetchUserCards } from '../../utils/api';
 
 export default function UserPage() {
@@ -54,7 +55,27 @@ export default function UserPage() {
             <i className="fa-solid fa-spinner fa-spin text-4xl text-yellow-500"></i>
           </div>
         ) : (
-          <CardGrid cards={cards?.data || []} user={user} />
+          <>
+            {/* Favorite Card Section */}
+            {user.fav && user.fav !== '0' && cards?.data && (
+              (() => {
+                const favCard = cards.data.find(card => card.id === parseInt(user.fav));
+                if (favCard) {
+                  return (
+                    <div className="mb-8">
+                      <h2 className="text-xl font-bold mb-4 text-center">Favorite Card</h2>
+                      <div className="flex justify-center">
+                        <SpecialCard card={favCard} />
+                      </div>
+                    </div>
+                  );
+                }
+                return null;
+              })()
+            )}
+            
+            <CardGrid cards={cards?.data || []} user={user} />
+          </>
         )}
       </div>
     </div>

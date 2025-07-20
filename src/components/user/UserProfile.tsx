@@ -6,6 +6,15 @@ interface UserProfileProps {
 }
 
 export default function UserProfile({ user, cards }: UserProfileProps) {
+  const formatPlanet = (planet: number) => {
+    if (planet >= 1000000) {
+      return `${(planet / 1000000).toFixed(2)}M`;
+    } else if (planet >= 1000) {
+      return `${(planet / 1000).toFixed(2)}K`;
+    }
+    return planet.toLocaleString();
+  };
+
   return (
     <div className="bg-white rounded-lg p-6 mb-8">
       <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
@@ -48,7 +57,7 @@ export default function UserProfile({ user, cards }: UserProfileProps) {
         {user.planet && (
           <div className="flex items-center gap-1">
             <i className="fa-solid fa-earth-americas"></i>
-            {user.planet}
+            {formatPlanet(user.planet)}
           </div>
         )}
       </div>

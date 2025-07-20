@@ -6,14 +6,6 @@ interface UserProfileProps {
 }
 
 export default function UserProfile({ user, cards }: UserProfileProps) {
-  const formatPlanet = (planet: number) => {
-    if (planet >= 1000000) {
-      return `${(planet / 1000000).toFixed(2)}M`;
-    } else if (planet >= 1000) {
-      return `${(planet / 1000).toFixed(2)}K`;
-    }
-    return planet.toLocaleString();
-  };
 
   return (
     <div className="bg-white rounded-lg p-6 mb-8">
@@ -38,7 +30,7 @@ export default function UserProfile({ user, cards }: UserProfileProps) {
         )}
       </h3>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-4 text-sm">
         <div>
           <strong>ID:</strong> {user.id}
         </div>
@@ -54,12 +46,10 @@ export default function UserProfile({ user, cards }: UserProfileProps) {
           <span className="icon-ai"></span>
           {cards.filter(c => c.card >= 96 && c.card <= 121).length}
         </div>
-        {user.planet && (
-          <div className="flex items-center gap-1">
-            <i className="fa-solid fa-earth-americas"></i>
-            {formatPlanet(user.planet)}
-          </div>
-        )}
+        <div className="flex items-center gap-1">
+          <i className="fa-solid fa-earth-americas"></i>
+          {user.planet?.toLocaleString() || '0'}
+        </div>
       </div>
 
       {/* Badge Images */}

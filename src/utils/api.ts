@@ -15,28 +15,40 @@ export const api = axios.create({
 // API関数
 export const fetchUsers = async (itemsPerPage = 8000): Promise<{ data: User[] }> => {
   try {
-    // First try to load cached users.json for fast initial loading
-    const cachedResponse = await axios.get('/json/users.json');
-    
-    // Background fetch for fresh data
-    setTimeout(async () => {
-      try {
-        await api.get(`users?itemsPerPage=${itemsPerPage}`);
-      } catch (error) {
-        console.error('Background fetch failed:', error);
-      }
-    }, 100);
-    
-    return { data: cachedResponse.data };
+    // Directly fetch from API to get complete user data including planet
+    const response = await api.get(`users?itemsPerPage=${itemsPerPage}`);
+    return { data: response.data };
   } catch (error) {
-    console.error('Failed to fetch cached users:', error);
-    // Fallback to API if cached JSON fails
+    console.error('Failed to fetch users from API:', error);
+    // Fallback to cached data (but it doesn't have planet field)
     try {
-      const response = await api.get(`users?itemsPerPage=${itemsPerPage}`);
-      return { data: response.data };
-    } catch (apiError) {
-      console.error('API fallback failed:', apiError);
+      const cachedResponse = await axios.get('/json/users.json');
+      return { data: cachedResponse.data };
+    } catch (cacheError) {
+      console.error('Cache fallback failed:', cacheError);
       return { data: [] };
+    }
+  }
+};
+
+// Fetch users with cache-first strategy for home page
+export const fetchUsersWithCache = async (): Promise<{ data: User[], isFromCache?: boolean }> => {
+  try {
+    // First, try to get cached data
+    console.log('Attempting to load cached users.json');
+    const cachedResponse = await axios.get('/json/users.json');
+    console.log('Successfully loaded cached data:', cachedResponse.data.length, 'users');
+    return { data: cachedResponse.data, isFromCache: true };
+  } catch (error) {
+    console.error('Cache read failed, fetching from API:', error);
+    // If cache fails, fetch from API
+    try {
+      const response = await api.get('users?itemsPerPage=8000');
+      console.log('Successfully loaded from API:', response.data.length, 'users');
+      return { data: response.data, isFromCache: false };
+    } catch (apiError) {
+      console.error('API fetch also failed:', apiError);
+      return { data: [], isFromCache: false };
     }
   }
 };

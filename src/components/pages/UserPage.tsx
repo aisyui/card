@@ -4,17 +4,27 @@ import Navigation from '../common/Navigation';
 import CardGrid from '../card/CardGrid';
 import UserProfile from '../user/UserProfile';
 import SpecialCard from '../card/SpecialCard';
-import { fetchUsers, fetchUserCards } from '../../utils/api';
+import { fetchUsers, fetchUserCards, fetchUser } from '../../utils/api';
 
 export default function UserPage() {
   const { username } = useParams<{ username: string }>();
   
+  // First get users list to find the user ID
   const { data: users, isLoading } = useQuery({
     queryKey: ['users'],
     queryFn: () => fetchUsers(),
   });
 
-  const user = users?.data.find(u => u.username === username);
+  const userId = users?.data.find(u => u.username === username)?.id;
+  
+  // Then fetch full user data from API to get planet value
+  const { data: userResponse } = useQuery({
+    queryKey: ['user', userId],
+    queryFn: () => fetchUser(userId!),
+    enabled: !!userId,
+  });
+  
+  const user = userResponse?.data || users?.data.find(u => u.username === username);
   
   const { data: cards, isLoading: cardsLoading } = useQuery({
     queryKey: ['userCards', user?.id],

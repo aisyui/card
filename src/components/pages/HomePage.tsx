@@ -1,13 +1,34 @@
-import { useQuery } from '@tanstack/react-query';
+import { useQuery, useQueryClient } from '@tanstack/react-query';
+import { useEffect } from 'react';
 import Navigation from '../common/Navigation';
-import { fetchUsers } from '../../utils/api';
+import { fetchUsersWithCache } from '../../utils/api';
+import { api } from '../../utils/api';
 
 export default function HomePage() {
+  const queryClient = useQueryClient();
   
   const { data: users, isLoading } = useQuery({
     queryKey: ['users'],
-    queryFn: () => fetchUsers()
+    queryFn: () => fetchUsersWithCache(),
+    staleTime: 0, // Always consider data stale
   });
+
+  // Refresh with API data after cache load
+  useEffect(() => {
+    if (users?.isFromCache) {
+      // Fetch fresh data from API in background
+      api.get('users?itemsPerPage=8000').then(response => {
+        console.log('Background API fetch successful, got', response.data.length, 'users with planet data');
+        // Update the query cache with fresh data
+        queryClient.setQueryData(['users'], {
+          data: response.data,
+          isFromCache: false
+        });
+      }).catch(error => {
+        console.error('Background API fetch failed:', error);
+      });
+    }
+  }, [users?.isFromCache, queryClient]);
 
   if (isLoading) {
     return (

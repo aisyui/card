@@ -4,6 +4,7 @@ import HomePage from './components/pages/HomePage';
 import DocsPage from './components/pages/DocsPage';
 import OwnerPage from './components/pages/OwnerPage';
 import UserPage from './components/pages/UserPage';
+import CardDisplayPage from './components/pages/CardDisplayPage';
 
 function App() {
   useEffect(() => {
@@ -28,6 +29,7 @@ function App() {
         <Route path="/fa" element={<DocsPage page="fanart" />} />
         <Route path="/ph" element={<DocsPage page="photo" />} />
         <Route path="/pr" element={<DocsPage page="favorite" />} />
+        <Route path="/cards/:id" element={<CardDisplayPage />} />
         <Route path="/:username" element={<UserPage />} />
       </Routes>
     </div>

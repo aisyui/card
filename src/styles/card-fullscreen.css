@@ -1,0 +1,7 @@
+/* Fullscreen Card Display Styles */
+.card-wrapper-fullscreen {
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+}

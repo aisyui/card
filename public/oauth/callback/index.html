@@ -100,21 +100,28 @@
           return;
         }
 
-        // Universal Links用: 現在のHTTPS URLがそのままアプリに渡される
-        // iOSがUniversal Linkを認識すれば自動的にアプリが開く
-        console.log('Waiting for Universal Link to trigger...');
+        // カスタムスキームのDeep Linkを生成
+        const deepLink = `aicard://oauth/callback?code=${encodeURIComponent(code)}&state=${encodeURIComponent(state)}`;
 
-        // 3秒後にフォールバックメッセージを表示
+        console.log('OAuth callback received, attempting app launch...');
+        console.log('Universal Link should trigger automatically if configured correctly');
+
+        // 即座にカスタムスキームへのリダイレクトを試行（フォールバック）
+        // Universal Linksが動作すればこのコードに到達する前にアプリが開く
+        // 動作しない場合はカスタムスキームで開く
         setTimeout(() => {
-          // カスタムスキームのDeep Linkを生成（フォールバック用）
-          const deepLink = `aicard://oauth/callback?code=${encodeURIComponent(code)}&state=${encodeURIComponent(state)}`;
+          console.log('Attempting fallback custom scheme redirect');
+          window.location.href = deepLink;
+        }, 500);
 
+        // 2秒後に手動ボタンを表示（念のため）
+        setTimeout(() => {
           content.innerHTML = `
             <div class="message">認証が完了しました</div>
             <p style="font-size: 14px; opacity: 0.9;">アプリが自動的に開かない場合は、<br>下のボタンをタップしてください</p>
             <a href="${deepLink}" class="button">アプリを開く</a>
           `;
-        }, 3000);
+        }, 2000);
 
       } catch (err) {
         console.error('Callback error:', err);

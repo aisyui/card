@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OAuth Callback - Aicard</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+    .container {
+      text-align: center;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+    }
+    .spinner {
+      border: 4px solid rgba(255, 255, 255, 0.3);
+      border-top: 4px solid white;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 20px;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .error {
+      color: #ff6b6b;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="spinner"></div>
+    <p id="status">認証中...</p>
+  </div>
+
+  <script>
+    (function() {
+      try {
+        // URLパラメータを取得
+        const params = new URLSearchParams(window.location.search);
+        const code = params.get('code');
+        const state = params.get('state');
+        const error = params.get('error');
+        const errorDescription = params.get('error_description');
+
+        // エラーチェック
+        if (error) {
+          document.getElementById('status').innerHTML =
+            `<div class="error">認証エラー: ${errorDescription || error}</div>`;
+          return;
+        }
+
+        if (!code || !state) {
+          document.getElementById('status').innerHTML =
+            '<div class="error">認証パラメータが不足しています</div>';
+          return;
+        }
+
+        // React Nativeアプリに戻す (deep link)
+        const deepLink = `aicard://oauth/callback?code=${encodeURIComponent(code)}&state=${encodeURIComponent(state)}`;
+
+        document.getElementById('status').textContent = 'アプリに戻っています...';
+
+        // Deep linkを開く
+        window.location.href = deepLink;
+
+        // フォールバック: 3秒後にも試行
+        setTimeout(() => {
+          window.location.href = deepLink;
+        }, 1000);
+
+        // フォールバック: 5秒後にメッセージ表示
+        setTimeout(() => {
+          document.getElementById('status').innerHTML =
+            '<div class="error">アプリが開かない場合は、Aicardアプリを手動で開いてください</div>';
+        }, 5000);
+
+      } catch (err) {
+        console.error('Callback error:', err);
+        document.getElementById('status').innerHTML =
+          `<div class="error">エラーが発生しました: ${err.message}</div>`;
+      }
+    })();
+  </script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 {
-  "client_id": "https://card.syui.ai/client-metadata.json",
+  "client_id": "https://card.syui.ai/.well-known/client-metadata.json",
   "client_name": "Aicard",
   "client_uri": "https://card.syui.ai",
   "logo_uri": "https://card.syui.ai/icon.png",

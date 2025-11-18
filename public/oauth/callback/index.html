@@ -59,6 +59,9 @@
         const error = params.get('error');
         const errorDescription = params.get('error_description');
 
+        console.log('OAuth callback page loaded');
+        console.log('Params:', { code: code ? 'present' : 'missing', state: state ? 'present' : 'missing' });
+
         // エラーチェック
         if (error) {
           document.getElementById('status').innerHTML =
@@ -75,20 +78,40 @@
         // React Nativeアプリに戻す (deep link)
         const deepLink = `aicard://oauth/callback?code=${encodeURIComponent(code)}&state=${encodeURIComponent(state)}`;
 
-        document.getElementById('status').textContent = 'アプリに戻っています...';
+        console.log('Deep link:', deepLink);
+        document.getElementById('status').innerHTML = 'アプリに戻っています...<br><small>' + deepLink + '</small>';
 
-        // Deep linkを開く
-        window.location.href = deepLink;
+        // Method 1: iframe approach
+        const iframe = document.createElement('iframe');
+        iframe.style.display = 'none';
+        iframe.src = deepLink;
+        document.body.appendChild(iframe);
 
-        // フォールバック: 3秒後にも試行
+        // Method 2: Direct window.location
         setTimeout(() => {
+          console.log('Attempting window.location redirect');
           window.location.href = deepLink;
+        }, 500);
+
+        // Method 3: Link click simulation
+        setTimeout(() => {
+          console.log('Attempting link click');
+          const link = document.createElement('a');
+          link.href = deepLink;
+          link.click();
         }, 1000);
+
+        // Method 4: Window.open
+        setTimeout(() => {
+          console.log('Attempting window.open');
+          window.open(deepLink, '_self');
+        }, 1500);
 
         // フォールバック: 5秒後にメッセージ表示
         setTimeout(() => {
           document.getElementById('status').innerHTML =
-            '<div class="error">アプリが開かない場合は、Aicardアプリを手動で開いてください</div>';
+            '<div class="error">アプリが開かない場合は、下のリンクをタップしてください<br><br>' +
+            '<a href="' + deepLink + '" style="color: white; text-decoration: underline; font-size: 18px;">Aicardアプリを開く</a></div>';
         }, 5000);
 
       } catch (err) {
